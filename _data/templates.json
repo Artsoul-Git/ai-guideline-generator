@@ -1,0 +1,297 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-06-29",
+  "note": "4成果物の章立てテンプレ。条項DB（clauses.json）のID参照で本文を動的差込",
+
+  "common_header": {
+    "preamble": "## はじめに（弁護士確認推奨注記）\n\n本ガイドラインは、{法令時点}時点の法令・業界ガイドラインに基づき作成されています。実運用前に、貴社の業種・規模に応じた弁護士による最終確認を強く推奨します。法令改正・業界動向の変化により定期的な見直しが必要です。",
+    "company_info_block": "## 基本情報\n\n- **会社名**：{company_name}\n- **業種**：{industries_label}\n- **従業員規模**：{employee_count}名（規模区分：{scale_label}）\n- **作成日**：{creation_date}\n- **次回見直し予定**：{next_review_date}\n- **本ガイドライン版番号**：v{version}"
+  },
+
+  "01_guideline_base": {
+    "title": "AI・IT利用ガイドライン",
+    "subtitle": "{company_name} 社内規程",
+    "description": "本体ガイドライン。全従業者が遵守する基本ルール集。",
+    "sections": [
+      {
+        "id": "1",
+        "title": "目的・適用範囲・用語定義",
+        "include_clauses": [],
+        "narrative": "本ガイドラインの目的、対象、用語定義。glossary.jsonから自動生成。",
+        "required_for_scales": ["S","XS","S2","M","L"]
+      },
+      {
+        "id": "2",
+        "title": "基本方針（3リスク対応宣言）",
+        "include_clauses": [],
+        "narrative": "情報漏洩・品質・法令遵守の3リスクへの基本姿勢宣言。",
+        "required_for_scales": ["S","XS","S2","M","L"]
+      },
+      {
+        "id": "3",
+        "title": "AI入力データ管理（最重要）",
+        "include_clauses": ["C-CMN-001","C-CMN-002","C-CMN-003","C-CMN-005"],
+        "narrative": "個人情報・営業秘密・第三者著作物の生成AI投入ルール",
+        "required_for_scales": ["S","XS","S2","M","L"]
+      },
+      {
+        "id": "4",
+        "title": "AI出力物の管理",
+        "include_clauses": ["C-CMN-004","C-AI-003","C-AI-004"],
+        "narrative": "AI出力物のレビュー義務・著作権・原典性記録",
+        "required_for_scales": ["S","XS","S2","M","L"]
+      },
+      {
+        "id": "5",
+        "title": "認証・アカウント管理",
+        "include_clauses": ["C-CMN-006","C-AUTH-001","C-AUTH-002","C-AUTH-003","C-AUTH-004"],
+        "narrative": "パスワード・MFA・SSO・特権ID（規模適用に応じ）",
+        "required_for_scales": ["XS","S2","M","L"]
+      },
+      {
+        "id": "6",
+        "title": "端末・ネットワーク管理",
+        "include_clauses": ["C-DEV-001","C-DEV-002","C-DEV-003","C-DEV-004","C-DEV-005","C-NET-001","C-NET-002","C-NET-003","C-NET-004"],
+        "narrative": "端末資産・暗号化・Wi-Fi分離・VPN・クラウド承認",
+        "required_for_scales": ["XS","S2","M","L"]
+      },
+      {
+        "id": "7",
+        "title": "データ管理・アクセス権限",
+        "include_clauses": ["C-DAT-001","C-DAT-002","C-DAT-003","C-DAT-004","C-DAT-005","C-ACL-001","C-ACL-002","C-ACL-003","C-ACL-004","C-CMN-008"],
+        "narrative": "バックアップ・分類・保管・破棄・権限管理・オフボーディング",
+        "required_for_scales": ["XS","S2","M","L"]
+      },
+      {
+        "id": "8",
+        "title": "AI利用ルール",
+        "include_clauses": ["C-AI-001","C-AI-002","C-AI-005","C-AI-006","C-BYO-001","C-BYO-002","C-BYO-003"],
+        "narrative": "許可ツール・承認フロー・ログ・教育・BYOD",
+        "required_for_scales": ["S","XS","S2","M","L"]
+      },
+      {
+        "id": "9",
+        "title": "委託先・外部関係者管理",
+        "include_clauses": ["C-CMN-009","C-EXT-001","C-EXT-002","C-EXT-003"],
+        "narrative": "委託契約・セキュリティ評価・委託先監査",
+        "required_for_scales": ["XS","S2","M","L"]
+      },
+      {
+        "id": "10",
+        "title": "ログ・監査",
+        "include_clauses": ["C-CMN-010","C-LOG-001","C-LOG-002","C-LOG-003","C-LOG-004"],
+        "narrative": "ログ取得・保管・レビュー・改ざん防止",
+        "required_for_scales": ["S2","M","L"]
+      },
+      {
+        "id": "11",
+        "title": "インシデント対応",
+        "include_clauses": ["C-CMN-007","C-INC-001","C-INC-002","C-INC-003","C-INC-004"],
+        "narrative": "インシデント連絡先・報告フロー・封じ込め・訓練",
+        "required_for_scales": ["S","XS","S2","M","L"]
+      },
+      {
+        "id": "12",
+        "title": "業種別追加条項",
+        "include_clauses_by_industry": {
+          "medical": ["C-MED-001","C-MED-002","C-MED-003"],
+          "shigyo": ["C-SHI-001","C-SHI-002","C-SHI-003"],
+          "finance": ["C-FIN-001","C-FIN-002","C-FIN-003"],
+          "education": ["C-EDU2-001","C-EDU2-002","C-EDU2-003"],
+          "manufacturing": ["C-MFG-001","C-MFG-002","C-MFG-003"],
+          "logistics": ["C-TRA-001","C-TRA-002","C-TRA-003"],
+          "retail": ["C-RET-001","C-RET-002","C-RET-003"],
+          "beauty": ["C-BTY-001","C-BTY-002","C-BTY-003"],
+          "it_consulting": ["C-ITC-001","C-ITC-002","C-ITC-003"],
+          "construction": ["C-BLD-001","C-BLD-002","C-BLD-003"],
+          "public": ["C-PUB-001","C-PUB-002","C-PUB-003"]
+        },
+        "narrative": "選択された業種に応じて該当業種特化条項を自動挿入",
+        "required_for_scales": ["S","XS","S2","M","L"]
+      },
+      {
+        "id": "13",
+        "title": "懲戒・見直し",
+        "include_clauses": ["C-CMN-011","C-CMN-012"],
+        "narrative": "違反時の懲戒規定・定期見直し",
+        "required_for_scales": ["S2","M","L"]
+      }
+    ]
+  },
+
+  "02_customization_guide": {
+    "title": "自社カスタマイズ運用ガイドブック",
+    "subtitle": "{company_name} 運用設計書",
+    "description": "本体ガイドラインを自社に合わせて作り変える運用書",
+    "sections": [
+      {
+        "id": "1",
+        "title": "なぜカスタマイズが必要か",
+        "narrative": "業種・規模・体制で正解が違う。「コピペ」では運用破綻する理由"
+      },
+      {
+        "id": "2",
+        "title": "5ステップ・カスタマイズ・ワークフロー",
+        "narrative": "①現状調査→②リスク棚卸→③項目選別→④文言調整→⑤承認"
+      },
+      {
+        "id": "3",
+        "title": "業種別カスタマイズ事例（{industries_label}）",
+        "narrative": "選択業種に応じた具体事例を提示"
+      },
+      {
+        "id": "4",
+        "title": "運用のポイント",
+        "narrative": "キーマン特定／浸透施策／違反時対応／更新サイクル"
+      },
+      {
+        "id": "5",
+        "title": "よくある失敗パターン7集",
+        "narrative": "過剰禁止／放置／属人化／ITアレルギー無視／経営者不在／業界事情ズレ／改訂サイクルなし"
+      },
+      {
+        "id": "6",
+        "title": "定着までの90日ロードマップ",
+        "narrative": "規模{scale_label}向けDay1/Week2/Month1/Quarter1の具体ステップ"
+      }
+    ]
+  },
+
+  "03_risk_handbook": {
+    "title": "生成AIリスク対策ハンドブック",
+    "subtitle": "{company_name} リスクマネジメント編",
+    "description": "リスク管理の考え方と打ち手集",
+    "sections": [
+      {
+        "id": "1",
+        "title": "生成AIの3大リスク全体像",
+        "narrative": "情報漏洩／品質／法令の3カテゴリと派生15リスク"
+      },
+      {
+        "id": "2",
+        "title": "リスクマトリクス",
+        "narrative": "影響度×発生頻度／優先順位付け"
+      },
+      {
+        "id": "3",
+        "title": "情報漏洩リスク対策10手法",
+        "narrative": "技術／運用／契約／教育の4軸での具体策"
+      },
+      {
+        "id": "4",
+        "title": "品質リスク対策10手法",
+        "narrative": "ハルシネーション／バイアス／誤訳／著作物混入への対策"
+      },
+      {
+        "id": "5",
+        "title": "法令リスク対策10手法",
+        "narrative": "個情法／著作権／景表法／業界規制への対策"
+      },
+      {
+        "id": "6",
+        "title": "インシデント発生時の対応プレイブック",
+        "narrative": "24時間以内／7日以内／30日以内の対応フロー"
+      },
+      {
+        "id": "7",
+        "title": "リスクと便益のバランス設計",
+        "narrative": "過剰禁止 vs 過剰開放の中庸を見つける"
+      }
+    ]
+  },
+
+  "04_masking_manual": {
+    "title": "機密情報マスキング 実務マニュアル",
+    "subtitle": "{company_name} 現場ですぐ使える実務手引き",
+    "description": "業務シーン別の実務マニュアル。やさしい表現と図解中心の構成",
+    "tone": "very_beginner",
+    "sections": [
+      {
+        "id": "1",
+        "title": "なぜマスキングが必要なのか",
+        "narrative": "漫画的事例3本で動機付け。「うっかり漏洩」「秘伝の配合流出」「依頼者情報の混在」"
+      },
+      {
+        "id": "2",
+        "title": "3分でわかる「マスクして戻す」全体像",
+        "narrative": "手書きイラスト風フロー。①原文確認→②要マスク箇所抽出→③置換→④AI処理→⑤復元→⑥最終確認"
+      },
+      {
+        "id": "3",
+        "title": "マスキング対象の見分け方",
+        "narrative": "個人名／住所／取引先名／金額／社外秘情報／要配慮個人情報 の典型パターン"
+      },
+      {
+        "id": "4",
+        "title": "超基本パターン10",
+        "narrative": "コピペで使えるマスク前→マスク後の対比表。「田中太郎→A様」「東京都港区→○○県」など"
+      },
+      {
+        "id": "5",
+        "title": "業務シーン別 完全実演（4本）",
+        "narrative": "①議事録要約／②提案書ドラフト／③顧客分析／④メール返信 のbefore-after実演"
+      },
+      {
+        "id": "6",
+        "title": "復元手順",
+        "narrative": "マスク辞書の作り方／置換ツール／チェック方法。Excelで管理する具体手順"
+      },
+      {
+        "id": "7",
+        "title": "使うAIツール別 注意点",
+        "narrative": "ChatGPT／Claude／Copilot／Gemini の各サービス固有の注意点"
+      },
+      {
+        "id": "8",
+        "title": "やっちゃダメなマスキング失敗例10集",
+        "narrative": "「マスクしたつもりで一部漏れ」「文脈で特定可能」「数字を残して特定」など典型失敗"
+      },
+      {
+        "id": "9",
+        "title": "困った時のQ&A 30問",
+        "narrative": "現場の「これどうする？」を網羅"
+      },
+      {
+        "id": "10",
+        "title": "印刷して机に貼れる「マスキング・チートシート」1枚",
+        "narrative": "A4・1枚要約版。机に貼っておけば事故防止"
+      }
+    ]
+  },
+
+  "scale_specific_chapter_pruning": {
+    "S": {
+      "max_pages": 5,
+      "include_section_ids_01": ["1","2","3","4","8","11","12","13"],
+      "tone": "very_simple",
+      "include_section_ids_02": ["1","2","6"],
+      "include_section_ids_03": ["1","6"],
+      "include_section_ids_04": ["1","2","3","4","6","10"]
+    },
+    "XS": {
+      "max_pages": 8,
+      "include_section_ids_01": ["1","2","3","4","5","6","8","11","12","13"],
+      "tone": "simple"
+    },
+    "S2": {
+      "max_pages": 15,
+      "include_section_ids_01": ["1","2","3","4","5","6","7","8","9","10","11","12","13"],
+      "tone": "standard"
+    },
+    "M": {
+      "max_pages": 25,
+      "include_section_ids_01": ["1","2","3","4","5","6","7","8","9","10","11","12","13"],
+      "tone": "detailed",
+      "tiered_audience": true
+    },
+    "L": {
+      "max_pages": 40,
+      "include_section_ids_01": ["1","2","3","4","5","6","7","8","9","10","11","12","13"],
+      "tone": "comprehensive",
+      "tiered_audience": true,
+      "department_localization": true
+    }
+  },
+
+  "footer_template": "\n\n---\n\n## 改訂履歴\n\n| 版 | 日付 | 改訂内容 | 改訂者 |\n|---|---|---|---|\n| v{version} | {creation_date} | 初版作成 | {creator} |\n\n## 連絡先・問い合わせ\n\n- 情報セキュリティ責任者：{security_officer}\n- AI利用相談窓口：{ai_consultation_contact}\n\n---\n\n_本ガイドラインは「AI・IT利用ガイドライン ジェネレーター v{generator_version}」により生成されました。_  \n_本ガイドラインは雛形提供であり、法務助言の代替ではありません。実運用前に弁護士・社労士による最終確認をお受けください。_\n"
+}

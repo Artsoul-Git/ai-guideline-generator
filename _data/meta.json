@@ -1,0 +1,278 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-06-29",
+  "author": "有限会社アートソウル",
+  "generator_name": "AI・IT利用ガイドライン・ジェネレーター",
+  "license_note": "本ジェネレーターは雛形提供ツールであり、法務的助言の代替ではありません。実際に社内規程として施行する前に、必ず弁護士・社労士の最終確認をお受けください。医療・金融・士業の各業界では業界専門弁護士の個別確認をお勧めします。",
+
+  "scale_patterns": [
+    {
+      "id": "S",
+      "label": "個人事業主・フリーランス",
+      "employee_range": "1名",
+      "employee_min": 1,
+      "employee_max": 1,
+      "ops_premise": "自分1人で全業務。顧客情報の最低限保護が中心",
+      "guideline_pages": "A4・5枚程度",
+      "required_clauses_min": 8,
+      "required_clauses_max": 12,
+      "auth_target": "なし",
+      "key_risk": "AI個人アカウント=事業アカウント混在、端末1台兼用",
+      "scale_ops_hint": "全文を読み込む前提に立てない。A4・1枚版を机に貼り、ブラウザのブックマークバーに「マスク確認」リンクを置くなど『忘れさせない仕掛け』中心が現実的"
+    },
+    {
+      "id": "XS",
+      "label": "超小規模",
+      "employee_range": "2〜10名",
+      "employee_min": 2,
+      "employee_max": 10,
+      "ops_premise": "経営者が全社員に直接周知できる規模",
+      "guideline_pages": "A4・8枚程度",
+      "required_clauses_min": 15,
+      "required_clauses_max": 22,
+      "auth_target": "なし（取引先要求でPマーク準備）",
+      "key_risk": "経営者口頭ルール属人化、退職時のアカウント残留",
+      "scale_ops_hint": "朝礼5分×週1で経営者が口頭周知。この規模は文書配布より口伝のほうが浸透が早い"
+    },
+    {
+      "id": "S2",
+      "label": "小規模",
+      "employee_range": "11〜30名",
+      "employee_min": 11,
+      "employee_max": 30,
+      "ops_premise": "経営者の目が届かなくなる境界。部門が出始める",
+      "guideline_pages": "A4・15枚程度",
+      "required_clauses_min": 25,
+      "required_clauses_max": 35,
+      "auth_target": "Pマーク射程入り",
+      "key_risk": "経営者の目が届かない領域発生、シャドーIT顕在化の臨界点",
+      "scale_ops_hint": "経営者の目が届く境界を越え始める規模帯。30分×3回の全社読み合わせ会と読了サインの組合せが効果的とされる（実務的な目安）"
+    },
+    {
+      "id": "M",
+      "label": "中小",
+      "employee_range": "31〜100名",
+      "employee_min": 31,
+      "employee_max": 100,
+      "ops_premise": "情シス担当1名いる前提。役職階層あり",
+      "guideline_pages": "A4・25枚程度",
+      "required_clauses_min": 40,
+      "required_clauses_max": 55,
+      "auth_target": "Pマーク現実視野／ISMS準備",
+      "key_risk": "情シス1名ワンマン運用破綻、部門間ルール不整合",
+      "scale_ops_hint": "階層別3版（経営層向け要約／管理職向け運用版／一般職向けチートシート）が現実的。eラーニング化推奨"
+    },
+    {
+      "id": "L",
+      "label": "中堅以上",
+      "employee_range": "101名〜",
+      "employee_min": 101,
+      "employee_max": null,
+      "ops_premise": "部門制・委員会設置・監査体制を前提",
+      "guideline_pages": "A4・40枚程度",
+      "required_clauses_min": 60,
+      "required_clauses_max": 85,
+      "auth_target": "ISMS+Pマーク両睨み",
+      "key_risk": "委員会形骸化、監査ログ取得対象の網羅性、グループ会社波及",
+      "scale_ops_hint": "部門別ローカライズが必要な規模。LMS（社内学習システム）必須受講＋年1回の更新テストが標準"
+    }
+  ],
+
+  "industries": [
+    {
+      "id": "medical",
+      "label": "医療・介護・調剤",
+      "category_group": "規制業種",
+      "clause_count_estimate": 7,
+      "key_laws": ["医師法", "薬機法", "個情法（要配慮個人情報）", "厚労省3省2ガイドライン"],
+      "extra_warning": "業界専門弁護士（医療法務）の個別確認必須"
+    },
+    {
+      "id": "shigyo",
+      "label": "士業（弁護士・税理士・司法書士・社労士・行政書士）",
+      "category_group": "規制業種",
+      "clause_count_estimate": 6,
+      "key_laws": ["各士業法", "弁護士法72条（非弁）", "刑法134条（秘密漏示）"],
+      "extra_warning": "守秘義務の絶対遵守。AI投入は依頼者承諾必須"
+    },
+    {
+      "id": "finance",
+      "label": "金融・保険",
+      "category_group": "規制業種",
+      "clause_count_estimate": 7,
+      "key_laws": ["銀行法", "保険業法", "金商法", "犯収法", "FISC安全対策基準"],
+      "extra_warning": "FISC基準準拠が監督上必須"
+    },
+    {
+      "id": "education",
+      "label": "教育・保育",
+      "category_group": "規制業種",
+      "clause_count_estimate": 6,
+      "key_laws": ["学校教育法", "児童福祉法", "個情法", "文科省ガイドラインVer2.0"],
+      "extra_warning": "児童・生徒の要配慮個人情報の取扱に最大限注意"
+    },
+    {
+      "id": "manufacturing",
+      "label": "製造業",
+      "category_group": "製造・物流",
+      "clause_count_estimate": 6,
+      "key_laws": ["不正競争防止法（営業秘密）", "外為法", "PL法"],
+      "extra_warning": "図面・技術情報の生成AI投入は秘密管理性喪失リスク"
+    },
+    {
+      "id": "logistics",
+      "label": "物流・運送",
+      "category_group": "製造・物流",
+      "clause_count_estimate": 6,
+      "key_laws": ["貨物自動車運送事業法", "改善基準告示", "個情法"],
+      "extra_warning": "2024年問題対応＋運行記録の労働者プライバシー"
+    },
+    {
+      "id": "retail",
+      "label": "小売・飲食",
+      "category_group": "対人サービス",
+      "clause_count_estimate": 6,
+      "key_laws": ["景表法", "特商法", "食品表示法", "PCI DSS"],
+      "extra_warning": "顧客カメラ・POSデータ・キャッシュレス決済"
+    },
+    {
+      "id": "beauty",
+      "label": "美容・ヘルスケア",
+      "category_group": "対人サービス",
+      "clause_count_estimate": 6,
+      "key_laws": ["医療広告ガイドライン", "薬機法", "特商法", "個情法"],
+      "extra_warning": "ビフォーアフター写真AI改変は景表法違反リスク"
+    },
+    {
+      "id": "it_consulting",
+      "label": "IT・コンサル",
+      "category_group": "BtoB",
+      "clause_count_estimate": 7,
+      "key_laws": ["不正競争防止法", "著作権法", "個情法28条（越境移転）", "労働者派遣法"],
+      "extra_warning": "クライアント機密情報のAI投入はNDA違反"
+    },
+    {
+      "id": "construction",
+      "label": "建設・不動産",
+      "category_group": "BtoB",
+      "clause_count_estimate": 6,
+      "key_laws": ["建築士法", "宅建業法", "建設業法", "個情法"],
+      "extra_warning": "重要事項説明書・建築士業務のAI生成は士業最終確認必須"
+    },
+    {
+      "id": "public",
+      "label": "自治体・公益法人",
+      "category_group": "公的領域",
+      "clause_count_estimate": 7,
+      "key_laws": ["個情法第5章（行政機関）", "情報公開法", "公文書管理法", "番号法"],
+      "extra_warning": "デジタル庁「テキスト生成AI利活用におけるリスクへの対策ガイドブック」遵守"
+    }
+  ],
+
+  "categories": [
+    {"id": "CMN", "label": "共通基礎", "description": "全業種・全規模共通の必須条項"},
+    {"id": "AUTH", "label": "認証", "description": "パスワード・MFA・SSO・特権ID管理"},
+    {"id": "DEV", "label": "端末", "description": "資産管理・暗号化・画面ロック・MDM"},
+    {"id": "NET", "label": "ネットワーク", "description": "Wi-Fi分離・VPN・クラウド承認"},
+    {"id": "DAT", "label": "データ管理", "description": "バックアップ・分類・保管期間・破棄"},
+    {"id": "ACL", "label": "アクセス権限", "description": "最小権限・棚卸・オフボーディング"},
+    {"id": "LOG", "label": "ログ・監査", "description": "取得対象・保管期間・レビュー"},
+    {"id": "INC", "label": "インシデント", "description": "発覚→報告→封じ込め→復旧→再発防止"},
+    {"id": "AI", "label": "AI利用", "description": "許可ツール・プロンプト・出力レビュー"},
+    {"id": "BYO", "label": "BYOD・私物", "description": "私物端末・私物クラウド・私物AI"},
+    {"id": "EXT", "label": "委託先・外部", "description": "外部委託・再委託・監督義務"},
+    {"id": "PII", "label": "個人情報", "description": "個情法準拠・要配慮・越境移転"},
+    {"id": "EDU", "label": "教育・訓練", "description": "従業者教育・標的型訓練"},
+    {"id": "AUD", "label": "監査", "description": "内部監査・外部監査・是正"},
+    {"id": "GOV", "label": "ガバナンス", "description": "委員会・CISO・体制設計"},
+    {"id": "MED", "label": "医療業種特化", "description": "医療・介護・調剤業種固有"},
+    {"id": "SHI", "label": "士業特化", "description": "弁護士・税理士・社労士等"},
+    {"id": "FIN", "label": "金融特化", "description": "銀行・保険・証券"},
+    {"id": "EDU2", "label": "教育業種特化", "description": "学校・保育"},
+    {"id": "MFG", "label": "製造業特化", "description": "図面・設計・営業秘密"},
+    {"id": "TRA", "label": "物流特化", "description": "運送・配送・運行管理"},
+    {"id": "RET", "label": "小売・飲食特化", "description": "POS・カメラ・食品表示"},
+    {"id": "BTY", "label": "美容特化", "description": "カルテ・写真・薬機"},
+    {"id": "ITC", "label": "IT・コンサル特化", "description": "NDA・OSS・越境移転"},
+    {"id": "BLD", "label": "建設・不動産特化", "description": "建築士法・宅建業法"},
+    {"id": "PUB", "label": "公的領域特化", "description": "自治体・公益法人"}
+  ],
+
+  "ai_tools_options": [
+    "ChatGPT（個人版）",
+    "ChatGPT（Team/Enterprise）",
+    "ChatGPT API",
+    "Claude（個人版）",
+    "Claude（Team/Enterprise）",
+    "Claude API",
+    "Gemini（個人版）",
+    "Gemini（Workspace）",
+    "Microsoft Copilot",
+    "GitHub Copilot",
+    "Perplexity",
+    "Notion AI",
+    "社内専用LLM",
+    "その他カスタムGPT/Claude Project",
+    "未使用（これから検討）"
+  ],
+
+  "ai_purposes_options": [
+    "議事録要約・文字起こし整文",
+    "提案書・資料ドラフト",
+    "顧客分析・市場調査",
+    "メール・チャット返信ドラフト",
+    "翻訳・多言語対応",
+    "プログラミング・コード生成",
+    "画像生成・編集",
+    "アイデア出し・ブレスト",
+    "FAQ・ナレッジ整理",
+    "個別契約・法務文書ドラフト",
+    "数値分析・データ整理",
+    "教育・研修コンテンツ",
+    "営業トーク・スクリプト作成",
+    "その他"
+  ],
+
+  "data_types_options": [
+    "顧客の氏名・連絡先",
+    "顧客との会話・取引履歴",
+    "従業員情報",
+    "売上・財務データ",
+    "営業秘密・ノウハウ",
+    "図面・設計情報",
+    "契約書・法務文書",
+    "要配慮個人情報（病歴・信条等）",
+    "未成年者・児童の情報",
+    "マイナンバー関連",
+    "クレジットカード情報",
+    "公開情報のみ"
+  ],
+
+  "existing_rules_options": [
+    "就業規則",
+    "個人情報保護規程",
+    "情報セキュリティ規程",
+    "営業秘密管理規程",
+    "BYOD規程",
+    "クラウド利用規程",
+    "AI利用規程（旧版）",
+    "インシデント対応規程",
+    "委託先管理規程",
+    "ハラスメント防止規程"
+  ],
+
+  "output_formats": [
+    {"id": "html", "label": "HTML（ブラウザ即閲覧）", "ext": ".html"},
+    {"id": "word", "label": "Word（社内回覧・改訂用）", "ext": ".docx"},
+    {"id": "pdf", "label": "PDF（印刷配布用）", "ext": ".pdf"},
+    {"id": "md", "label": ".md（再開・編集用）", "ext": ".md"},
+    {"id": "requirements", "label": "専門家向け 要件定義書.md（本格制作版 相談用）", "ext": "_requirements.md"}
+  ],
+
+  "audience_options": [
+    {"id": "exec", "label": "経営層向け（2-3ページ要約）"},
+    {"id": "manager", "label": "管理職向け（5-8ページ運用版）"},
+    {"id": "all", "label": "全社員向け（A4・1枚チートシート）"},
+    {"id": "tiered", "label": "階層別3版（経営/管理職/一般）"}
+  ]
+}
