@@ -738,3 +738,352 @@ main {
   font-weight: 700;
   margin-bottom: 4px;
 }
+
+
+/* ============ v1.1.0 追加スタイル ============ */
+
+/* トーン選択カード */
+.tone-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 18px 0;
+}
+@media (max-width: 768px) {
+  .tone-grid { grid-template-columns: 1fr; }
+}
+.tone-card {
+  display: block;
+  cursor: pointer;
+  background: var(--bg-card, #fff);
+  border: 2px solid var(--border, #e5e5e5);
+  border-radius: var(--radius-md, 8px);
+  padding: 22px 24px;
+  transition: all .2s;
+  position: relative;
+}
+.tone-card:hover {
+  border-color: var(--brand, #2d5a4e);
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+.tone-card input[type=radio] {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.tone-card:has(input[type=radio]:checked) {
+  border-color: var(--brand, #2d5a4e);
+  background: linear-gradient(135deg, rgba(45,90,78,.04), rgba(200,158,94,.04));
+  box-shadow: 0 4px 16px rgba(45,90,78,.15);
+}
+.tone-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line-soft, #eee);
+}
+.tone-icon { font-size: 28px; }
+.tone-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--brand, #2d5a4e);
+}
+.tone-sub {
+  font-size: 12px;
+  color: var(--text-soft, #777);
+  background: var(--bg-alt, #f5f5f5);
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+.tone-message {
+  font-size: 15px;
+  color: var(--text-main, #333);
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+.tone-features {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+}
+.tone-features li {
+  font-size: 13.5px;
+  padding: 4px 0;
+  color: var(--text-main, #333);
+  position: relative;
+  padding-left: 18px;
+}
+.tone-features li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent, #c89e5e);
+  font-weight: 700;
+}
+.tone-philosophy {
+  font-size: 13px;
+  color: var(--text-soft, #777);
+  padding: 12px;
+  background: var(--bg-alt, #f5f5f5);
+  border-left: 3px solid var(--accent, #c89e5e);
+  border-radius: 0 4px 4px 0;
+  line-height: 1.7;
+}
+
+/* AIジャンル・概念グリッド */
+.ai-genre-grid, .ai-concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+.ai-genre-card, .ai-concept-card {
+  display: block;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid var(--border, #e5e5e5);
+  border-radius: 6px;
+  padding: 14px 16px;
+  transition: all .15s;
+}
+.ai-genre-card:hover, .ai-concept-card:hover {
+  border-color: var(--brand, #2d5a4e);
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.ai-genre-card.selected, .ai-concept-card.selected {
+  background: rgba(45,90,78,.04);
+  border-color: var(--brand, #2d5a4e);
+  box-shadow: 0 2px 8px rgba(45,90,78,.12);
+}
+.ai-genre-card input, .ai-concept-card input {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.ai-genre-card .label, .ai-concept-card .label {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-main, #333);
+  margin-bottom: 4px;
+}
+.ai-genre-card .examples {
+  font-size: 12px;
+  color: var(--text-soft, #777);
+  margin-top: 4px;
+}
+.ai-genre-card .concerns {
+  font-size: 11.5px;
+  color: var(--accent-deep, #a8843e);
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--line-soft, #eee);
+}
+
+/* 警戒サービス対応方針 */
+.caution-policy-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 8px;
+}
+.caution-card {
+  display: block;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid var(--border, #e5e5e5);
+  border-radius: 6px;
+  padding: 14px 18px;
+  transition: all .15s;
+}
+.caution-card:hover {
+  border-color: var(--brand, #2d5a4e);
+}
+.caution-card:has(input[type=radio]:checked) {
+  background: rgba(45,90,78,.04);
+  border-color: var(--brand, #2d5a4e);
+  border-left: 4px solid var(--brand, #2d5a4e);
+}
+.caution-card input { margin-right: 8px; vertical-align: middle; }
+.caution-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-main, #333);
+  margin-bottom: 6px;
+}
+.caution-desc {
+  font-size: 13px;
+  color: var(--text-soft, #555);
+  line-height: 1.7;
+  padding-left: 22px;
+}
+
+/* ファイルアップロード */
+.upload-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 22px;
+  background: var(--bg-alt, #f5f5f5);
+  border: 2px dashed var(--border, #ccc);
+  border-radius: 8px;
+  margin-top: 8px;
+  transition: all .2s;
+}
+.upload-area.dragover {
+  border-color: var(--brand, #2d5a4e);
+  background: rgba(45,90,78,.06);
+}
+.upload-hint {
+  font-size: 13px;
+  color: var(--text-soft, #777);
+}
+.uploaded-files-list {
+  margin-top: 12px;
+}
+.uploaded-file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px solid var(--line-soft, #eee);
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+.uploaded-file-item .file-name {
+  font-size: 13px;
+  color: var(--text-main, #333);
+  flex: 1;
+}
+.uploaded-file-item .file-size {
+  font-size: 11.5px;
+  color: var(--text-soft, #777);
+  margin-right: 12px;
+}
+.uploaded-file-item .file-remove {
+  background: transparent;
+  border: none;
+  color: var(--bad, #d9534f);
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0;
+}
+
+/* 完了画面 フロー図 */
+.completion-section {
+  background: linear-gradient(180deg, rgba(45,90,78,.03), rgba(200,158,94,.03));
+  padding: 40px 32px;
+  border-radius: 12px;
+  border: 2px solid var(--brand, #2d5a4e);
+}
+.flow-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 24px;
+}
+.flow-step {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid var(--line-soft, #eee);
+  border-left: 5px solid var(--brand, #2d5a4e);
+  border-radius: 6px;
+  padding: 18px 22px;
+}
+.flow-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: var(--brand, #2d5a4e);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.flow-content { flex: 1; }
+.flow-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--brand, #2d5a4e);
+  margin-bottom: 6px;
+}
+.flow-desc {
+  font-size: 13.5px;
+  color: var(--text-main, #333);
+  line-height: 1.85;
+}
+.flow-desc code {
+  background: var(--bg-alt, #f5f5f5);
+  padding: 1px 6px;
+  font-size: 12.5px;
+  border-radius: 3px;
+  color: var(--brand-dark, #1e4035);
+}
+.flow-arrow {
+  text-align: center;
+  color: var(--brand, #2d5a4e);
+  font-size: 18px;
+  padding: 6px 0;
+}
+
+/* 印刷用CSS（PDF出力 window.print() ベース） */
+@media print {
+  @page {
+    size: A4;
+    margin: 18mm 16mm;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 11pt;
+    line-height: 1.55;
+  }
+  .hero, .step-nav-sticky, .action-bar, .back-to-top, footer { display: none !important; }
+  .intro-card { background: #f9f9f9 !important; border: 1px solid #ddd !important; page-break-inside: avoid; }
+  .step-section { page-break-inside: avoid; padding: 8mm 0 !important; border-bottom: none !important; }
+  .step-head { margin-bottom: 4mm; }
+  .step-num { background: #000 !important; color: #fff !important; }
+  .completion-section { display: none !important; }
+  .tone-card, .ai-genre-card, .ai-concept-card, .caution-card, .industry-card, .format-card {
+    background: #fff !important;
+    border: 1px solid #999 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+  .flow-step { page-break-inside: avoid; }
+  h1, h2, h3, h4 { page-break-after: avoid; }
+  a { color: #000 !important; text-decoration: underline; }
+  .uploaded-file-item .file-remove { display: none; }
+  .upload-area { display: none; }
+}
+
+/* 印刷モード時のヘッダ表示 */
+.print-header {
+  display: none;
+}
+@media print {
+  .print-header {
+    display: block;
+    margin-bottom: 8mm;
+    padding-bottom: 4mm;
+    border-bottom: 2px solid #000;
+  }
+  .print-header h1 {
+    font-size: 18pt;
+    margin-bottom: 2mm;
+  }
+  .print-header .meta {
+    font-size: 9pt;
+    color: #555;
+  }
+}

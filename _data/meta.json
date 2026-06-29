@@ -1,9 +1,178 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "last_updated": "2026-06-29",
   "author": "有限会社アートソウル",
-  "generator_name": "AI・IT利用ガイドライン・ジェネレーター",
-  "license_note": "本ジェネレーターは雛形提供ツールであり、法務的助言の代替ではありません。実際に社内規程として施行する前に、必ず弁護士・社労士の最終確認をお受けください。医療・金融・士業の各業界では業界専門弁護士の個別確認をお勧めします。",
+  "generator_name": "AI・IT利用ガイドライン 要件定義シート",
+  "generator_subtitle": "本格制作のための要件定義書を作成するツール",
+  "license_note": "本ツールはガイドライン本格制作のための要件定義書作成ツールです。出力された要件定義書は本格制作の入力素材として活用ください。本格制作・施行前には必ず弁護士・社労士の最終確認をお受けください。医療・金融・士業の各業界では業界専門弁護士の個別確認をお勧めします。",
+
+  "tone_patterns": [
+    {
+      "id": "trust",
+      "label": "信頼ベース型（クレド型）",
+      "label_sub": "性善説・スピード重視",
+      "recommended_for_scales": ["S", "XS", "S2"],
+      "message": "全員が「正しく怖がりながら、早く使いこなす」",
+      "philosophy": "ガチガチのルールより、1枚の『約束事（クレド）』を共有してスタート",
+      "writing_style": "『私たちは〜します』（宣言・一人称複数）",
+      "approval_flow": "ゼロ（自己責任）",
+      "prohibition_style": "ニュアンスで自制を促す",
+      "tool_selection": "現場裁量",
+      "log_storage": "推奨",
+      "page_estimate": "A4・5〜8枚＋クレドカード1枚",
+      "switch_warning": "業務委託・パートが多い場合は統制ベース推奨"
+    },
+    {
+      "id": "control",
+      "label": "統制ベース型（防壁型）",
+      "label_sub": "性悪説・統制開始",
+      "recommended_for_scales": ["M", "L"],
+      "message": "「悪気のないうっかり漏洩」から会社と社員を守る",
+      "philosophy": "顔が見えない社員や外部スタッフが増える時期、手続きを挟む『防壁としてのルール』に切り替え",
+      "writing_style": "『〜してはならない』『〜の場合は申請を要する』（規程文）",
+      "approval_flow": "必須（事前申請・承認）",
+      "prohibition_style": "法的拘束力のある明示禁止",
+      "tool_selection": "ホワイトリスト方式",
+      "log_storage": "義務化＋仕組み化",
+      "page_estimate": "A4・25〜40枚＋運用マニュアル",
+      "switch_warning": "経営層判断で信頼ベース継続可（研究開発型・クリエイティブ型企業など）"
+    }
+  ],
+
+  "ai_genres": [
+    {
+      "id": "chat_llm",
+      "label": "対話型LLM",
+      "examples": "ChatGPT／Claude／Gemini／Copilot Chat 等",
+      "key_concerns": "学習利用デフォルト／プロンプト履歴／無料版設定確認"
+    },
+    {
+      "id": "ai_coding",
+      "label": "AIエージェント・コーディング支援",
+      "examples": "Codex／Claude Code／Antigravity／GitHub Copilot／Cursor 等",
+      "key_concerns": "ソースコード送信／プロジェクト機密／自動実行範囲"
+    },
+    {
+      "id": "image_video",
+      "label": "画像・動画生成",
+      "examples": "Midjourney／Stable Diffusion／Sora／DALL-E／Runway 等",
+      "key_concerns": "他者著作物の参照／肖像権／商用利用ライセンス"
+    },
+    {
+      "id": "voice_recorder",
+      "label": "AIボイスレコーダー",
+      "examples": "PLAUD／Notta／Otter／Tactiq／Fireflies 等",
+      "key_concerns": "サーバー所在国／録音権限／会話内容の学習利用"
+    },
+    {
+      "id": "document_ai",
+      "label": "ドキュメント要約・分析",
+      "examples": "NotebookLM／Perplexity／Felo／Genspark 等",
+      "key_concerns": "アップロード文書の取扱／引用元の正確性／中国系サービスの本土サーバー懸念"
+    },
+    {
+      "id": "autonomous_agent",
+      "label": "自律エージェント・タスク代行",
+      "examples": "Manus／Devin／AutoGPT／Operator 等",
+      "key_concerns": "自律実行による意図しない動作／APIキー漏洩／中国系サービスの本土サーバー懸念"
+    }
+  ],
+
+  "ai_concepts": [
+    {
+      "id": "input_data",
+      "label": "入力データの取扱",
+      "description": "学習利用許諾／個人情報／秘密情報／**他者著作物・肖像（IP系）**を含む全カテゴリ"
+    },
+    {
+      "id": "output_rights",
+      "label": "出力物の著作権・責任所在",
+      "description": "AI出力物の権利帰属／クライアント納品時の明示義務／責任分担"
+    },
+    {
+      "id": "server_location",
+      "label": "サーバー所在国",
+      "description": "米国／中国／EU／日本 別の取扱基準。特に中国本土サーバーは要警戒"
+    },
+    {
+      "id": "third_party",
+      "label": "第三者提供・再委託",
+      "description": "AI事業者の利用規約・データ取扱方針／再委託禁止条項との整合"
+    }
+  ],
+
+  "caution_services": [
+    {
+      "category": "中国系（本土サーバー懸念）",
+      "examples": ["Genspark", "Manus", "DeepSeek", "Kimi（Moonshot AI）", "Doubao（ByteDance）"],
+      "guideline": "業務情報・顧客情報の投入は原則禁止。試用は公開情報のみで実施"
+    },
+    {
+      "category": "学習利用ありデフォルト（無料版多数）",
+      "examples": ["ChatGPT無料版", "Gemini無料版", "Perplexity無料版"],
+      "guideline": "業務利用前に「学習利用オフ」設定の確認を必須化"
+    },
+    {
+      "category": "オプトアウト未対応・対応不明",
+      "examples": ["一部の新興AIサービス全般"],
+      "guideline": "業務情報の投入は原則禁止。Team/Enterprise版に切替"
+    }
+  ],
+
+  "ip_business_packs": [
+    {
+      "id": "creative",
+      "label": "クリエイティブ系（広告・SNS運用・LP制作・動画制作・デザイン）",
+      "ip_focus": "IP-001〜006 全件本文展開＋業務シーン3例×3",
+      "key_risk": "他社サイト・他社デザインのキャプチャをAI入力する常習化"
+    },
+    {
+      "id": "development",
+      "label": "開発系（IT・アプリ・Web開発）",
+      "ip_focus": "IP-002・003・004 重点展開＋競合UI参照ルール",
+      "key_risk": "他社サイトのスクショ→AI再現→構造模倣で不競法・著作権侵害"
+    },
+    {
+      "id": "beauty_health",
+      "label": "美容・ヘルスケア",
+      "ip_focus": "IP-006 重点展開＋お客様写真使用同意フロー",
+      "key_risk": "ビフォーアフター写真のAI改変／実在人物の同意確認漏れ"
+    },
+    {
+      "id": "construction_realestate",
+      "label": "建設・不動産",
+      "ip_focus": "IP-004 重点展開＋意匠権・図面取扱",
+      "key_risk": "他社図面の参考利用／意匠権侵害"
+    }
+  ],
+
+  "next_steps_flow": [
+    {
+      "step": 1,
+      "label": "要件定義書.md をダウンロード",
+      "description": "本ツールで作成した要件定義書を保存"
+    },
+    {
+      "step": 2,
+      "label": "ASに依頼 or /ai-guideline-build スキル実行",
+      "description": "要件定義書.md または Excelヒアリングシートを添付して本格制作スキルを起動"
+    },
+    {
+      "step": 3,
+      "label": "業種×規模×トーンに最適化した4成果物が完成",
+      "description": "ガイドライン本体／カスタマイズGB／リスク対策GB／マスキング実務マニュアル（規模により2-4本＋クレドカード）"
+    },
+    {
+      "step": 4,
+      "label": "弁護士・社労士の最終確認（必須）",
+      "description": "業界専門弁護士による施行前レビューを必修実施"
+    },
+    {
+      "step": 5,
+      "label": "社内施行＋90日定着ロードマップ",
+      "description": "Kei式定着メソッドで運用開始。研修・周知・振り返りまで伴走可能"
+    }
+  ],
 
   "scale_patterns": [
     {
@@ -195,7 +364,8 @@
     {"id": "BTY", "label": "美容特化", "description": "カルテ・写真・薬機"},
     {"id": "ITC", "label": "IT・コンサル特化", "description": "NDA・OSS・越境移転"},
     {"id": "BLD", "label": "建設・不動産特化", "description": "建築士法・宅建業法"},
-    {"id": "PUB", "label": "公的領域特化", "description": "自治体・公益法人"}
+    {"id": "PUB", "label": "公的領域特化", "description": "自治体・公益法人"},
+    {"id": "IP", "label": "知的財産（IP）", "description": "著作権・肖像権・パブリシティ権・間接利用倫理ライン（全規模・全業種必修）"}
   ],
 
   "ai_tools_options": [

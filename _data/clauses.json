@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "last_updated": "2026-06-29",
   "author_team": "有限会社アートソウル 制作チーム",
   "license_note": "本条項DBは雛形提供であり、法務助言の代替ではありません。実運用前に弁護士・社労士の最終確認をお受けください。",
@@ -9,8 +9,16 @@
       "category": "CMN",
       "subcategory": "AI入力データ管理",
       "title": "個人情報の生成AIプロンプト投入 原則禁止",
-      "applies_to_scale": ["S","XS","S2","M","L"],
-      "applies_to_industry": ["*"],
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
       "necessity": "required",
       "clause_text_short": "顧客名・住所・電話番号など、個人を特定できる情報は、生成AI（ChatGPT等）にそのまま入力しません。必要なときは「●●様」「○○県」など伏せ字に置き換えてから入力します。",
       "clause_text_full": "従業者は、生存する個人を識別できる情報（個人情報保護法第2条第1項）を、外部の生成AIサービス（OpenAI ChatGPT、Anthropic Claude、Google Gemini、その他全てのクラウド型生成AIを含む）のプロンプト入力欄に投入してはならない。例外として、(1)API版で学習無効化設定済み、(2)委託契約締結済み、(3)業務上必要性が認められ責任者の事前承認を得た場合に限り、必要最小限の情報のみ投入を認める。違反時は速やかに情報セキュリティ責任者へ報告すること。",
@@ -19,10 +27,24 @@
       "violation_risk_detail": "個人情報保護法違反（法人に対し最大1億円以下の罰金〔個情法第179条第1項〕／個情委による指導・命令・公表／民事損害賠償／業界からの信頼喪失）",
       "law_basis": "個人情報保護法 第17条（利用目的の特定）・第27条（第三者提供の制限）",
       "law_basis_url": "https://elaws.e-gov.go.jp/document?lawid=415AC0000000057",
-      "incident_response": {"report_to_pic": "個情委 速報3-5日／確報30-60日", "internal_escalation": "24時間以内"},
-      "evidence_required": ["AI利用ログ", "プロンプト記録", "削除要請証跡"],
+      "incident_response": {
+        "report_to_pic": "個情委 速報3-5日／確報30-60日",
+        "internal_escalation": "24時間以内"
+      },
+      "evidence_required": [
+        "AI利用ログ",
+        "プロンプト記録",
+        "削除要請証跡"
+      ],
       "log_retention_years": 3,
-      "tags": ["AI","個人情報","プロンプト","ChatGPT","Claude","Gemini"],
+      "tags": [
+        "AI",
+        "個人情報",
+        "プロンプト",
+        "ChatGPT",
+        "Claude",
+        "Gemini"
+      ],
       "review_cycle_months": 12,
       "lawyer_review_required": false,
       "version_added": "1.0.0"
@@ -32,8 +54,16 @@
       "category": "CMN",
       "subcategory": "AI入力データ管理",
       "title": "営業秘密の生成AI投入禁止",
-      "applies_to_scale": ["S","XS","S2","M","L"],
-      "applies_to_industry": ["*"],
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
       "necessity": "required",
       "clause_text_short": "自社のノウハウ・図面・顧客リスト・原価情報など「他社に知られたくない情報」は、生成AIに入力しません。",
       "clause_text_full": "従業者は、不正競争防止法第2条第6項に定める営業秘密に該当する情報、および自社の競争力源泉となる非公開情報を、外部の生成AIサービスに投入してはならない。投入により当該情報の秘密管理性が喪失し、不正競争防止法上の営業秘密該当性を失う恐れがあるため。具体的には、製造ノウハウ、原価情報、顧客マスタ、提案書テンプレ、社内システムの仕様書等を含む。",
@@ -42,7 +72,13 @@
       "violation_risk_detail": "不正競争防止法上の営業秘密該当性喪失（致命的）。後日他社に類似情報が流出しても法的保護を受けられない",
       "law_basis": "不正競争防止法 第2条第6項",
       "law_basis_url": "https://elaws.e-gov.go.jp/document?lawid=405AC0000000047",
-      "tags": ["AI","営業秘密","ノウハウ","図面","原価"],
+      "tags": [
+        "AI",
+        "営業秘密",
+        "ノウハウ",
+        "図面",
+        "原価"
+      ],
       "review_cycle_months": 12,
       "version_added": "1.0.0"
     },
@@ -51,8 +87,16 @@
       "category": "CMN",
       "subcategory": "AI入力データ管理",
       "title": "第三者著作物の生成AI入力時の留意",
-      "applies_to_scale": ["S","XS","S2","M","L"],
-      "applies_to_industry": ["*"],
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
       "necessity": "required",
       "clause_text_short": "他社の資料・書籍・記事を、許可なく生成AIに丸ごと入力して要約・改変しません。社内分析の参考にとどめ、公表物には使いません。",
       "clause_text_full": "従業者は、第三者が著作権を有する著作物（書籍、Web記事、有償資料、競合社の提案書等）を生成AIに入力する場合、著作権法第30条の4（情報解析）の趣旨に従い、社内の事実分析・要約・調査の補助目的に限定すること。AI出力物を社外提案書・出版物・SNS等に公表する場合は、依拠性・類似性の確認を行い、必要に応じて著作権者の許諾を得ること。",
@@ -61,7 +105,11 @@
       "violation_risk_detail": "著作権侵害（10年以下の懲役または1000万円以下の罰金）／民事損害賠償／差止請求",
       "law_basis": "著作権法 第30条の4・第21条〜第28条",
       "law_basis_url": "https://elaws.e-gov.go.jp/document?lawid=345AC0000000048",
-      "tags": ["AI","著作権","第三者著作物"],
+      "tags": [
+        "AI",
+        "著作権",
+        "第三者著作物"
+      ],
       "review_cycle_months": 12,
       "version_added": "1.0.0"
     },
@@ -70,8 +118,16 @@
       "category": "CMN",
       "subcategory": "AI出力物管理",
       "title": "AI出力物の事実確認義務（ハルシネーション対策）",
-      "applies_to_scale": ["S","XS","S2","M","L"],
-      "applies_to_industry": ["*"],
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
       "necessity": "required",
       "clause_text_short": "AIの答えは「下書き」と思うこと。固有名詞・数字・法令・URL・引用は必ず元情報で確認してから使います。",
       "clause_text_full": "従業者は、生成AIの出力をそのまま社内外文書・対外発信・契約書・提案書に使用してはならない。特に固有名詞、数値、法令条文、URL、引用箇所は、必ず一次情報（公式サイト・原典・公式文書）で照合する。AIが事実と異なる情報をあたかも事実のように出力する現象（ハルシネーション）は構造的に避けられない。最終的な事実確認責任は利用者にある。",
@@ -79,7 +135,12 @@
       "violation_risk_level": "high",
       "violation_risk_detail": "虚偽情報の対外発信による名誉毀損／景表法違反／民事損害賠償／会社信用失墜",
       "law_basis": "民法709条（一般不法行為）／景品表示法／民法415条（債務不履行）",
-      "tags": ["AI","ハルシネーション","事実確認","品質管理"],
+      "tags": [
+        "AI",
+        "ハルシネーション",
+        "事実確認",
+        "品質管理"
+      ],
       "review_cycle_months": 12,
       "version_added": "1.0.0"
     },
@@ -88,8 +149,16 @@
       "category": "CMN",
       "subcategory": "AIサービス選定",
       "title": "生成AIサービスの利用規約遵守義務",
-      "applies_to_scale": ["S","XS","S2","M","L"],
-      "applies_to_industry": ["*"],
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
       "necessity": "required",
       "clause_text_short": "ChatGPT等のサービスを使う前に、その規約と「入力データの扱い」設定を確認します。",
       "clause_text_full": "従業者は、生成AIサービスを利用する前に、当該サービスの利用規約・プライバシーポリシー・データ取扱方針を確認すること。特に、(1)入力データの学習利用有無、(2)学習無効化（オプトアウト）設定の方法、(3)データ保管期間と所在地、(4)第三者開示条件、を理解した上で利用すること。会社が許可していないサービスの業務利用は禁止。",
@@ -97,7 +166,11 @@
       "violation_risk_level": "medium",
       "violation_risk_detail": "規約違反による利用停止／意図せぬ情報の学習利用／第三者への意図せぬ提供",
       "law_basis": "民法（契約遵守義務）／個人情報保護法 第27条",
-      "tags": ["AI","利用規約","オプトアウト"],
+      "tags": [
+        "AI",
+        "利用規約",
+        "オプトアウト"
+      ],
       "review_cycle_months": 6,
       "version_added": "1.0.0"
     },
@@ -106,8 +179,16 @@
       "category": "CMN",
       "subcategory": "認証",
       "title": "アカウント管理（共有禁止・MFA推奨）",
-      "applies_to_scale": ["S","XS","S2","M","L"],
-      "applies_to_industry": ["*"],
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
       "necessity": "required",
       "clause_text_short": "ChatGPT等のAIアカウントは個人ごとに発行。1つのアカウントを複数人で共有しません。パスワードは強固に、できれば二要素認証を有効化します。",
       "clause_text_full": "AIサービスを含む業務利用全てのアカウントは、利用者ごとに発行し、共有を禁止する。パスワードは推測困難な12文字以上（英数記号混在）とし、他システムとの使い回しを禁止。可能な場合は多要素認証（MFA）を有効化する。退職・異動時は当該アカウントを即時停止する。",
@@ -115,7 +196,12 @@
       "violation_risk_level": "high",
       "violation_risk_detail": "不正アクセス／追跡不能／退職者による持出",
       "law_basis": "不正アクセス禁止法 第3条",
-      "tags": ["認証","パスワード","MFA","アカウント"],
+      "tags": [
+        "認証",
+        "パスワード",
+        "MFA",
+        "アカウント"
+      ],
       "review_cycle_months": 12,
       "version_added": "1.0.0"
     },
@@ -124,8 +210,16 @@
       "category": "CMN",
       "subcategory": "インシデント対応",
       "title": "インシデント報告体制（24時間以内一次対応）",
-      "applies_to_scale": ["S","XS","S2","M","L"],
-      "applies_to_industry": ["*"],
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
       "necessity": "required",
       "clause_text_short": "AI経由でうっかり個人情報が漏れたら、24時間以内に責任者へ連絡。叱る前に原因究明します。",
       "clause_text_full": "従業者は、AI利用に関連した情報漏えい・誤入力・誤送信・規約違反・出力誤用の事象（または事象の疑い）を認識した場合、24時間以内に情報セキュリティ責任者（または経営者）へ一次報告すること。個人情報漏えいの場合は個人情報保護委員会への速報義務（3〜5日以内）が発生するため、迅速対応が必須。報告者は「事象を発生させた」ことのみを理由に懲戒対象としない。",
@@ -134,8 +228,16 @@
       "violation_risk_detail": "個情委報告義務違反（個情法第26条）／被害拡大／隠蔽による信頼喪失",
       "law_basis": "個人情報保護法 第26条（漏えい等の報告等）",
       "law_basis_url": "https://elaws.e-gov.go.jp/document?lawid=415AC0000000057",
-      "incident_response": {"report_to_pic": "速報3-5日／確報30-60日", "report_to_subject": "本人通知", "internal_escalation": "24時間以内"},
-      "tags": ["インシデント","報告","個情委"],
+      "incident_response": {
+        "report_to_pic": "速報3-5日／確報30-60日",
+        "report_to_subject": "本人通知",
+        "internal_escalation": "24時間以内"
+      },
+      "tags": [
+        "インシデント",
+        "報告",
+        "個情委"
+      ],
       "review_cycle_months": 6,
       "version_added": "1.0.0"
     },
@@ -144,8 +246,16 @@
       "category": "CMN",
       "subcategory": "アクセス管理",
       "title": "退職・異動時のアカウント即時停止",
-      "applies_to_scale": ["S","XS","S2","M","L"],
-      "applies_to_industry": ["*"],
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
       "necessity": "required",
       "clause_text_short": "退職者・異動者のAIアカウントは、最終出社日に必ず停止。クラウドストレージへのアクセスも止めます。",
       "clause_text_full": "従業者の退職・異動時には、当該者の業務利用アカウント（生成AIサービス、クラウドストレージ、社内システム、メール、その他全て）を最終出社日中に停止する。停止した証跡を記録に残す。退職者の私物端末に業務データのコピーが残っていないか確認手続きを設ける。",
@@ -153,7 +263,11 @@
       "violation_risk_level": "critical",
       "violation_risk_detail": "退職者による営業秘密持出／不正アクセス／競合企業への流出",
       "law_basis": "不正競争防止法／不正アクセス禁止法",
-      "tags": ["アクセス管理","退職","オフボーディング"],
+      "tags": [
+        "アクセス管理",
+        "退職",
+        "オフボーディング"
+      ],
       "review_cycle_months": 12,
       "version_added": "1.0.0"
     },
@@ -162,8 +276,15 @@
       "category": "CMN",
       "subcategory": "委託先管理",
       "title": "業務委託先のAI利用管理（再委託禁止・監督義務）",
-      "applies_to_scale": ["XS","S2","M","L"],
-      "applies_to_industry": ["*"],
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
       "necessity": "required",
       "clause_text_short": "外注先・委託先にも、自社と同等のAI利用ルールを守ってもらいます。契約書に明記。",
       "clause_text_full": "業務委託契約締結時には、委託先における生成AI利用について自社と同等以上の管理水準を要求する条項を含めること。具体的には(1)個人情報・営業秘密のAI投入禁止、(2)再委託の事前承諾必須、(3)インシデント時の報告義務、(4)委託終了時のデータ削除義務、(5)違反時の損害賠償条項を盛り込む。個人情報を委託する場合は個人情報保護法第25条の委託先監督義務が適用される。",
@@ -171,7 +292,12 @@
       "violation_risk_level": "high",
       "violation_risk_detail": "委託先経由の情報漏えい／個情法25条違反（委託先監督義務）",
       "law_basis": "個人情報保護法 第25条",
-      "tags": ["委託先","NDA","監督義務","再委託"],
+      "tags": [
+        "委託先",
+        "NDA",
+        "監督義務",
+        "再委託"
+      ],
       "review_cycle_months": 12,
       "version_added": "1.0.0"
     },
@@ -180,8 +306,14 @@
       "category": "CMN",
       "subcategory": "ログ",
       "title": "AI利用ログの保存（最低1年）",
-      "applies_to_scale": ["S2","M","L"],
-      "applies_to_industry": ["*"],
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
       "necessity": "required",
       "clause_text_short": "誰が・いつ・どんな目的でAIを使ったかの記録を、最低1年残します（業種により3〜7年）。",
       "clause_text_full": "業務でのAI利用記録（利用者、日時、サービス名、用途、機密度の高い処理の有無）を、最低1年（医療3年、金融7年、税務7年等の業界基準を上回る期間）保管する。プロンプトの全文記録は規模L以降の要件とし、規模S2-Mでは「分類タグ＋目的＋利用日時」の要約記録で足りる。記録は監査・インシデント対応・教育材料として活用する。",
@@ -189,7 +321,11 @@
       "violation_risk_level": "medium",
       "violation_risk_detail": "インシデント時の立証困難／監査指摘",
       "law_basis": "個人情報保護法 第29条（記録の作成等）／業界別ガイドライン",
-      "tags": ["ログ","記録","監査"],
+      "tags": [
+        "ログ",
+        "記録",
+        "監査"
+      ],
       "log_retention_years": 1,
       "review_cycle_months": 12,
       "version_added": "1.0.0"
@@ -199,8 +335,14 @@
       "category": "CMN",
       "subcategory": "懲戒",
       "title": "違反時の懲戒規定（就業規則連動）",
-      "applies_to_scale": ["S2","M","L"],
-      "applies_to_industry": ["*"],
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
       "necessity": "required",
       "clause_text_short": "本ガイドラインに重大な違反があった場合は、就業規則に基づく懲戒対象になります。",
       "clause_text_full": "本ガイドラインに重大な違反があった場合（故意の個人情報漏えい、営業秘密の意図的な投入、隠蔽行為等）は、就業規則および関連諸規程に基づく懲戒処分の対象となる。ただし、故意でない誤りやヒヤリハットは原則として教育・指導の対象とし、報告自体を懲戒対象としない。懲戒処分を有効に行うため、就業規則に本ガイドラインへの参照と懲戒事由を明記すること。",
@@ -208,7 +350,11 @@
       "violation_risk_level": "medium",
       "violation_risk_detail": "懲戒無効リスク（就業規則に明文なき場合）",
       "law_basis": "労働契約法 第7条・第15条",
-      "tags": ["懲戒","就業規則","規律"],
+      "tags": [
+        "懲戒",
+        "就業規則",
+        "規律"
+      ],
       "review_cycle_months": 12,
       "lawyer_review_required": true,
       "version_added": "1.0.0"
@@ -218,8 +364,16 @@
       "category": "CMN",
       "subcategory": "見直し",
       "title": "ガイドラインの定期見直し（年1回）",
-      "applies_to_scale": ["S","XS","S2","M","L"],
-      "applies_to_industry": ["*"],
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
       "necessity": "required",
       "clause_text_short": "AI技術と法令は速く変わります。毎年1回、内容を見直します。",
       "clause_text_full": "本ガイドラインは少なくとも年1回見直しを行う。見直しのトリガー：(1)関連法令の改正、(2)新たな業界ガイドライン発出、(3)社内インシデント発生、(4)新たなAIサービス導入、(5)組織変更。改訂時は版番号を更新し、改訂履歴を本ガイドライン末尾に記録する。",
@@ -227,105 +381,2099 @@
       "violation_risk_level": "low",
       "violation_risk_detail": "ガイドラインの陳腐化・形骸化",
       "law_basis": "—",
-      "tags": ["見直し","改訂","運用"],
+      "tags": [
+        "見直し",
+        "改訂",
+        "運用"
+      ],
       "review_cycle_months": 12,
       "version_added": "1.0.0"
     },
-
-    {"id":"C-AUTH-001","category":"AUTH","title":"パスワード強度ルール","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"パスワードは12文字以上、英数記号混在。他システムと使い回し禁止。","clause_text_full":"業務利用全アカウントのパスワードは英大小・数字・記号を含む12文字以上とし、他システム（私用含む）との使い回しを禁止する。定期変更は強制しない（NIST SP800-63B方針）。パスワードマネージャの利用を推奨。","explanation_beginner":"パスワードは長くて複雑に。会社と私用で同じものを使わないこと。スマホやアプリの「パスワード管理」機能を使うと楽です。定期変更は今は推奨されていません（むしろ覚えにくくなって付箋メモで漏れる事故が多発）。","violation_risk_level":"high","violation_risk_detail":"パスワード破られ・不正アクセス","law_basis":"NIST SP800-63B（推奨）","tags":["認証","パスワード"],"version_added":"1.0.0"},
-    {"id":"C-AUTH-002","category":"AUTH","title":"多要素認証（MFA）必須化","applies_to_scale":["S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"管理者アカウント・重要システムには必ず二段階ロックを設定します。","clause_text_full":"以下のアカウントは多要素認証（MFA）を必須とする：(1)管理者権限を持つアカウント全て、(2)個人情報を扱うシステム、(3)生成AIサービス（Team/Enterprise版）、(4)クラウドストレージ。一般従業者アカウントもMFA有効化を推奨。","explanation_beginner":"特に「管理者」のアカウントは、パスワード＋スマホ確認の二段階ロックを必ずオンに。手間ですが、これだけで多くの事故を防げます。","violation_risk_level":"high","violation_risk_detail":"管理者権限奪取→全システム侵害","law_basis":"—","tags":["認証","MFA"],"version_added":"1.0.0"},
-    {"id":"C-AUTH-003","category":"AUTH","title":"シングルサインオン（SSO）の導入","applies_to_scale":["M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"複数のクラウドサービスは、1つのIDで管理（SSO）します。","clause_text_full":"クラウドサービスの統一管理のため、SSO（シングルサインオン）プロバイダの導入を必須とする。退職時のアカウント停止が一元化される利点が大きい。","explanation_beginner":"クラウドサービスを10個20個と使うようになったら、1つのIDで全部ログインできる仕組み（SSO）を入れます。退職者処理が一発で済むのが最大の効果。","violation_risk_level":"medium","violation_risk_detail":"アカウント管理漏れ","tags":["認証","SSO"],"version_added":"1.0.0"},
-    {"id":"C-AUTH-004","category":"AUTH","title":"特権ID管理（PAM）","applies_to_scale":["L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"システム管理者の権限利用は、申請・承認・記録の3点セットで運用します。","clause_text_full":"特権アカウント（システム管理者・データベース管理者・クラウド管理者）の利用は、PAM（Privileged Access Management）ツールで管理する。一時的な権限付与・利用記録・自動失効を標準とする。","explanation_beginner":"システム管理者の強い権限は、必要な時だけ「申請→承認→使用→ログ記録」の流れで管理します。大企業向けの仕組みです。","violation_risk_level":"high","tags":["認証","PAM","特権ID"],"version_added":"1.0.0"},
-
-    {"id":"C-DEV-001","category":"DEV","title":"資産台帳の整備","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"会社のパソコン・スマホは1台ずつ台帳で管理します（Excel1枚で十分）。","clause_text_full":"業務利用端末は資産台帳で管理する（規模XS/S2はExcel1枚、規模M以上はMDM＝モバイルデバイス管理ツールを推奨）。記載項目：管理番号、機種、利用者、購入年月、OS、最終インストールアプリ。年1回棚卸。","explanation_beginner":"会社のパソコン・スマホが何台あって、誰が使っているかをExcel1枚にまとめておくだけでOKです。年1回「現状確認」をすれば足ります。","violation_risk_level":"medium","tags":["端末","台帳"],"version_added":"1.0.0"},
-    {"id":"C-DEV-002","category":"DEV","title":"ディスク暗号化必須","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"ノートPCは紛失時の備えとして、ディスク暗号化（BitLocker等）を必ず有効化。","clause_text_full":"業務利用端末（特に持ち出し可能なノートPC・タブレット・スマホ）は、ディスク暗号化機能を必ず有効化する。Windows = BitLocker、Mac = FileVault、iOS/Android = OS標準暗号化。","explanation_beginner":"ノートパソコンを電車に忘れても、暗号化しておけば中身は安全。WindowsならBitLocker、MacならFileVaultをオンにするだけ。今すぐ確認してください。","violation_risk_level":"high","violation_risk_detail":"紛失・盗難時の情報漏えい","tags":["端末","暗号化","BitLocker"],"version_added":"1.0.0"},
-    {"id":"C-DEV-003","category":"DEV","title":"画面ロック自動化","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"離席時はパソコンの画面を必ずロック。自動ロックを5分以内に設定。","clause_text_full":"全業務利用端末で、無操作5分以内の自動画面ロックを設定する。離席時は手動ロック（Win+L / Ctrl+Cmd+Q）を習慣化する。","explanation_beginner":"トイレに立つ時、コピーに行く時、必ずパソコンの画面を閉じるかロック。Windowsは「Windowsキー＋L」、Macは「Ctrl＋Cmd＋Q」。","violation_risk_level":"medium","tags":["端末","画面ロック"],"version_added":"1.0.0"},
-    {"id":"C-DEV-004","category":"DEV","title":"端末持出申請","applies_to_scale":["S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"会社のパソコンを社外に持ち出す時は事前申請。","clause_text_full":"業務利用端末の社外持出は事前申請制とする。申請項目：持出日時、行先、目的、返却予定日。日常的な外回り営業は包括承認可。","explanation_beginner":"会社のパソコンを家やカフェに持って帰る時は、申請を出します（社内ルール）。営業の外回りは毎回申請不要、最初に「外回り用」と一括承認しておけばOK。","violation_risk_level":"medium","tags":["端末","持出"],"version_added":"1.0.0"},
-    {"id":"C-DEV-005","category":"DEV","title":"EDR/アンチウイルス導入","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"全パソコンにウイルス対策ソフトを導入。Windows標準のDefenderでも可。","clause_text_full":"全業務利用端末にエンドポイントセキュリティソフト（EDRまたはアンチウイルス）を導入する。Windows Defender（標準）でも要件を満たす。規模M以上では中央管理可能なEDR製品（CrowdStrike、SentinelOne等）を推奨。","explanation_beginner":"パソコンには必ずウイルス対策ソフトを入れます。Windows標準の「Defender」でも十分です。大企業ではもっと高機能なものを使います。","violation_risk_level":"high","tags":["端末","EDR","アンチウイルス"],"version_added":"1.0.0"},
-
-    {"id":"C-NET-001","category":"NET","title":"業務Wi-Fiとゲストの分離","applies_to_scale":["S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"来客用Wi-Fiは社員用と分離。来客に社内ネットを使わせません。","clause_text_full":"オフィスWi-Fiは業務用とゲスト用を分離する（ルータのVLAN機能またはゲストネットワーク機能を利用）。来客・私物端末はゲストネット側のみ接続を許可。","explanation_beginner":"来客にWi-Fiを貸す時は、社員と同じネットワークを使わせないこと。多くの市販Wi-Fiルータに「ゲストネットワーク」機能があるので、それを使うだけです。","violation_risk_level":"high","tags":["ネットワーク","Wi-Fi"],"version_added":"1.0.0"},
-    {"id":"C-NET-002","category":"NET","title":"リモート時のVPN必須","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"自宅・出張先から社内データに接続する時は、VPN（仮想専用線）必須。","clause_text_full":"社外から社内システム・ファイルサーバに接続する場合は、VPN接続を必須とする。クラウドサービスへの直接接続でも、機密性の高いデータを扱う場合はVPN経由を推奨。","explanation_beginner":"自宅で仕事する時、会社の中にあるファイルやシステムを開く必要があれば、VPNという専用ルートを通します。安全な土管のようなものです。","violation_risk_level":"high","tags":["ネットワーク","VPN","リモート"],"version_added":"1.0.0"},
-    {"id":"C-NET-003","category":"NET","title":"クラウドサービス利用承認","applies_to_scale":["S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"新しいクラウドサービス（含むAI）を業務で使う前に申請。許可リスト管理。","clause_text_full":"業務での新規クラウドサービス利用は事前申請制とする。情シス担当者が(1)規約、(2)データ所在地、(3)セキュリティ認証、(4)代替手段、を確認後に許可リストへ追加。許可外サービスの業務利用は禁止。","explanation_beginner":"「便利だから使う」を許すと、会社が把握できないツールが増えて事故のもとに。新しいクラウドサービスは「使う前に申請」というルールを作ります。","violation_risk_level":"high","tags":["ネットワーク","クラウド","シャドーIT"],"version_added":"1.0.0"},
-    {"id":"C-NET-004","category":"NET","title":"公衆Wi-Fiでの業務制限","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"カフェや空港のフリーWi-Fiで機密データを扱いません。やむを得ない時はVPN経由。","clause_text_full":"公衆Wi-Fi（カフェ・空港・ホテル等）での業務利用は原則として閲覧系業務のみに限定する。機密データ取扱・社内システムログイン・AIへの社内情報投入は、VPN経由または個人テザリング経由で行う。","explanation_beginner":"カフェの無料Wi-Fiで仕事するのは便利ですが、機密データを扱う時は要注意。スマホのテザリング（インターネット共有）かVPN経由で。","violation_risk_level":"medium","tags":["ネットワーク","公衆Wi-Fi"],"version_added":"1.0.0"},
-
-    {"id":"C-DAT-001","category":"DAT","title":"バックアップ運用（3-2-1原則）","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"大事なデータは「3つのコピー、2つのメディア、1つは離れた場所」が原則。","clause_text_full":"業務データのバックアップは「3-2-1原則」（コピー3部、異なるメディア2種、1部は遠隔地保管）を推奨。クラウドサービス利用時はクラウド側の冗長性に加え、独立バックアップを取得する。月1回以上の復元テストを推奨。","explanation_beginner":"大事なデータは「コピーを3つ、2つの別メディアに、1つは離れた場所に」が鉄則。クラウドに保存していても、別のクラウドにも保存しておくと安心です。","violation_risk_level":"high","violation_risk_detail":"ランサムウェア・人為ミス・自然災害でのデータ消失","tags":["データ","バックアップ"],"version_added":"1.0.0"},
-    {"id":"C-DAT-002","category":"DAT","title":"機密データの分類（3-4階層）","applies_to_scale":["S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"情報を「公開」「社内限定」「機密」の階層に分けてラベル管理。","clause_text_full":"扱う情報を「公開」「社内限定」「機密」「最高機密」の3〜4階層に分類し、ファイル名・フォルダ名に分類ラベルを付ける。階層ごとに取扱いルール（AI投入可否、持出可否、外部送信可否）を定める。","explanation_beginner":"情報には「外に出してOK」「社員だけ」「機密」「超機密」の段階があります。フォルダ名やファイル名に「[機密]」とつけるだけでも事故防止になります。","violation_risk_level":"high","tags":["データ","分類","ラベル"],"version_added":"1.0.0"},
-    {"id":"C-DAT-003","category":"DAT","title":"データ保管期間と破棄手順","applies_to_scale":["S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"データには保管期限を設定。期限を過ぎたら確実に破棄します。","clause_text_full":"業務データには法令・業界基準に基づく保管期間を設定する（医療3年・金融7年・税務7年等）。期間経過後は復元不能な方法で破棄する。クラウドデータの破棄証跡を保管。","explanation_beginner":"データは「いつまで保管するか」のルールを決め、期限が来たらきちんと消す。永久保管は事故のリスクが増えるだけです。","violation_risk_level":"medium","log_retention_years":3,"tags":["データ","保管期間","破棄"],"version_added":"1.0.0"},
-    {"id":"C-DAT-004","category":"DAT","title":"クラウドデータの所在地確認","applies_to_scale":["M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"クラウドサービスのデータ保管場所（国内／海外）を把握。海外保管は個情法28条確認。","clause_text_full":"利用するクラウドサービスのデータ保管国・サーバ所在地を把握し記録する。個人データを海外保管するサービスを利用する場合は、個人情報保護法第28条（外国にある第三者への提供）の要件を確認する。","explanation_beginner":"クラウドサービスのデータが「日本にあるか、海外にあるか」を知っておくこと。海外の場合は、個人情報を扱う前に法務確認が必要です。","violation_risk_level":"high","law_basis":"個人情報保護法 第28条","tags":["データ","クラウド","越境移転"],"version_added":"1.0.0"},
-    {"id":"C-DAT-005","category":"DAT","title":"AI出力データの保管・分類","applies_to_scale":["S2","M","L"],"applies_to_industry":["*"],"necessity":"recommended","clause_text_short":"AIが生成した文書・画像にも、元データと同じ分類ラベルを付けます。","clause_text_full":"AI生成物（文書、コード、画像、要約）には、元データと同等の機密分類ラベルを付与する。AI生成物の「原典性」（人の創作的寄与の有無）を記録し、著作物性判断に備える。","explanation_beginner":"AIが作った資料も、元の情報と同じレベルで管理。「AIが作ったから雑に扱っていい」ではありません。","violation_risk_level":"medium","tags":["データ","AI生成物","分類"],"version_added":"1.0.0"},
-
-    {"id":"C-ACL-001","category":"ACL","title":"最小権限の原則","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"システムへのアクセス権は「業務に必要な最小限」だけ付与。","clause_text_full":"システム・データへのアクセス権限は、業務遂行に必要最小限の範囲で付与する。「全員管理者権限」「全員フルアクセス」は事故のもと。","explanation_beginner":"「念のため全員に管理者権限」はNG。必要な人だけに、必要な分だけ。誤操作や悪意ある操作のリスクを大きく減らせます。","violation_risk_level":"high","tags":["権限","最小権限"],"version_added":"1.0.0"},
-    {"id":"C-ACL-002","category":"ACL","title":"権限の定期棚卸","applies_to_scale":["S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"半期に1回、誰がどこにアクセスできるか棚卸。","clause_text_full":"アクセス権限の棚卸を半期に1回（規模L以上は四半期に1回）実施し、不要な権限を削除する。異動者の旧部署権限が残りがち、要注意。","explanation_beginner":"半年に1回、「この人、この権限本当に必要？」を見直します。異動した人の前の部署の権限が残りっぱなしの事故が多発しています。","violation_risk_level":"medium","tags":["権限","棚卸"],"version_added":"1.0.0"},
-    {"id":"C-ACL-003","category":"ACL","title":"オフボーディング手順","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"退職時は、アカウント停止・データ返却・誓約書のチェックリストで漏れ防止。","clause_text_full":"退職・契約終了時のオフボーディング手順をチェックリスト化する。最低項目：(1)全アカウント停止、(2)端末返却、(3)業務データの私物端末からの削除確認、(4)秘密保持誓約書の取得、(5)入退館証回収。","explanation_beginner":"辞める人の処理は、チェックリストにして漏れを防ぐ。アカウント停止、パソコン返却、データ削除、誓約書、入館証。これだけで多くの事故を防げます。","violation_risk_level":"critical","tags":["権限","オフボーディング","退職"],"version_added":"1.0.0"},
-    {"id":"C-ACL-004","category":"ACL","title":"共有アカウントの原則禁止","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"「みんなで使う1つのアカウント」は原則禁止。例外は承認制。","clause_text_full":"複数人での1アカウント共有は原則禁止する。やむを得ない場合（古い業務システム等）は承認制とし、利用者・利用日時の記録を取る。","explanation_beginner":"「みんなで使うID」は誰の操作か追跡できなくなるのでNG。古いシステムで仕方ない場合は、誰がいつ使ったかを別途記録します。","violation_risk_level":"high","tags":["権限","共有アカウント"],"version_added":"1.0.0"},
-
-    {"id":"C-LOG-001","category":"LOG","title":"ログ取得対象の規定","applies_to_scale":["S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"認証ログ・主要SaaS利用ログを取得。プロンプト全文は規模L以上。","clause_text_full":"取得対象ログ：(1)システム認証ログ、(2)主要SaaSアクセスログ、(3)生成AI利用ログ（規模Mまで＝サマリ／規模L＝全文）、(4)ファイルサーバアクセス、(5)管理者操作ログ。取得対象は規模に応じて段階的に拡張。","explanation_beginner":"何を記録に残すかを規定。中小企業は「いつ・誰が・どのサービスを使ったか」のメモで十分。大企業はもっと詳細に。","violation_risk_level":"medium","tags":["ログ","取得対象"],"version_added":"1.0.0"},
-    {"id":"C-LOG-002","category":"LOG","title":"ログ保管期間の規定","applies_to_scale":["S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"ログは最低1年保管（業界により3〜7年）。","clause_text_full":"ログ保管期間は規模・業界により決定：S2=1年、M=1年（業界要件で3年）、L=3年以上（医療3年・金融7年・税務7年）。","explanation_beginner":"記録はどれくらい残すか。業界によって法律で決まっている期間が違います（医療3年・金融7年・税務7年）。","violation_risk_level":"medium","log_retention_years":1,"tags":["ログ","保管期間"],"version_added":"1.0.0"},
-    {"id":"C-LOG-003","category":"LOG","title":"ログの定期レビュー","applies_to_scale":["M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"四半期に1回（規模Lは月次）、ログを目視レビューして異常検知。","clause_text_full":"ログを四半期1回以上レビューし、異常アクセス・大量ダウンロード・深夜利用等の異常パターンを検知する。規模Lはツール自動アラート併用。","explanation_beginner":"記録は取るだけでなく、定期的に見る。深夜のおかしなアクセスや、大量ダウンロードを見つける機会です。","violation_risk_level":"medium","tags":["ログ","レビュー"],"version_added":"1.0.0"},
-    {"id":"C-LOG-004","category":"LOG","title":"ログの改ざん防止","applies_to_scale":["M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"ログは書き換え不能な状態で保管（WORM ／別サーバ）。","clause_text_full":"ログは記録後に改ざんできない形態（WORM ストレージ、ログ専用サーバ、外部SaaSサービス等）で保管する。攻撃者がログを消して足跡を隠すのを防ぐため。","explanation_beginner":"記録は「書き換えできない場所」に保管。攻撃者が痕跡を消す手段を断ちます。","violation_risk_level":"high","tags":["ログ","改ざん防止"],"version_added":"1.0.0"},
-
-    {"id":"C-INC-001","category":"INC","title":"インシデント連絡先の明示","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"何か起きたら誰に連絡するか、全社員が分かるように明示。","clause_text_full":"インシデント発見時の一次連絡先（情報セキュリティ責任者・経営者）を全従業者に周知する。連絡先は名刺・社内掲示・ガイドライン冒頭等、すぐ目に入る場所に明示。","explanation_beginner":"「困った時、誰に電話するか」を全員が知っている状態に。冷蔵庫マグネットに連絡先を書くくらい徹底すること。","violation_risk_level":"critical","tags":["インシデント","連絡先"],"version_added":"1.0.0"},
-    {"id":"C-INC-002","category":"INC","title":"インシデント報告フロー","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"発覚→責任者→対応判断→個情委報告（必要時）→再発防止 の流れを文書化。","clause_text_full":"インシデント対応フロー：発覚→24時間以内一次連絡→事実確認→影響範囲特定→封じ込め→外部報告判断（個情委・本人通知）→是正→再発防止策→経営層報告。","explanation_beginner":"事故が起きた時の「やること順番」を決めておく。慌ててから決めると間違えます。フローチャート1枚で十分。","violation_risk_level":"critical","tags":["インシデント","フロー"],"version_added":"1.0.0"},
-    {"id":"C-INC-003","category":"INC","title":"インシデント封じ込め手順","applies_to_scale":["S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"発覚時の「とりあえずネットワーク切断」「アカウント停止」等の即時対応手順。","clause_text_full":"発生時の即時対応手順を規定：(1)該当端末のネットワーク切断、(2)該当アカウントの即時停止、(3)関連クラウドサービスのトークン無効化、(4)証跡保全（ログ・ハードディスクの状態保存）。","explanation_beginner":"事故発覚直後、まず「やるべきこと」を決めておく。LANケーブルを抜く、アカウントを止める、証拠を残す。これを知らないと被害が広がります。","violation_risk_level":"high","tags":["インシデント","封じ込め"],"version_added":"1.0.0"},
-    {"id":"C-INC-004","category":"INC","title":"インシデント訓練","applies_to_scale":["M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"年1回以上、模擬訓練を実施して対応力を養成。","clause_text_full":"年1回以上のインシデント対応訓練（標的型メール訓練、模擬漏えい訓練、復旧訓練）を実施し、対応フローの実効性を確認する。","explanation_beginner":"年1回、「もし起きたら」の練習をします。標的型メールに引っかからないかテストする等。やってないと本番で動けません。","violation_risk_level":"medium","tags":["インシデント","訓練"],"version_added":"1.0.0"},
-
-    {"id":"C-AI-001","category":"AI","title":"許可AIツールリストの運用","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"会社が許可したAIツールのリストを作成。リスト外の業務利用は禁止。","clause_text_full":"業務利用を許可する生成AIサービスのリストを作成・維持し、全従業者に共有する。新規ツール導入は情シス担当者（または経営者）の承認制。許可外ツールの業務利用は禁止する。","explanation_beginner":"「うちの会社で使っていいAIサービス」のリストを作っておく。それ以外を業務で使うのは禁止。リストに無いツールを試したい時は申請を。","violation_risk_level":"high","tags":["AI","許可リスト"],"version_added":"1.0.0"},
-    {"id":"C-AI-002","category":"AI","title":"AI利用承認フロー（重要処理）","applies_to_scale":["S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"顧客情報の分析等、重要な処理にAIを使う時は事前承認制。","clause_text_full":"以下の処理にAIを利用する場合は事前承認を必須とする：(1)個人情報の処理、(2)契約書・法務文書のドラフト、(3)対外公表物の生成、(4)財務・経営判断の支援。承認者：規模S2＝経営者、M＝部門長、L＝AI利用委員会。","explanation_beginner":"重要な仕事（お客様情報・契約書・対外資料）でAIを使う時は、上司の承認を取ってから。普段の議事録要約等は逐一申請不要。","violation_risk_level":"high","tags":["AI","承認"],"version_added":"1.0.0"},
-    {"id":"C-AI-003","category":"AI","title":"AI出力物の人的レビュー義務","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"AIが作った文書は、必ず人が見直してから社外に出します。","clause_text_full":"AI生成物を社外に発信・送付する場合は、必ず人によるレビューを経ること。チェック項目：(1)事実関係の正確性、(2)固有名詞・数字の正確性、(3)第三者著作物の混入有無、(4)機密情報の混入有無、(5)文体・トーンの適切性。","explanation_beginner":"AIが書いた文章を「そのままコピー貼り付けで送信」は絶対NG。必ず読み直して、おかしいところを直してから出します。AIは平気で嘘をつくので、特に固有名詞と数字は要注意。","violation_risk_level":"high","tags":["AI","レビュー","品質管理"],"version_added":"1.0.0"},
-    {"id":"C-AI-004","category":"AI","title":"AI生成物の著作権・原典性記録","applies_to_scale":["M","L"],"applies_to_industry":["*"],"necessity":"recommended","clause_text_short":"AIで作った重要資料は、生成プロセスと「人の創作的寄与」を記録します。","clause_text_full":"事業上重要な著作物をAIで生成した場合、(1)使用プロンプト、(2)生成日時、(3)人による修正内容、(4)最終確定者を記録する。著作物性の判断（人の創作的寄与の有無）に備える。","explanation_beginner":"大事な著作物（ロゴ、コピー、デザイン）をAIで作った時は、「どんな指示で作ったか」「人がどこを直したか」を記録。著作権の話で後々重要になります。","violation_risk_level":"medium","tags":["AI","著作権","原典性"],"version_added":"1.0.0"},
-    {"id":"C-AI-005","category":"AI","title":"AI利用記録の保存","applies_to_scale":["S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"AI使用時の「いつ・誰が・何を」を記録（プロンプト全文は規模L以上）。","clause_text_full":"AI利用記録を保存：規模S2/M＝利用者・日時・サービス名・用途分類、規模L＝上記＋プロンプト全文。最低1年保管。","explanation_beginner":"AIを使ったら、メモを残す。中小は項目だけでOK、大企業はプロンプト全文も。事故時の証拠になります。","violation_risk_level":"medium","log_retention_years":1,"tags":["AI","ログ"],"version_added":"1.0.0"},
-    {"id":"C-AI-006","category":"AI","title":"プロンプトエンジニアリング教育","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"recommended","clause_text_short":"全社員にAIの使い方の基礎教育を提供（年1回30分以上）。","clause_text_full":"年1回以上のAI利用教育を実施：(1)効果的なプロンプト作成方法、(2)ハルシネーション対策、(3)個人情報・営業秘密の扱い、(4)出力物の検証方法。新入社員には入社時オリエンで必須。","explanation_beginner":"AIの使い方は「教えれば誰でも上達」します。年1回でも研修すると、社員のAI活用レベルが大きく変わります。","violation_risk_level":"low","tags":["AI","教育"],"version_added":"1.0.0"},
-
-    {"id":"C-BYO-001","category":"BYO","title":"BYOD（私物端末業務利用）の許諾／禁止明確化","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"自分のスマホで仕事をしてOKかダメか、明確にルール化。","clause_text_full":"私物端末（自分のスマホ・パソコン）の業務利用について、許諾・禁止・条件付き許諾の方針を明確化する。許諾する場合：(1)端末暗号化必須、(2)パスワード保護必須、(3)業務データの私物クラウド保存禁止、(4)紛失時の即時報告。","explanation_beginner":"自分のスマホで会社のメールを見る、ChatGPTを使う、これがOKかダメかをはっきり決めます。OKにする場合も、最低限のルール（パスワード・暗号化・紛失時連絡）を守ってもらいます。","violation_risk_level":"high","tags":["BYOD","私物端末"],"version_added":"1.0.0"},
-    {"id":"C-BYO-002","category":"BYO","title":"私物クラウドへの業務データ持出禁止","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"自分のGmail・個人Dropbox・LINE等への業務データ送信は禁止。","clause_text_full":"業務データを個人所有のクラウドサービス（個人Gmail、個人Dropbox、個人OneDrive、個人LINE、個人Discord等）に転送・保存することを禁止する。会社契約のクラウドサービスを利用すること。","explanation_beginner":"「家でも見たいから」と、自分のGmailに業務メールを転送するのはNG。会社が用意したサービスを使ってください。","violation_risk_level":"high","tags":["BYOD","私物クラウド","シャドーIT"],"version_added":"1.0.0"},
-    {"id":"C-BYO-003","category":"BYO","title":"私物AIアカウントでの業務利用条件","applies_to_scale":["XS","S2"],"applies_to_industry":["*"],"necessity":"recommended","clause_text_short":"個人のChatGPT等で業務をする場合は、有料版＋オプトアウト＋機密入力禁止が条件。","clause_text_full":"会社契約版がない場合の例外措置として、個人有料版AIサービス（学習無効化設定済）の業務利用を条件付きで認める：(1)有料版限定、(2)オプトアウト設定済、(3)機密情報・個人情報の投入禁止、(4)利用記録自己管理。","explanation_beginner":"会社でChatGPT等を契約していない場合、個人の有料版を業務で使うのはアリ。ただし「学習に使わない設定」を必ずオンに、機密情報は絶対入れない、を守ること。","violation_risk_level":"medium","tags":["BYOD","個人AI","オプトアウト"],"version_added":"1.0.0"},
-
-    {"id":"C-EXT-001","category":"EXT","title":"委託先のAI利用管理（契約必須条項）","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"外注先との契約書にAI利用条項を入れる。","clause_text_full":"業務委託契約書に必須条項：(1)委託情報の生成AI投入禁止（または条件）、(2)再委託の事前承認、(3)インシデント時の即時報告、(4)契約終了時のデータ削除、(5)違反時の損害賠償。","explanation_beginner":"外注先（デザイナー・ライター・開発業者）との契約書に「AIの使い方ルール」を入れます。これを忘れると、外注経由で情報が漏れた時に対応できません。","violation_risk_level":"high","tags":["委託先","契約","NDA"],"version_added":"1.0.0","lawyer_review_required":true},
-    {"id":"C-EXT-002","category":"EXT","title":"委託先のセキュリティ評価","applies_to_scale":["M","L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"重要委託先には、セキュリティ調査票でチェックしてから契約。","clause_text_full":"個人情報・営業秘密を委託する取引先について、セキュリティ調査票（質問書）で事前評価し、認証取得状況（ISMS、Pマーク）・AI利用ポリシー・インシデント履歴を確認する。","explanation_beginner":"大事な委託先には、契約前に「セキュリティ大丈夫ですか？」のチェックシートを送って確認します。","violation_risk_level":"medium","tags":["委託先","評価","調査票"],"version_added":"1.0.0"},
-    {"id":"C-EXT-003","category":"EXT","title":"委託先監査の実施","applies_to_scale":["L"],"applies_to_industry":["*"],"necessity":"required","clause_text_short":"重要委託先には年1回の監査を実施。","clause_text_full":"個人データを多量委託する委託先には、年1回以上の監査（書面または実地）を実施する。改善要請と改善状況を記録。","explanation_beginner":"年1回、大事な委託先を見に行く（あるいは書面でチェック）。Pマーク・ISMS取得想定なら必須。","violation_risk_level":"medium","tags":["委託先","監査"],"version_added":"1.0.0"},
-
-    {"id":"C-MED-001","category":"MED","subcategory":"医療業種特化","title":"要配慮個人情報の取扱（病歴・診療情報）","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["medical"],"necessity":"required","clause_text_short":"患者の病歴・診療情報をAIに入れる時は、必ず匿名加工してから。","clause_text_full":"医療従事者は、患者の要配慮個人情報（病歴・診療情報・健康診断結果）を生成AIに投入する場合、必ず匿名加工処理（個人特定要素の除去）を行うこと。患者本人の明示同意がある場合のみ、限定的に非匿名化投入を認める。厚労省「医療情報システムの安全管理に関するガイドライン 第6.0版」に準拠すること。","explanation_beginner":"患者さんの名前・住所・病名をChatGPT等にそのまま入れるのは絶対NG。「●●様の症例」のように完全に伏字にしてから使ってください。","violation_risk_level":"critical","law_basis":"個人情報保護法 第2条第3項／医療情報システムの安全管理に関するガイドライン","tags":["医療","要配慮","匿名加工"],"lawyer_review_required":true,"version_added":"1.0.0"},
-    {"id":"C-MED-002","category":"MED","subcategory":"医療業種特化","title":"3省2ガイドライン遵守","applies_to_scale":["S2","M","L"],"applies_to_industry":["medical"],"necessity":"required","clause_text_short":"医療情報を扱うシステムは厚労省・経産省・総務省の3省2ガイドラインに準拠。","clause_text_full":"医療情報を扱う情報システム・クラウドサービスの選定・運用は、厚労省「医療情報システムの安全管理に関するガイドライン」および経産省・総務省「医療情報を取り扱う情報システム・サービスの提供事業者における安全管理ガイドライン」に準拠すること。","explanation_beginner":"医療の情報を扱うシステムには、専用のガイドラインがあります。新しいクラウドサービスやAIを導入する前に、これに合っているか確認します。","violation_risk_level":"critical","tags":["医療","3省2ガイドライン"],"lawyer_review_required":true,"version_added":"1.0.0"},
-    {"id":"C-MED-003","category":"MED","subcategory":"医療業種特化","title":"AI診断支援機器の薬機法該当性確認","applies_to_scale":["M","L"],"applies_to_industry":["medical"],"necessity":"required","clause_text_short":"AIで診断補助をする機能を使う前に、それがプログラム医療機器（薬機法）に該当しないか確認。","clause_text_full":"AIが診断・治療判断を補助する機能（SaMD：Software as a Medical Device）の利用前に、薬機法第2条第4項・厚労省「プログラムの医療機器該当性に関するガイドライン」に基づく該非判定を実施すること。","explanation_beginner":"「AIが画像から病気を判定する」「AIが治療法を提案する」等の機能は、法律上「医療機器」に該当する場合があります。導入前に確認が必要です。","violation_risk_level":"critical","tags":["医療","薬機法","SaMD"],"lawyer_review_required":true,"version_added":"1.0.0"},
-
-    {"id":"C-SHI-001","category":"SHI","subcategory":"士業特化","title":"守秘義務の絶対遵守（AI投入は依頼者承諾必須）","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["shigyo"],"necessity":"required","clause_text_short":"依頼者の情報をAIに入れる時は、依頼者本人の事前承諾が必要。","clause_text_full":"弁護士法23条・税理士法38条・司法書士法24条・社労士法21条・行政書士法12条等の守秘義務に基づき、依頼者・関係者の個別情報を生成AIに投入する場合は、事前に依頼者本人の書面承諾を取得すること。承諾なき投入は刑法134条第1項（秘密漏示罪）に該当する可能性がある。","explanation_beginner":"士業の先生方は法律で「守秘義務」が課されています。依頼者の情報をAIに入れる前に、必ず依頼者本人に「使っていいか」を確認すること。","violation_risk_level":"critical","law_basis":"弁護士法23条／税理士法38条／刑法134条","tags":["士業","守秘義務"],"lawyer_review_required":true,"version_added":"1.0.0"},
-    {"id":"C-SHI-002","category":"SHI","subcategory":"士業特化","title":"利益相反チェック","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["shigyo"],"necessity":"required","clause_text_short":"複数の依頼者の情報を、同じAIセッションで混在させない。","clause_text_full":"複数の依頼者の情報を、同一AIセッション・同一プロンプト内で扱わないこと。AIの文脈混在による利益相反リスクを回避する。依頼者ごとに別セッションで処理する。","explanation_beginner":"AさんとBさんの案件を、同じChatGPTのチャット画面で交互に相談しない。AIが「混ぜて」回答するリスクがあります。","violation_risk_level":"high","tags":["士業","利益相反"],"version_added":"1.0.0"},
-    {"id":"C-SHI-003","category":"SHI","subcategory":"士業特化","title":"AI出力の士業最終責任","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["shigyo"],"necessity":"required","clause_text_short":"AIが作った助言は、必ず士業本人が確認・修正してから依頼者に渡します。","clause_text_full":"AI生成物（法的助言ドラフト、税務試算、登記書類ドラフト等）は、必ず資格者本人が確認・修正・承認の上で依頼者に提供する。AI出力をそのまま提供することは禁止。最終責任は資格者にある。","explanation_beginner":"AIが書いた書類や助言を、そのまま依頼者に渡すのはNG。必ず先生が見直して責任を持って提供します。","violation_risk_level":"high","tags":["士業","責任"],"version_added":"1.0.0"},
-
-    {"id":"C-FIN-001","category":"FIN","subcategory":"金融特化","title":"FISC安全対策基準遵守","applies_to_scale":["M","L"],"applies_to_industry":["finance"],"necessity":"required","clause_text_short":"金融機関のAI利用は、FISC安全対策基準に準拠。","clause_text_full":"生成AIサービスの利用は、FISC「金融機関等コンピュータシステムの安全対策基準・解説書」の最新版に準拠すること。特に「生成AI利用編」の要件を満たす運用体制を構築する。","explanation_beginner":"金融機関には「FISC基準」という業界共通ルールがあります。AIを使う前にこれに合っているか確認します。","violation_risk_level":"critical","tags":["金融","FISC"],"lawyer_review_required":true,"version_added":"1.0.0"},
-    {"id":"C-FIN-002","category":"FIN","subcategory":"金融特化","title":"顧客情報のAI投入原則禁止","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["finance"],"necessity":"required","clause_text_short":"金融取引情報・顧客金融資産情報は生成AIに投入しません。","clause_text_full":"顧客の金融取引情報・口座情報・運用資産情報は、生成AIサービスへの投入を原則禁止する。例外は金融庁監督指針および金融分野ガイドラインに準拠した社内クローズドLLM等に限定する。","explanation_beginner":"お客様の取引履歴・口座番号・資産額をChatGPTに入れるのは絶対NG。社内に閉じたAIを使うこと。","violation_risk_level":"critical","tags":["金融","顧客情報"],"lawyer_review_required":true,"version_added":"1.0.0"},
-    {"id":"C-FIN-003","category":"FIN","subcategory":"金融特化","title":"AI誤判定時の人的確認義務","applies_to_scale":["S2","M","L"],"applies_to_industry":["finance"],"necessity":"required","clause_text_short":"AIが「疑わしい取引」と判定しても、最終的には人が確認します。","clause_text_full":"犯収法上の「疑わしい取引」判定、反社チェック、KYC（本人確認）等の業務でAIを利用する場合、AI判定を最終決定とせず、必ず資格者の人的確認・承認を経ること。","explanation_beginner":"AIが「これは怪しい取引」「これは反社の人かも」と判定しても、必ず人が最終確認。AIだけで決めるのはNGです。","violation_risk_level":"high","law_basis":"犯罪収益移転防止法 第8条","tags":["金融","犯収法","KYC"],"version_added":"1.0.0"},
-
-    {"id":"C-EDU2-001","category":"EDU2","subcategory":"教育業種特化","title":"児童・生徒の個人情報保護","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["education"],"necessity":"required","clause_text_short":"児童・生徒の氏名・成績・指導内容を生成AIに入れません。","clause_text_full":"児童・生徒の個人情報（氏名、成績、指導要録、健康診断結果、生活指導記録）の生成AIへの投入を原則禁止する。教材作成・授業準備での利用は匿名化必須。文科省「初等中等教育段階における生成AIの利用に関する暫定的なガイドライン Ver.2.0」に準拠。","explanation_beginner":"児童・生徒の名前・成績・指導の記録をChatGPTに入れるのはNG。教材作りで使う時も、特定の子の名前は伏せます。","violation_risk_level":"critical","tags":["教育","児童","文科省GL"],"lawyer_review_required":true,"version_added":"1.0.0"},
-    {"id":"C-EDU2-002","category":"EDU2","subcategory":"教育業種特化","title":"AI教材の最終確認","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["education"],"necessity":"required","clause_text_short":"AIが作った教材は、教員が必ず内容確認してから生徒に提供。","clause_text_full":"AI生成教材・問題・解説を生徒に提供する前に、教員が必ず内容・正確性・適切性を確認すること。誤情報・偏向情報の混入を防ぐ。","explanation_beginner":"AIに教材を作らせる時、そのまま生徒に渡すのはNG。先生が必ず内容をチェック。AIは平気で嘘の歴史や数式を書きます。","violation_risk_level":"high","tags":["教育","教材","レビュー"],"version_added":"1.0.0"},
-    {"id":"C-EDU2-003","category":"EDU2","subcategory":"教育業種特化","title":"いじめ・虐待情報のAI処理禁止","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["education"],"necessity":"required","clause_text_short":"いじめ・虐待に関する情報は生成AIに入れません。","clause_text_full":"いじめ・虐待事案に関する情報は、要配慮個人情報として外部AIへの投入を禁止する。必要な場合は学校設置者・教育委員会の指導を仰ぐこと。","explanation_beginner":"いじめ・虐待の情報は最も配慮が必要な情報。絶対にChatGPT等に入れないでください。","violation_risk_level":"critical","tags":["教育","いじめ","虐待"],"lawyer_review_required":true,"version_added":"1.0.0"},
-
-    {"id":"C-MFG-001","category":"MFG","subcategory":"製造業特化","title":"製造ノウハウの営業秘密管理","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["manufacturing"],"necessity":"required","clause_text_short":"製造方法・工程の細部情報を生成AIに入れません。","clause_text_full":"製造ノウハウ・工程仕様・配合情報・歩留改善ノウハウは、不正競争防止法上の営業秘密3要件を維持するため、生成AIへの投入を厳禁する。投入により秘密管理性が喪失し、法的保護を失う。","explanation_beginner":"うちの工場の「独自製法」や「秘伝の配合」をChatGPTに入れたら、その瞬間に法律上『秘密』ではなくなる可能性があります。絶対NG。","violation_risk_level":"critical","tags":["製造","営業秘密","ノウハウ"],"version_added":"1.0.0"},
-    {"id":"C-MFG-002","category":"MFG","subcategory":"製造業特化","title":"図面・仕様書の生成AI投入禁止","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["manufacturing"],"necessity":"required","clause_text_short":"設計図面・部品仕様書をAIにアップロードしません。","clause_text_full":"設計図面（CAD・PDF・画像）、部品仕様書、組立指示書、検査基準書を生成AIサービスに投入することを禁止する。","explanation_beginner":"設計図や仕様書をAIにアップロードしてはダメ。要約・翻訳が必要な時は、固有情報を伏せた抜粋のみ使用してください。","violation_risk_level":"critical","tags":["製造","図面","仕様書"],"version_added":"1.0.0"},
-    {"id":"C-MFG-003","category":"MFG","subcategory":"製造業特化","title":"輸出管理（外為法）AIモデル・データの該非判定","applies_to_scale":["M","L"],"applies_to_industry":["manufacturing"],"necessity":"required","clause_text_short":"AIモデル・学習データを海外に持ち出す前に、外為法の規制対象か確認。","clause_text_full":"AIモデル・学習データ・技術情報を海外拠点に持ち出す場合、外為法第48条に基づき該非判定を実施すること。規制対象の場合は経産省への許可申請が必要。","explanation_beginner":"AIに使う技術情報を海外に送る前に、「規制対象」かチェック。半導体・防衛関連は特に注意。","violation_risk_level":"high","law_basis":"外国為替及び外国貿易法 第48条","tags":["製造","外為法","輸出管理"],"lawyer_review_required":true,"version_added":"1.0.0"},
-
-    {"id":"C-TRA-001","category":"TRA","subcategory":"物流特化","title":"荷主情報・配送先個人情報の保護","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["logistics"],"necessity":"required","clause_text_short":"荷主・配送先の個人情報を生成AIに入れません。","clause_text_full":"荷主企業の取引情報、個人配送先の氏名・住所・電話番号、ECサイト購入履歴等を生成AIに投入することを禁止する。配送効率化AIの利用は匿名化済データに限定する。","explanation_beginner":"配送先の名前・住所をChatGPTに入れるのはNG。ルート最適化に使う時も、住所だけ（個人名なし）にしてください。","violation_risk_level":"critical","tags":["物流","荷主","配送先"],"version_added":"1.0.0"},
-    {"id":"C-TRA-002","category":"TRA","subcategory":"物流特化","title":"ドライバー労務管理AIと労働者プライバシー","applies_to_scale":["S2","M","L"],"applies_to_industry":["logistics"],"necessity":"required","clause_text_short":"ドライバーの運行データAI分析は、本人の権利に配慮し透明性を確保。","clause_text_full":"運行記録・タコグラフ・ドラレコ等のAI分析は、個人情報保護法および労働関係法令に基づき、利用目的の透明性、データの最小限利用、本人通知を徹底する。改善基準告示遵守（2024年問題）にも留意。","explanation_beginner":"ドライバーの運転記録をAIで分析する時は、何のために使うかを本人に説明。監視ではなく安全・効率改善が目的だと明示します。","violation_risk_level":"high","tags":["物流","ドライバー","労務"],"version_added":"1.0.0"},
-    {"id":"C-TRA-003","category":"TRA","subcategory":"物流特化","title":"危険物・規制物配送のAI判定の人的確認","applies_to_scale":["S2","M","L"],"applies_to_industry":["logistics"],"necessity":"required","clause_text_short":"危険物・薬品の取扱判定は、AI任せにせず必ず人が確認。","clause_text_full":"危険物・医薬品・規制対象物の配送可否、保管方法、輸送経路のAI判定は、必ず人による最終確認を経ること。消防法・薬機法等の法令違反リスクを回避。","explanation_beginner":"危険物・薬品の取扱はAI任せにせず必ず人が確認。法令違反は事業停止につながります。","violation_risk_level":"high","tags":["物流","危険物","薬機法"],"version_added":"1.0.0"},
-
-    {"id":"C-RET-001","category":"RET","subcategory":"小売・飲食特化","title":"顧客購買履歴・ポイント情報の取扱","applies_to_scale":["XS","S2","M","L"],"applies_to_industry":["retail"],"necessity":"required","clause_text_short":"顧客IDに紐づく購買履歴を生成AIに入れる時は、個人を特定できない形にしてから。","clause_text_full":"顧客購買履歴・ポイント情報・会員情報は、個人を特定できる形での生成AI投入を禁止する。匿名集計データ（年代別・地域別・商品別）に加工後の利用に限定。","explanation_beginner":"「○○様の購買履歴」をChatGPTに入れるのはNG。「20代女性・○○地域・お弁当購入」など、特定の人と分からない形にしてから使います。","violation_risk_level":"high","tags":["小売","購買履歴","ポイント"],"version_added":"1.0.0"},
-    {"id":"C-RET-002","category":"RET","subcategory":"小売・飲食特化","title":"店内カメラ・顔認識AIの本人通知","applies_to_scale":["S2","M","L"],"applies_to_industry":["retail"],"necessity":"required","clause_text_short":"店内カメラで顔認識AIを使う時は、来店客への通知必須。","clause_text_full":"店内カメラ映像をAIで解析する場合（特に顔認識・属性推定）、店頭での明示通知、プライバシーポリシーへの記載が必須。個情委ガイドラインに準拠。","explanation_beginner":"お店のカメラ映像をAIで「お客様の年代を推定する」等に使う時は、「映像をAIで分析しています」と店頭に明示する義務があります。","violation_risk_level":"high","tags":["小売","カメラ","顔認識"],"version_added":"1.0.0"},
-    {"id":"C-RET-003","category":"RET","subcategory":"小売・飲食特化","title":"AIキャッチコピーの景表法対応","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["retail"],"necessity":"required","clause_text_short":"AIが作った広告コピーが「優良誤認」「有利誤認」になっていないか確認。","clause_text_full":"AIが生成する広告コピー・販促文・商品説明は、景品表示法上の優良誤認・有利誤認に該当しないよう、必ず人が事実確認・表現確認を行うこと。","explanation_beginner":"AIに広告コピーを作らせると、つい「業界No.1」「効果絶大」と書きがち。法律で禁止されている表現になっていないか必ず確認します。","violation_risk_level":"high","law_basis":"景品表示法 第5条","tags":["小売","景表法","広告"],"version_added":"1.0.0"},
-
-    {"id":"C-BTY-001","category":"BTY","subcategory":"美容特化","title":"顧客カルテの取扱","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["beauty"],"necessity":"required","clause_text_short":"顧客カルテ（肌質・施術履歴）を生成AIに入れる時は匿名化必須。","clause_text_full":"顧客カルテ（肌質、施術履歴、アレルギー情報、健康状態）は個人情報・要配慮個人情報を含むため、生成AIへの投入時は完全匿名化を必須とする。","explanation_beginner":"お客様のカルテ情報をChatGPTで分析する時は、必ず名前を消してから。アレルギー・健康情報は特に注意。","violation_risk_level":"high","tags":["美容","カルテ","要配慮"],"version_added":"1.0.0"},
-    {"id":"C-BTY-002","category":"BTY","subcategory":"美容特化","title":"ビフォーアフター写真のAI改変規制","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["beauty"],"necessity":"required","clause_text_short":"ビフォーアフター写真をAIで「より良く」見せる加工は景表法違反のリスク。","clause_text_full":"ビフォーアフター写真のAI生成・改変・補正は、医療広告ガイドライン・景品表示法上の優良誤認に該当する可能性があるため、原則禁止。やむを得ない補正（明るさ・トリミング）に限定し、補正内容を併記する。","explanation_beginner":"ビフォーアフター写真をAIで「より痩せて」「より若く」見せる加工はNG。広告法違反になります。","violation_risk_level":"critical","tags":["美容","写真","景表法"],"lawyer_review_required":true,"version_added":"1.0.0"},
-    {"id":"C-BTY-003","category":"BTY","subcategory":"美容特化","title":"医療行為境界の明確化","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["beauty"],"necessity":"required","clause_text_short":"AIの推奨が医療行為（医師法）に該当しないよう確認。","clause_text_full":"AIによる肌質診断・治療推奨が、医師法第17条の医業に該当しないよう注意する。診断・治療判断は医師の業務範囲。美容施術所のAI推奨は「美容相談」の範囲に限定する。","explanation_beginner":"AIが「これは○○病ですね」「この治療がいい」と言ったら、それは医師の仕事。エステ・美容室では美容相談の範囲を超えないように。","violation_risk_level":"critical","law_basis":"医師法 第17条","tags":["美容","医師法","境界"],"lawyer_review_required":true,"version_added":"1.0.0"},
-
-    {"id":"C-ITC-001","category":"ITC","subcategory":"IT・コンサル特化","title":"クライアント機密情報の生成AI投入禁止（NDA違反防止）","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["it_consulting"],"necessity":"required","clause_text_short":"クライアントの情報をAIに入れる時は、必ずクライアントの承諾を得る。","clause_text_full":"クライアントから提供された機密情報（社内資料、コード、戦略情報、顧客リスト等）を生成AIに投入する場合、必ずクライアントの事前承諾を取得する。NDA違反は損害賠償・取引停止の重大リスク。","explanation_beginner":"クライアントから預かった資料・コードをChatGPTに入れる時は、必ずクライアントに「OK？」を聞いてから。黙って使うのは契約違反です。","violation_risk_level":"critical","tags":["IT・コンサル","NDA","クライアント情報"],"version_added":"1.0.0"},
-    {"id":"C-ITC-002","category":"ITC","subcategory":"IT・コンサル特化","title":"受託開発成果物の著作権帰属","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["it_consulting"],"necessity":"required","clause_text_short":"受託開発でAIを使った場合、AI生成部分を契約書で明示。","clause_text_full":"受託開発契約において、AI生成コード・ドキュメントの著作権帰属、検収条件、責任範囲を明示する。AI生成物の品質責任、著作権侵害発生時の責任分担を契約書に明記。","explanation_beginner":"お客様向けの開発でAIを使うなら、「AIが書いたコードもうちの納品物として扱う」「AIが他人のコードを真似していた場合の責任は誰か」を契約書に書きます。","violation_risk_level":"high","tags":["IT・コンサル","受託開発","著作権"],"lawyer_review_required":true,"version_added":"1.0.0"},
-    {"id":"C-ITC-003","category":"ITC","subcategory":"IT・コンサル特化","title":"OSSライセンスとAI生成コード","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["it_consulting"],"necessity":"required","clause_text_short":"AIが生成したコードがGPL等のオープンソースを含む可能性。商用利用前に確認。","clause_text_full":"AI生成コードに、特定オープンソース（特にGPL/AGPL等のコピーレフトライセンス）由来のコードが含まれる可能性に留意。商用製品・受託開発成果物に組込む前に、ライセンス監査ツール等で確認すること。","explanation_beginner":"AIが書いたコードに、GPLというライセンスのコードが混じっていると、製品全体を無料公開する義務が発生する場合があります。商用利用前に確認します。","violation_risk_level":"high","tags":["IT・コンサル","OSS","ライセンス"],"version_added":"1.0.0"},
-
-    {"id":"C-BLD-001","category":"BLD","subcategory":"建設・不動産特化","title":"設計図面・施工計画書の営業秘密管理","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["construction"],"necessity":"required","clause_text_short":"設計図面・施工計画書は生成AIに投入しません。","clause_text_full":"設計図面、構造計算書、施工計画書、工事原価情報を生成AIに投入することを禁止する。建築士法・営業秘密管理の観点で重要。","explanation_beginner":"設計図や施工計画書をAIにアップロードはNG。要約・整理が必要な時は固有情報を伏せた抜粋に限定。","violation_risk_level":"high","tags":["建設","設計図"],"version_added":"1.0.0"},
-    {"id":"C-BLD-002","category":"BLD","subcategory":"建設・不動産特化","title":"建築士法第20条 AI生成図面の士業最終確認","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["construction"],"necessity":"required","clause_text_short":"AIで作った図面・書類は、建築士本人の確認・記名押印が必須。","clause_text_full":"建築士法第20条に基づき、設計図書には建築士の記名・押印が必須。AI生成図面でも、建築士本人が責任を持って内容確認の上で記名する。","explanation_beginner":"AIで図面を描いても、建築士の先生が「自分の責任で確認しました」と記名押印します。AI任せにはできません。","violation_risk_level":"critical","law_basis":"建築士法 第20条","tags":["建設","建築士法"],"lawyer_review_required":true,"version_added":"1.0.0"},
-    {"id":"C-BLD-003","category":"BLD","subcategory":"建設・不動産特化","title":"重要事項説明書のAI生成時の宅建業法対応","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["construction"],"necessity":"required","clause_text_short":"重要事項説明書をAIで作る時は、宅建士が必ず最終確認。","clause_text_full":"宅地建物取引業法第35条に基づく重要事項説明書をAIで生成する場合、宅地建物取引士が必ず最終確認・記名押印を行う。AI生成内容の誤りは取引士の責任。","explanation_beginner":"AIで重要事項説明書を作っても、宅建士の先生が必ず最終確認。法律で決まっています。","violation_risk_level":"critical","law_basis":"宅地建物取引業法 第35条","tags":["不動産","宅建業法"],"lawyer_review_required":true,"version_added":"1.0.0"},
-
-    {"id":"C-PUB-001","category":"PUB","subcategory":"公的領域特化","title":"行政機関個人情報保護法対応","applies_to_scale":["S2","M","L"],"applies_to_industry":["public"],"necessity":"required","clause_text_short":"行政機関は、令和3年改正で一元化された個情法第5章の規定に従います。","clause_text_full":"行政機関・自治体・公益法人は、令和3年改正で一元化された個人情報保護法第5章の規定に従う。生成AI利用時の個人情報取扱は、保有個人情報の利用制限（第69条）に注意。","explanation_beginner":"自治体・公益法人には、行政機関向けの個人情報ルールがあります。一般企業より厳しい部分があります。","violation_risk_level":"critical","tags":["公的","行政機関個情法"],"lawyer_review_required":true,"version_added":"1.0.0"},
-    {"id":"C-PUB-002","category":"PUB","subcategory":"公的領域特化","title":"デジタル庁ガイドブック遵守","applies_to_scale":["S","XS","S2","M","L"],"applies_to_industry":["public"],"necessity":"required","clause_text_short":"デジタル庁の「テキスト生成AI利活用リスク対策ガイドブック」に準拠。","clause_text_full":"行政機関・自治体・公益法人での生成AI利用は、デジタル庁「テキスト生成AI利活用におけるリスクへの対策ガイドブック」最新版に準拠すること。","explanation_beginner":"国（デジタル庁）が出している「自治体・公的機関向けの生成AIガイドブック」に従います。","violation_risk_level":"high","tags":["公的","デジタル庁"],"version_added":"1.0.0"},
-    {"id":"C-PUB-003","category":"PUB","subcategory":"公的領域特化","title":"公文書管理法対応（AI生成文書の真正性）","applies_to_scale":["S2","M","L"],"applies_to_industry":["public"],"necessity":"required","clause_text_short":"AIで作った公文書は、生成過程・最終確認者を記録。","clause_text_full":"AIで生成・補助した公文書は、公文書管理法に基づき、生成過程・修正履歴・最終確認者を記録する。文書の真正性・改ざん検知を確保する。","explanation_beginner":"AIで公文書を作る時は、「どんなプロンプトで」「誰が最終確認したか」を記録。後で「これは本物の公文書」と証明できるようにします。","violation_risk_level":"high","law_basis":"公文書管理法","tags":["公的","公文書管理法"],"version_added":"1.0.0"}
+    {
+      "id": "C-AUTH-001",
+      "category": "AUTH",
+      "title": "パスワード強度ルール",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "パスワードは12文字以上、英数記号混在。他システムと使い回し禁止。",
+      "clause_text_full": "業務利用全アカウントのパスワードは英大小・数字・記号を含む12文字以上とし、他システム（私用含む）との使い回しを禁止する。定期変更は強制しない（NIST SP800-63B方針）。パスワードマネージャの利用を推奨。",
+      "explanation_beginner": "パスワードは長くて複雑に。会社と私用で同じものを使わないこと。スマホやアプリの「パスワード管理」機能を使うと楽です。定期変更は今は推奨されていません（むしろ覚えにくくなって付箋メモで漏れる事故が多発）。",
+      "violation_risk_level": "high",
+      "violation_risk_detail": "パスワード破られ・不正アクセス",
+      "law_basis": "NIST SP800-63B（推奨）",
+      "tags": [
+        "認証",
+        "パスワード"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-AUTH-002",
+      "category": "AUTH",
+      "title": "多要素認証（MFA）必須化",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "管理者アカウント・重要システムには必ず二段階ロックを設定します。",
+      "clause_text_full": "以下のアカウントは多要素認証（MFA）を必須とする：(1)管理者権限を持つアカウント全て、(2)個人情報を扱うシステム、(3)生成AIサービス（Team/Enterprise版）、(4)クラウドストレージ。一般従業者アカウントもMFA有効化を推奨。",
+      "explanation_beginner": "特に「管理者」のアカウントは、パスワード＋スマホ確認の二段階ロックを必ずオンに。手間ですが、これだけで多くの事故を防げます。",
+      "violation_risk_level": "high",
+      "violation_risk_detail": "管理者権限奪取→全システム侵害",
+      "law_basis": "—",
+      "tags": [
+        "認証",
+        "MFA"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-AUTH-003",
+      "category": "AUTH",
+      "title": "シングルサインオン（SSO）の導入",
+      "applies_to_scale": [
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "複数のクラウドサービスは、1つのIDで管理（SSO）します。",
+      "clause_text_full": "クラウドサービスの統一管理のため、SSO（シングルサインオン）プロバイダの導入を必須とする。退職時のアカウント停止が一元化される利点が大きい。",
+      "explanation_beginner": "クラウドサービスを10個20個と使うようになったら、1つのIDで全部ログインできる仕組み（SSO）を入れます。退職者処理が一発で済むのが最大の効果。",
+      "violation_risk_level": "medium",
+      "violation_risk_detail": "アカウント管理漏れ",
+      "tags": [
+        "認証",
+        "SSO"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-AUTH-004",
+      "category": "AUTH",
+      "title": "特権ID管理（PAM）",
+      "applies_to_scale": [
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "システム管理者の権限利用は、申請・承認・記録の3点セットで運用します。",
+      "clause_text_full": "特権アカウント（システム管理者・データベース管理者・クラウド管理者）の利用は、PAM（Privileged Access Management）ツールで管理する。一時的な権限付与・利用記録・自動失効を標準とする。",
+      "explanation_beginner": "システム管理者の強い権限は、必要な時だけ「申請→承認→使用→ログ記録」の流れで管理します。大企業向けの仕組みです。",
+      "violation_risk_level": "high",
+      "tags": [
+        "認証",
+        "PAM",
+        "特権ID"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-DEV-001",
+      "category": "DEV",
+      "title": "資産台帳の整備",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "会社のパソコン・スマホは1台ずつ台帳で管理します（Excel1枚で十分）。",
+      "clause_text_full": "業務利用端末は資産台帳で管理する（規模XS/S2はExcel1枚、規模M以上はMDM＝モバイルデバイス管理ツールを推奨）。記載項目：管理番号、機種、利用者、購入年月、OS、最終インストールアプリ。年1回棚卸。",
+      "explanation_beginner": "会社のパソコン・スマホが何台あって、誰が使っているかをExcel1枚にまとめておくだけでOKです。年1回「現状確認」をすれば足ります。",
+      "violation_risk_level": "medium",
+      "tags": [
+        "端末",
+        "台帳"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-DEV-002",
+      "category": "DEV",
+      "title": "ディスク暗号化必須",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "ノートPCは紛失時の備えとして、ディスク暗号化（BitLocker等）を必ず有効化。",
+      "clause_text_full": "業務利用端末（特に持ち出し可能なノートPC・タブレット・スマホ）は、ディスク暗号化機能を必ず有効化する。Windows = BitLocker、Mac = FileVault、iOS/Android = OS標準暗号化。",
+      "explanation_beginner": "ノートパソコンを電車に忘れても、暗号化しておけば中身は安全。WindowsならBitLocker、MacならFileVaultをオンにするだけ。今すぐ確認してください。",
+      "violation_risk_level": "high",
+      "violation_risk_detail": "紛失・盗難時の情報漏えい",
+      "tags": [
+        "端末",
+        "暗号化",
+        "BitLocker"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-DEV-003",
+      "category": "DEV",
+      "title": "画面ロック自動化",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "離席時はパソコンの画面を必ずロック。自動ロックを5分以内に設定。",
+      "clause_text_full": "全業務利用端末で、無操作5分以内の自動画面ロックを設定する。離席時は手動ロック（Win+L / Ctrl+Cmd+Q）を習慣化する。",
+      "explanation_beginner": "トイレに立つ時、コピーに行く時、必ずパソコンの画面を閉じるかロック。Windowsは「Windowsキー＋L」、Macは「Ctrl＋Cmd＋Q」。",
+      "violation_risk_level": "medium",
+      "tags": [
+        "端末",
+        "画面ロック"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-DEV-004",
+      "category": "DEV",
+      "title": "端末持出申請",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "会社のパソコンを社外に持ち出す時は事前申請。",
+      "clause_text_full": "業務利用端末の社外持出は事前申請制とする。申請項目：持出日時、行先、目的、返却予定日。日常的な外回り営業は包括承認可。",
+      "explanation_beginner": "会社のパソコンを家やカフェに持って帰る時は、申請を出します（社内ルール）。営業の外回りは毎回申請不要、最初に「外回り用」と一括承認しておけばOK。",
+      "violation_risk_level": "medium",
+      "tags": [
+        "端末",
+        "持出"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-DEV-005",
+      "category": "DEV",
+      "title": "EDR/アンチウイルス導入",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "全パソコンにウイルス対策ソフトを導入。Windows標準のDefenderでも可。",
+      "clause_text_full": "全業務利用端末にエンドポイントセキュリティソフト（EDRまたはアンチウイルス）を導入する。Windows Defender（標準）でも要件を満たす。規模M以上では中央管理可能なEDR製品（CrowdStrike、SentinelOne等）を推奨。",
+      "explanation_beginner": "パソコンには必ずウイルス対策ソフトを入れます。Windows標準の「Defender」でも十分です。大企業ではもっと高機能なものを使います。",
+      "violation_risk_level": "high",
+      "tags": [
+        "端末",
+        "EDR",
+        "アンチウイルス"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-NET-001",
+      "category": "NET",
+      "title": "業務Wi-Fiとゲストの分離",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "来客用Wi-Fiは社員用と分離。来客に社内ネットを使わせません。",
+      "clause_text_full": "オフィスWi-Fiは業務用とゲスト用を分離する（ルータのVLAN機能またはゲストネットワーク機能を利用）。来客・私物端末はゲストネット側のみ接続を許可。",
+      "explanation_beginner": "来客にWi-Fiを貸す時は、社員と同じネットワークを使わせないこと。多くの市販Wi-Fiルータに「ゲストネットワーク」機能があるので、それを使うだけです。",
+      "violation_risk_level": "high",
+      "tags": [
+        "ネットワーク",
+        "Wi-Fi"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-NET-002",
+      "category": "NET",
+      "title": "リモート時のVPN必須",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "自宅・出張先から社内データに接続する時は、VPN（仮想専用線）必須。",
+      "clause_text_full": "社外から社内システム・ファイルサーバに接続する場合は、VPN接続を必須とする。クラウドサービスへの直接接続でも、機密性の高いデータを扱う場合はVPN経由を推奨。",
+      "explanation_beginner": "自宅で仕事する時、会社の中にあるファイルやシステムを開く必要があれば、VPNという専用ルートを通します。安全な土管のようなものです。",
+      "violation_risk_level": "high",
+      "tags": [
+        "ネットワーク",
+        "VPN",
+        "リモート"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-NET-003",
+      "category": "NET",
+      "title": "クラウドサービス利用承認",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "新しいクラウドサービス（含むAI）を業務で使う前に申請。許可リスト管理。",
+      "clause_text_full": "業務での新規クラウドサービス利用は事前申請制とする。情シス担当者が(1)規約、(2)データ所在地、(3)セキュリティ認証、(4)代替手段、を確認後に許可リストへ追加。許可外サービスの業務利用は禁止。",
+      "explanation_beginner": "「便利だから使う」を許すと、会社が把握できないツールが増えて事故のもとに。新しいクラウドサービスは「使う前に申請」というルールを作ります。",
+      "violation_risk_level": "high",
+      "tags": [
+        "ネットワーク",
+        "クラウド",
+        "シャドーIT"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-NET-004",
+      "category": "NET",
+      "title": "公衆Wi-Fiでの業務制限",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "カフェや空港のフリーWi-Fiで機密データを扱いません。やむを得ない時はVPN経由。",
+      "clause_text_full": "公衆Wi-Fi（カフェ・空港・ホテル等）での業務利用は原則として閲覧系業務のみに限定する。機密データ取扱・社内システムログイン・AIへの社内情報投入は、VPN経由または個人テザリング経由で行う。",
+      "explanation_beginner": "カフェの無料Wi-Fiで仕事するのは便利ですが、機密データを扱う時は要注意。スマホのテザリング（インターネット共有）かVPN経由で。",
+      "violation_risk_level": "medium",
+      "tags": [
+        "ネットワーク",
+        "公衆Wi-Fi"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-DAT-001",
+      "category": "DAT",
+      "title": "バックアップ運用（3-2-1原則）",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "大事なデータは「3つのコピー、2つのメディア、1つは離れた場所」が原則。",
+      "clause_text_full": "業務データのバックアップは「3-2-1原則」（コピー3部、異なるメディア2種、1部は遠隔地保管）を推奨。クラウドサービス利用時はクラウド側の冗長性に加え、独立バックアップを取得する。月1回以上の復元テストを推奨。",
+      "explanation_beginner": "大事なデータは「コピーを3つ、2つの別メディアに、1つは離れた場所に」が鉄則。クラウドに保存していても、別のクラウドにも保存しておくと安心です。",
+      "violation_risk_level": "high",
+      "violation_risk_detail": "ランサムウェア・人為ミス・自然災害でのデータ消失",
+      "tags": [
+        "データ",
+        "バックアップ"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-DAT-002",
+      "category": "DAT",
+      "title": "機密データの分類（3-4階層）",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "情報を「公開」「社内限定」「機密」の階層に分けてラベル管理。",
+      "clause_text_full": "扱う情報を「公開」「社内限定」「機密」「最高機密」の3〜4階層に分類し、ファイル名・フォルダ名に分類ラベルを付ける。階層ごとに取扱いルール（AI投入可否、持出可否、外部送信可否）を定める。",
+      "explanation_beginner": "情報には「外に出してOK」「社員だけ」「機密」「超機密」の段階があります。フォルダ名やファイル名に「[機密]」とつけるだけでも事故防止になります。",
+      "violation_risk_level": "high",
+      "tags": [
+        "データ",
+        "分類",
+        "ラベル"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-DAT-003",
+      "category": "DAT",
+      "title": "データ保管期間と破棄手順",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "データには保管期限を設定。期限を過ぎたら確実に破棄します。",
+      "clause_text_full": "業務データには法令・業界基準に基づく保管期間を設定する（医療3年・金融7年・税務7年等）。期間経過後は復元不能な方法で破棄する。クラウドデータの破棄証跡を保管。",
+      "explanation_beginner": "データは「いつまで保管するか」のルールを決め、期限が来たらきちんと消す。永久保管は事故のリスクが増えるだけです。",
+      "violation_risk_level": "medium",
+      "log_retention_years": 3,
+      "tags": [
+        "データ",
+        "保管期間",
+        "破棄"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-DAT-004",
+      "category": "DAT",
+      "title": "クラウドデータの所在地確認",
+      "applies_to_scale": [
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "クラウドサービスのデータ保管場所（国内／海外）を把握。海外保管は個情法28条確認。",
+      "clause_text_full": "利用するクラウドサービスのデータ保管国・サーバ所在地を把握し記録する。個人データを海外保管するサービスを利用する場合は、個人情報保護法第28条（外国にある第三者への提供）の要件を確認する。",
+      "explanation_beginner": "クラウドサービスのデータが「日本にあるか、海外にあるか」を知っておくこと。海外の場合は、個人情報を扱う前に法務確認が必要です。",
+      "violation_risk_level": "high",
+      "law_basis": "個人情報保護法 第28条",
+      "tags": [
+        "データ",
+        "クラウド",
+        "越境移転"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-DAT-005",
+      "category": "DAT",
+      "title": "AI出力データの保管・分類",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "recommended",
+      "clause_text_short": "AIが生成した文書・画像にも、元データと同じ分類ラベルを付けます。",
+      "clause_text_full": "AI生成物（文書、コード、画像、要約）には、元データと同等の機密分類ラベルを付与する。AI生成物の「原典性」（人の創作的寄与の有無）を記録し、著作物性判断に備える。",
+      "explanation_beginner": "AIが作った資料も、元の情報と同じレベルで管理。「AIが作ったから雑に扱っていい」ではありません。",
+      "violation_risk_level": "medium",
+      "tags": [
+        "データ",
+        "AI生成物",
+        "分類"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-ACL-001",
+      "category": "ACL",
+      "title": "最小権限の原則",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "システムへのアクセス権は「業務に必要な最小限」だけ付与。",
+      "clause_text_full": "システム・データへのアクセス権限は、業務遂行に必要最小限の範囲で付与する。「全員管理者権限」「全員フルアクセス」は事故のもと。",
+      "explanation_beginner": "「念のため全員に管理者権限」はNG。必要な人だけに、必要な分だけ。誤操作や悪意ある操作のリスクを大きく減らせます。",
+      "violation_risk_level": "high",
+      "tags": [
+        "権限",
+        "最小権限"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-ACL-002",
+      "category": "ACL",
+      "title": "権限の定期棚卸",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "半期に1回、誰がどこにアクセスできるか棚卸。",
+      "clause_text_full": "アクセス権限の棚卸を半期に1回（規模L以上は四半期に1回）実施し、不要な権限を削除する。異動者の旧部署権限が残りがち、要注意。",
+      "explanation_beginner": "半年に1回、「この人、この権限本当に必要？」を見直します。異動した人の前の部署の権限が残りっぱなしの事故が多発しています。",
+      "violation_risk_level": "medium",
+      "tags": [
+        "権限",
+        "棚卸"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-ACL-003",
+      "category": "ACL",
+      "title": "オフボーディング手順",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "退職時は、アカウント停止・データ返却・誓約書のチェックリストで漏れ防止。",
+      "clause_text_full": "退職・契約終了時のオフボーディング手順をチェックリスト化する。最低項目：(1)全アカウント停止、(2)端末返却、(3)業務データの私物端末からの削除確認、(4)秘密保持誓約書の取得、(5)入退館証回収。",
+      "explanation_beginner": "辞める人の処理は、チェックリストにして漏れを防ぐ。アカウント停止、パソコン返却、データ削除、誓約書、入館証。これだけで多くの事故を防げます。",
+      "violation_risk_level": "critical",
+      "tags": [
+        "権限",
+        "オフボーディング",
+        "退職"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-ACL-004",
+      "category": "ACL",
+      "title": "共有アカウントの原則禁止",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "「みんなで使う1つのアカウント」は原則禁止。例外は承認制。",
+      "clause_text_full": "複数人での1アカウント共有は原則禁止する。やむを得ない場合（古い業務システム等）は承認制とし、利用者・利用日時の記録を取る。",
+      "explanation_beginner": "「みんなで使うID」は誰の操作か追跡できなくなるのでNG。古いシステムで仕方ない場合は、誰がいつ使ったかを別途記録します。",
+      "violation_risk_level": "high",
+      "tags": [
+        "権限",
+        "共有アカウント"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-LOG-001",
+      "category": "LOG",
+      "title": "ログ取得対象の規定",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "認証ログ・主要SaaS利用ログを取得。プロンプト全文は規模L以上。",
+      "clause_text_full": "取得対象ログ：(1)システム認証ログ、(2)主要SaaSアクセスログ、(3)生成AI利用ログ（規模Mまで＝サマリ／規模L＝全文）、(4)ファイルサーバアクセス、(5)管理者操作ログ。取得対象は規模に応じて段階的に拡張。",
+      "explanation_beginner": "何を記録に残すかを規定。中小企業は「いつ・誰が・どのサービスを使ったか」のメモで十分。大企業はもっと詳細に。",
+      "violation_risk_level": "medium",
+      "tags": [
+        "ログ",
+        "取得対象"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-LOG-002",
+      "category": "LOG",
+      "title": "ログ保管期間の規定",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "ログは最低1年保管（業界により3〜7年）。",
+      "clause_text_full": "ログ保管期間は規模・業界により決定：S2=1年、M=1年（業界要件で3年）、L=3年以上（医療3年・金融7年・税務7年）。",
+      "explanation_beginner": "記録はどれくらい残すか。業界によって法律で決まっている期間が違います（医療3年・金融7年・税務7年）。",
+      "violation_risk_level": "medium",
+      "log_retention_years": 1,
+      "tags": [
+        "ログ",
+        "保管期間"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-LOG-003",
+      "category": "LOG",
+      "title": "ログの定期レビュー",
+      "applies_to_scale": [
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "四半期に1回（規模Lは月次）、ログを目視レビューして異常検知。",
+      "clause_text_full": "ログを四半期1回以上レビューし、異常アクセス・大量ダウンロード・深夜利用等の異常パターンを検知する。規模Lはツール自動アラート併用。",
+      "explanation_beginner": "記録は取るだけでなく、定期的に見る。深夜のおかしなアクセスや、大量ダウンロードを見つける機会です。",
+      "violation_risk_level": "medium",
+      "tags": [
+        "ログ",
+        "レビュー"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-LOG-004",
+      "category": "LOG",
+      "title": "ログの改ざん防止",
+      "applies_to_scale": [
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "ログは書き換え不能な状態で保管（WORM ／別サーバ）。",
+      "clause_text_full": "ログは記録後に改ざんできない形態（WORM ストレージ、ログ専用サーバ、外部SaaSサービス等）で保管する。攻撃者がログを消して足跡を隠すのを防ぐため。",
+      "explanation_beginner": "記録は「書き換えできない場所」に保管。攻撃者が痕跡を消す手段を断ちます。",
+      "violation_risk_level": "high",
+      "tags": [
+        "ログ",
+        "改ざん防止"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-INC-001",
+      "category": "INC",
+      "title": "インシデント連絡先の明示",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "何か起きたら誰に連絡するか、全社員が分かるように明示。",
+      "clause_text_full": "インシデント発見時の一次連絡先（情報セキュリティ責任者・経営者）を全従業者に周知する。連絡先は名刺・社内掲示・ガイドライン冒頭等、すぐ目に入る場所に明示。",
+      "explanation_beginner": "「困った時、誰に電話するか」を全員が知っている状態に。冷蔵庫マグネットに連絡先を書くくらい徹底すること。",
+      "violation_risk_level": "critical",
+      "tags": [
+        "インシデント",
+        "連絡先"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-INC-002",
+      "category": "INC",
+      "title": "インシデント報告フロー",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "発覚→責任者→対応判断→個情委報告（必要時）→再発防止 の流れを文書化。",
+      "clause_text_full": "インシデント対応フロー：発覚→24時間以内一次連絡→事実確認→影響範囲特定→封じ込め→外部報告判断（個情委・本人通知）→是正→再発防止策→経営層報告。",
+      "explanation_beginner": "事故が起きた時の「やること順番」を決めておく。慌ててから決めると間違えます。フローチャート1枚で十分。",
+      "violation_risk_level": "critical",
+      "tags": [
+        "インシデント",
+        "フロー"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-INC-003",
+      "category": "INC",
+      "title": "インシデント封じ込め手順",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "発覚時の「とりあえずネットワーク切断」「アカウント停止」等の即時対応手順。",
+      "clause_text_full": "発生時の即時対応手順を規定：(1)該当端末のネットワーク切断、(2)該当アカウントの即時停止、(3)関連クラウドサービスのトークン無効化、(4)証跡保全（ログ・ハードディスクの状態保存）。",
+      "explanation_beginner": "事故発覚直後、まず「やるべきこと」を決めておく。LANケーブルを抜く、アカウントを止める、証拠を残す。これを知らないと被害が広がります。",
+      "violation_risk_level": "high",
+      "tags": [
+        "インシデント",
+        "封じ込め"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-INC-004",
+      "category": "INC",
+      "title": "インシデント訓練",
+      "applies_to_scale": [
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "年1回以上、模擬訓練を実施して対応力を養成。",
+      "clause_text_full": "年1回以上のインシデント対応訓練（標的型メール訓練、模擬漏えい訓練、復旧訓練）を実施し、対応フローの実効性を確認する。",
+      "explanation_beginner": "年1回、「もし起きたら」の練習をします。標的型メールに引っかからないかテストする等。やってないと本番で動けません。",
+      "violation_risk_level": "medium",
+      "tags": [
+        "インシデント",
+        "訓練"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-AI-001",
+      "category": "AI",
+      "title": "許可AIツールリストの運用",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "会社が許可したAIツールのリストを作成。リスト外の業務利用は禁止。",
+      "clause_text_full": "業務利用を許可する生成AIサービスのリストを作成・維持し、全従業者に共有する。新規ツール導入は情シス担当者（または経営者）の承認制。許可外ツールの業務利用は禁止する。",
+      "explanation_beginner": "「うちの会社で使っていいAIサービス」のリストを作っておく。それ以外を業務で使うのは禁止。リストに無いツールを試したい時は申請を。",
+      "violation_risk_level": "high",
+      "tags": [
+        "AI",
+        "許可リスト"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-AI-002",
+      "category": "AI",
+      "title": "AI利用承認フロー（重要処理）",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "顧客情報の分析等、重要な処理にAIを使う時は事前承認制。",
+      "clause_text_full": "以下の処理にAIを利用する場合は事前承認を必須とする：(1)個人情報の処理、(2)契約書・法務文書のドラフト、(3)対外公表物の生成、(4)財務・経営判断の支援。承認者：規模S2＝経営者、M＝部門長、L＝AI利用委員会。",
+      "explanation_beginner": "重要な仕事（お客様情報・契約書・対外資料）でAIを使う時は、上司の承認を取ってから。普段の議事録要約等は逐一申請不要。",
+      "violation_risk_level": "high",
+      "tags": [
+        "AI",
+        "承認"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-AI-003",
+      "category": "AI",
+      "title": "AI出力物の人的レビュー義務",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "AIが作った文書は、必ず人が見直してから社外に出します。",
+      "clause_text_full": "AI生成物を社外に発信・送付する場合は、必ず人によるレビューを経ること。チェック項目：(1)事実関係の正確性、(2)固有名詞・数字の正確性、(3)第三者著作物の混入有無、(4)機密情報の混入有無、(5)文体・トーンの適切性。",
+      "explanation_beginner": "AIが書いた文章を「そのままコピー貼り付けで送信」は絶対NG。必ず読み直して、おかしいところを直してから出します。AIは平気で嘘をつくので、特に固有名詞と数字は要注意。",
+      "violation_risk_level": "high",
+      "tags": [
+        "AI",
+        "レビュー",
+        "品質管理"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-AI-004",
+      "category": "AI",
+      "title": "AI生成物の著作権・原典性記録",
+      "applies_to_scale": [
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "recommended",
+      "clause_text_short": "AIで作った重要資料は、生成プロセスと「人の創作的寄与」を記録します。",
+      "clause_text_full": "事業上重要な著作物をAIで生成した場合、(1)使用プロンプト、(2)生成日時、(3)人による修正内容、(4)最終確定者を記録する。著作物性の判断（人の創作的寄与の有無）に備える。",
+      "explanation_beginner": "大事な著作物（ロゴ、コピー、デザイン）をAIで作った時は、「どんな指示で作ったか」「人がどこを直したか」を記録。著作権の話で後々重要になります。",
+      "violation_risk_level": "medium",
+      "tags": [
+        "AI",
+        "著作権",
+        "原典性"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-AI-005",
+      "category": "AI",
+      "title": "AI利用記録の保存",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "AI使用時の「いつ・誰が・何を」を記録（プロンプト全文は規模L以上）。",
+      "clause_text_full": "AI利用記録を保存：規模S2/M＝利用者・日時・サービス名・用途分類、規模L＝上記＋プロンプト全文。最低1年保管。",
+      "explanation_beginner": "AIを使ったら、メモを残す。中小は項目だけでOK、大企業はプロンプト全文も。事故時の証拠になります。",
+      "violation_risk_level": "medium",
+      "log_retention_years": 1,
+      "tags": [
+        "AI",
+        "ログ"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-AI-006",
+      "category": "AI",
+      "title": "プロンプトエンジニアリング教育",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "recommended",
+      "clause_text_short": "全社員にAIの使い方の基礎教育を提供（年1回30分以上）。",
+      "clause_text_full": "年1回以上のAI利用教育を実施：(1)効果的なプロンプト作成方法、(2)ハルシネーション対策、(3)個人情報・営業秘密の扱い、(4)出力物の検証方法。新入社員には入社時オリエンで必須。",
+      "explanation_beginner": "AIの使い方は「教えれば誰でも上達」します。年1回でも研修すると、社員のAI活用レベルが大きく変わります。",
+      "violation_risk_level": "low",
+      "tags": [
+        "AI",
+        "教育"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-BYO-001",
+      "category": "BYO",
+      "title": "BYOD（私物端末業務利用）の許諾／禁止明確化",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "自分のスマホで仕事をしてOKかダメか、明確にルール化。",
+      "clause_text_full": "私物端末（自分のスマホ・パソコン）の業務利用について、許諾・禁止・条件付き許諾の方針を明確化する。許諾する場合：(1)端末暗号化必須、(2)パスワード保護必須、(3)業務データの私物クラウド保存禁止、(4)紛失時の即時報告。",
+      "explanation_beginner": "自分のスマホで会社のメールを見る、ChatGPTを使う、これがOKかダメかをはっきり決めます。OKにする場合も、最低限のルール（パスワード・暗号化・紛失時連絡）を守ってもらいます。",
+      "violation_risk_level": "high",
+      "tags": [
+        "BYOD",
+        "私物端末"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-BYO-002",
+      "category": "BYO",
+      "title": "私物クラウドへの業務データ持出禁止",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "自分のGmail・個人Dropbox・LINE等への業務データ送信は禁止。",
+      "clause_text_full": "業務データを個人所有のクラウドサービス（個人Gmail、個人Dropbox、個人OneDrive、個人LINE、個人Discord等）に転送・保存することを禁止する。会社契約のクラウドサービスを利用すること。",
+      "explanation_beginner": "「家でも見たいから」と、自分のGmailに業務メールを転送するのはNG。会社が用意したサービスを使ってください。",
+      "violation_risk_level": "high",
+      "tags": [
+        "BYOD",
+        "私物クラウド",
+        "シャドーIT"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-BYO-003",
+      "category": "BYO",
+      "title": "私物AIアカウントでの業務利用条件",
+      "applies_to_scale": [
+        "XS",
+        "S2"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "recommended",
+      "clause_text_short": "個人のChatGPT等で業務をする場合は、有料版＋オプトアウト＋機密入力禁止が条件。",
+      "clause_text_full": "会社契約版がない場合の例外措置として、個人有料版AIサービス（学習無効化設定済）の業務利用を条件付きで認める：(1)有料版限定、(2)オプトアウト設定済、(3)機密情報・個人情報の投入禁止、(4)利用記録自己管理。",
+      "explanation_beginner": "会社でChatGPT等を契約していない場合、個人の有料版を業務で使うのはアリ。ただし「学習に使わない設定」を必ずオンに、機密情報は絶対入れない、を守ること。",
+      "violation_risk_level": "medium",
+      "tags": [
+        "BYOD",
+        "個人AI",
+        "オプトアウト"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-EXT-001",
+      "category": "EXT",
+      "title": "委託先のAI利用管理（契約必須条項）",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "外注先との契約書にAI利用条項を入れる。",
+      "clause_text_full": "業務委託契約書に必須条項：(1)委託情報の生成AI投入禁止（または条件）、(2)再委託の事前承認、(3)インシデント時の即時報告、(4)契約終了時のデータ削除、(5)違反時の損害賠償。",
+      "explanation_beginner": "外注先（デザイナー・ライター・開発業者）との契約書に「AIの使い方ルール」を入れます。これを忘れると、外注経由で情報が漏れた時に対応できません。",
+      "violation_risk_level": "high",
+      "tags": [
+        "委託先",
+        "契約",
+        "NDA"
+      ],
+      "version_added": "1.0.0",
+      "lawyer_review_required": true
+    },
+    {
+      "id": "C-EXT-002",
+      "category": "EXT",
+      "title": "委託先のセキュリティ評価",
+      "applies_to_scale": [
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "重要委託先には、セキュリティ調査票でチェックしてから契約。",
+      "clause_text_full": "個人情報・営業秘密を委託する取引先について、セキュリティ調査票（質問書）で事前評価し、認証取得状況（ISMS、Pマーク）・AI利用ポリシー・インシデント履歴を確認する。",
+      "explanation_beginner": "大事な委託先には、契約前に「セキュリティ大丈夫ですか？」のチェックシートを送って確認します。",
+      "violation_risk_level": "medium",
+      "tags": [
+        "委託先",
+        "評価",
+        "調査票"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-EXT-003",
+      "category": "EXT",
+      "title": "委託先監査の実施",
+      "applies_to_scale": [
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "重要委託先には年1回の監査を実施。",
+      "clause_text_full": "個人データを多量委託する委託先には、年1回以上の監査（書面または実地）を実施する。改善要請と改善状況を記録。",
+      "explanation_beginner": "年1回、大事な委託先を見に行く（あるいは書面でチェック）。Pマーク・ISMS取得想定なら必須。",
+      "violation_risk_level": "medium",
+      "tags": [
+        "委託先",
+        "監査"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-MED-001",
+      "category": "MED",
+      "subcategory": "医療業種特化",
+      "title": "要配慮個人情報の取扱（病歴・診療情報）",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "medical"
+      ],
+      "necessity": "required",
+      "clause_text_short": "患者の病歴・診療情報をAIに入れる時は、必ず匿名加工してから。",
+      "clause_text_full": "医療従事者は、患者の要配慮個人情報（病歴・診療情報・健康診断結果）を生成AIに投入する場合、必ず匿名加工処理（個人特定要素の除去）を行うこと。患者本人の明示同意がある場合のみ、限定的に非匿名化投入を認める。厚労省「医療情報システムの安全管理に関するガイドライン 第6.0版」に準拠すること。",
+      "explanation_beginner": "患者さんの名前・住所・病名をChatGPT等にそのまま入れるのは絶対NG。「●●様の症例」のように完全に伏字にしてから使ってください。",
+      "violation_risk_level": "critical",
+      "law_basis": "個人情報保護法 第2条第3項／医療情報システムの安全管理に関するガイドライン",
+      "tags": [
+        "医療",
+        "要配慮",
+        "匿名加工"
+      ],
+      "lawyer_review_required": true,
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-MED-002",
+      "category": "MED",
+      "subcategory": "医療業種特化",
+      "title": "3省2ガイドライン遵守",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "medical"
+      ],
+      "necessity": "required",
+      "clause_text_short": "医療情報を扱うシステムは厚労省・経産省・総務省の3省2ガイドラインに準拠。",
+      "clause_text_full": "医療情報を扱う情報システム・クラウドサービスの選定・運用は、厚労省「医療情報システムの安全管理に関するガイドライン」および経産省・総務省「医療情報を取り扱う情報システム・サービスの提供事業者における安全管理ガイドライン」に準拠すること。",
+      "explanation_beginner": "医療の情報を扱うシステムには、専用のガイドラインがあります。新しいクラウドサービスやAIを導入する前に、これに合っているか確認します。",
+      "violation_risk_level": "critical",
+      "tags": [
+        "医療",
+        "3省2ガイドライン"
+      ],
+      "lawyer_review_required": true,
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-MED-003",
+      "category": "MED",
+      "subcategory": "医療業種特化",
+      "title": "AI診断支援機器の薬機法該当性確認",
+      "applies_to_scale": [
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "medical"
+      ],
+      "necessity": "required",
+      "clause_text_short": "AIで診断補助をする機能を使う前に、それがプログラム医療機器（薬機法）に該当しないか確認。",
+      "clause_text_full": "AIが診断・治療判断を補助する機能（SaMD：Software as a Medical Device）の利用前に、薬機法第2条第4項・厚労省「プログラムの医療機器該当性に関するガイドライン」に基づく該非判定を実施すること。",
+      "explanation_beginner": "「AIが画像から病気を判定する」「AIが治療法を提案する」等の機能は、法律上「医療機器」に該当する場合があります。導入前に確認が必要です。",
+      "violation_risk_level": "critical",
+      "tags": [
+        "医療",
+        "薬機法",
+        "SaMD"
+      ],
+      "lawyer_review_required": true,
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-SHI-001",
+      "category": "SHI",
+      "subcategory": "士業特化",
+      "title": "守秘義務の絶対遵守（AI投入は依頼者承諾必須）",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "shigyo"
+      ],
+      "necessity": "required",
+      "clause_text_short": "依頼者の情報をAIに入れる時は、依頼者本人の事前承諾が必要。",
+      "clause_text_full": "弁護士法23条・税理士法38条・司法書士法24条・社労士法21条・行政書士法12条等の守秘義務に基づき、依頼者・関係者の個別情報を生成AIに投入する場合は、事前に依頼者本人の書面承諾を取得すること。承諾なき投入は刑法134条第1項（秘密漏示罪）に該当する可能性がある。",
+      "explanation_beginner": "士業の先生方は法律で「守秘義務」が課されています。依頼者の情報をAIに入れる前に、必ず依頼者本人に「使っていいか」を確認すること。",
+      "violation_risk_level": "critical",
+      "law_basis": "弁護士法23条／税理士法38条／刑法134条",
+      "tags": [
+        "士業",
+        "守秘義務"
+      ],
+      "lawyer_review_required": true,
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-SHI-002",
+      "category": "SHI",
+      "subcategory": "士業特化",
+      "title": "利益相反チェック",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "shigyo"
+      ],
+      "necessity": "required",
+      "clause_text_short": "複数の依頼者の情報を、同じAIセッションで混在させない。",
+      "clause_text_full": "複数の依頼者の情報を、同一AIセッション・同一プロンプト内で扱わないこと。AIの文脈混在による利益相反リスクを回避する。依頼者ごとに別セッションで処理する。",
+      "explanation_beginner": "AさんとBさんの案件を、同じChatGPTのチャット画面で交互に相談しない。AIが「混ぜて」回答するリスクがあります。",
+      "violation_risk_level": "high",
+      "tags": [
+        "士業",
+        "利益相反"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-SHI-003",
+      "category": "SHI",
+      "subcategory": "士業特化",
+      "title": "AI出力の士業最終責任",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "shigyo"
+      ],
+      "necessity": "required",
+      "clause_text_short": "AIが作った助言は、必ず士業本人が確認・修正してから依頼者に渡します。",
+      "clause_text_full": "AI生成物（法的助言ドラフト、税務試算、登記書類ドラフト等）は、必ず資格者本人が確認・修正・承認の上で依頼者に提供する。AI出力をそのまま提供することは禁止。最終責任は資格者にある。",
+      "explanation_beginner": "AIが書いた書類や助言を、そのまま依頼者に渡すのはNG。必ず先生が見直して責任を持って提供します。",
+      "violation_risk_level": "high",
+      "tags": [
+        "士業",
+        "責任"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-FIN-001",
+      "category": "FIN",
+      "subcategory": "金融特化",
+      "title": "FISC安全対策基準遵守",
+      "applies_to_scale": [
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "finance"
+      ],
+      "necessity": "required",
+      "clause_text_short": "金融機関のAI利用は、FISC安全対策基準に準拠。",
+      "clause_text_full": "生成AIサービスの利用は、FISC「金融機関等コンピュータシステムの安全対策基準・解説書」の最新版に準拠すること。特に「生成AI利用編」の要件を満たす運用体制を構築する。",
+      "explanation_beginner": "金融機関には「FISC基準」という業界共通ルールがあります。AIを使う前にこれに合っているか確認します。",
+      "violation_risk_level": "critical",
+      "tags": [
+        "金融",
+        "FISC"
+      ],
+      "lawyer_review_required": true,
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-FIN-002",
+      "category": "FIN",
+      "subcategory": "金融特化",
+      "title": "顧客情報のAI投入原則禁止",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "finance"
+      ],
+      "necessity": "required",
+      "clause_text_short": "金融取引情報・顧客金融資産情報は生成AIに投入しません。",
+      "clause_text_full": "顧客の金融取引情報・口座情報・運用資産情報は、生成AIサービスへの投入を原則禁止する。例外は金融庁監督指針および金融分野ガイドラインに準拠した社内クローズドLLM等に限定する。",
+      "explanation_beginner": "お客様の取引履歴・口座番号・資産額をChatGPTに入れるのは絶対NG。社内に閉じたAIを使うこと。",
+      "violation_risk_level": "critical",
+      "tags": [
+        "金融",
+        "顧客情報"
+      ],
+      "lawyer_review_required": true,
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-FIN-003",
+      "category": "FIN",
+      "subcategory": "金融特化",
+      "title": "AI誤判定時の人的確認義務",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "finance"
+      ],
+      "necessity": "required",
+      "clause_text_short": "AIが「疑わしい取引」と判定しても、最終的には人が確認します。",
+      "clause_text_full": "犯収法上の「疑わしい取引」判定、反社チェック、KYC（本人確認）等の業務でAIを利用する場合、AI判定を最終決定とせず、必ず資格者の人的確認・承認を経ること。",
+      "explanation_beginner": "AIが「これは怪しい取引」「これは反社の人かも」と判定しても、必ず人が最終確認。AIだけで決めるのはNGです。",
+      "violation_risk_level": "high",
+      "law_basis": "犯罪収益移転防止法 第8条",
+      "tags": [
+        "金融",
+        "犯収法",
+        "KYC"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-EDU2-001",
+      "category": "EDU2",
+      "subcategory": "教育業種特化",
+      "title": "児童・生徒の個人情報保護",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "education"
+      ],
+      "necessity": "required",
+      "clause_text_short": "児童・生徒の氏名・成績・指導内容を生成AIに入れません。",
+      "clause_text_full": "児童・生徒の個人情報（氏名、成績、指導要録、健康診断結果、生活指導記録）の生成AIへの投入を原則禁止する。教材作成・授業準備での利用は匿名化必須。文科省「初等中等教育段階における生成AIの利用に関する暫定的なガイドライン Ver.2.0」に準拠。",
+      "explanation_beginner": "児童・生徒の名前・成績・指導の記録をChatGPTに入れるのはNG。教材作りで使う時も、特定の子の名前は伏せます。",
+      "violation_risk_level": "critical",
+      "tags": [
+        "教育",
+        "児童",
+        "文科省GL"
+      ],
+      "lawyer_review_required": true,
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-EDU2-002",
+      "category": "EDU2",
+      "subcategory": "教育業種特化",
+      "title": "AI教材の最終確認",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "education"
+      ],
+      "necessity": "required",
+      "clause_text_short": "AIが作った教材は、教員が必ず内容確認してから生徒に提供。",
+      "clause_text_full": "AI生成教材・問題・解説を生徒に提供する前に、教員が必ず内容・正確性・適切性を確認すること。誤情報・偏向情報の混入を防ぐ。",
+      "explanation_beginner": "AIに教材を作らせる時、そのまま生徒に渡すのはNG。先生が必ず内容をチェック。AIは平気で嘘の歴史や数式を書きます。",
+      "violation_risk_level": "high",
+      "tags": [
+        "教育",
+        "教材",
+        "レビュー"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-EDU2-003",
+      "category": "EDU2",
+      "subcategory": "教育業種特化",
+      "title": "いじめ・虐待情報のAI処理禁止",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "education"
+      ],
+      "necessity": "required",
+      "clause_text_short": "いじめ・虐待に関する情報は生成AIに入れません。",
+      "clause_text_full": "いじめ・虐待事案に関する情報は、要配慮個人情報として外部AIへの投入を禁止する。必要な場合は学校設置者・教育委員会の指導を仰ぐこと。",
+      "explanation_beginner": "いじめ・虐待の情報は最も配慮が必要な情報。絶対にChatGPT等に入れないでください。",
+      "violation_risk_level": "critical",
+      "tags": [
+        "教育",
+        "いじめ",
+        "虐待"
+      ],
+      "lawyer_review_required": true,
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-MFG-001",
+      "category": "MFG",
+      "subcategory": "製造業特化",
+      "title": "製造ノウハウの営業秘密管理",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "manufacturing"
+      ],
+      "necessity": "required",
+      "clause_text_short": "製造方法・工程の細部情報を生成AIに入れません。",
+      "clause_text_full": "製造ノウハウ・工程仕様・配合情報・歩留改善ノウハウは、不正競争防止法上の営業秘密3要件を維持するため、生成AIへの投入を厳禁する。投入により秘密管理性が喪失し、法的保護を失う。",
+      "explanation_beginner": "うちの工場の「独自製法」や「秘伝の配合」をChatGPTに入れたら、その瞬間に法律上『秘密』ではなくなる可能性があります。絶対NG。",
+      "violation_risk_level": "critical",
+      "tags": [
+        "製造",
+        "営業秘密",
+        "ノウハウ"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-MFG-002",
+      "category": "MFG",
+      "subcategory": "製造業特化",
+      "title": "図面・仕様書の生成AI投入禁止",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "manufacturing"
+      ],
+      "necessity": "required",
+      "clause_text_short": "設計図面・部品仕様書をAIにアップロードしません。",
+      "clause_text_full": "設計図面（CAD・PDF・画像）、部品仕様書、組立指示書、検査基準書を生成AIサービスに投入することを禁止する。",
+      "explanation_beginner": "設計図や仕様書をAIにアップロードしてはダメ。要約・翻訳が必要な時は、固有情報を伏せた抜粋のみ使用してください。",
+      "violation_risk_level": "critical",
+      "tags": [
+        "製造",
+        "図面",
+        "仕様書"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-MFG-003",
+      "category": "MFG",
+      "subcategory": "製造業特化",
+      "title": "輸出管理（外為法）AIモデル・データの該非判定",
+      "applies_to_scale": [
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "manufacturing"
+      ],
+      "necessity": "required",
+      "clause_text_short": "AIモデル・学習データを海外に持ち出す前に、外為法の規制対象か確認。",
+      "clause_text_full": "AIモデル・学習データ・技術情報を海外拠点に持ち出す場合、外為法第48条に基づき該非判定を実施すること。規制対象の場合は経産省への許可申請が必要。",
+      "explanation_beginner": "AIに使う技術情報を海外に送る前に、「規制対象」かチェック。半導体・防衛関連は特に注意。",
+      "violation_risk_level": "high",
+      "law_basis": "外国為替及び外国貿易法 第48条",
+      "tags": [
+        "製造",
+        "外為法",
+        "輸出管理"
+      ],
+      "lawyer_review_required": true,
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-TRA-001",
+      "category": "TRA",
+      "subcategory": "物流特化",
+      "title": "荷主情報・配送先個人情報の保護",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "logistics"
+      ],
+      "necessity": "required",
+      "clause_text_short": "荷主・配送先の個人情報を生成AIに入れません。",
+      "clause_text_full": "荷主企業の取引情報、個人配送先の氏名・住所・電話番号、ECサイト購入履歴等を生成AIに投入することを禁止する。配送効率化AIの利用は匿名化済データに限定する。",
+      "explanation_beginner": "配送先の名前・住所をChatGPTに入れるのはNG。ルート最適化に使う時も、住所だけ（個人名なし）にしてください。",
+      "violation_risk_level": "critical",
+      "tags": [
+        "物流",
+        "荷主",
+        "配送先"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-TRA-002",
+      "category": "TRA",
+      "subcategory": "物流特化",
+      "title": "ドライバー労務管理AIと労働者プライバシー",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "logistics"
+      ],
+      "necessity": "required",
+      "clause_text_short": "ドライバーの運行データAI分析は、本人の権利に配慮し透明性を確保。",
+      "clause_text_full": "運行記録・タコグラフ・ドラレコ等のAI分析は、個人情報保護法および労働関係法令に基づき、利用目的の透明性、データの最小限利用、本人通知を徹底する。改善基準告示遵守（2024年問題）にも留意。",
+      "explanation_beginner": "ドライバーの運転記録をAIで分析する時は、何のために使うかを本人に説明。監視ではなく安全・効率改善が目的だと明示します。",
+      "violation_risk_level": "high",
+      "tags": [
+        "物流",
+        "ドライバー",
+        "労務"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-TRA-003",
+      "category": "TRA",
+      "subcategory": "物流特化",
+      "title": "危険物・規制物配送のAI判定の人的確認",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "logistics"
+      ],
+      "necessity": "required",
+      "clause_text_short": "危険物・薬品の取扱判定は、AI任せにせず必ず人が確認。",
+      "clause_text_full": "危険物・医薬品・規制対象物の配送可否、保管方法、輸送経路のAI判定は、必ず人による最終確認を経ること。消防法・薬機法等の法令違反リスクを回避。",
+      "explanation_beginner": "危険物・薬品の取扱はAI任せにせず必ず人が確認。法令違反は事業停止につながります。",
+      "violation_risk_level": "high",
+      "tags": [
+        "物流",
+        "危険物",
+        "薬機法"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-RET-001",
+      "category": "RET",
+      "subcategory": "小売・飲食特化",
+      "title": "顧客購買履歴・ポイント情報の取扱",
+      "applies_to_scale": [
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "retail"
+      ],
+      "necessity": "required",
+      "clause_text_short": "顧客IDに紐づく購買履歴を生成AIに入れる時は、個人を特定できない形にしてから。",
+      "clause_text_full": "顧客購買履歴・ポイント情報・会員情報は、個人を特定できる形での生成AI投入を禁止する。匿名集計データ（年代別・地域別・商品別）に加工後の利用に限定。",
+      "explanation_beginner": "「○○様の購買履歴」をChatGPTに入れるのはNG。「20代女性・○○地域・お弁当購入」など、特定の人と分からない形にしてから使います。",
+      "violation_risk_level": "high",
+      "tags": [
+        "小売",
+        "購買履歴",
+        "ポイント"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-RET-002",
+      "category": "RET",
+      "subcategory": "小売・飲食特化",
+      "title": "店内カメラ・顔認識AIの本人通知",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "retail"
+      ],
+      "necessity": "required",
+      "clause_text_short": "店内カメラで顔認識AIを使う時は、来店客への通知必須。",
+      "clause_text_full": "店内カメラ映像をAIで解析する場合（特に顔認識・属性推定）、店頭での明示通知、プライバシーポリシーへの記載が必須。個情委ガイドラインに準拠。",
+      "explanation_beginner": "お店のカメラ映像をAIで「お客様の年代を推定する」等に使う時は、「映像をAIで分析しています」と店頭に明示する義務があります。",
+      "violation_risk_level": "high",
+      "tags": [
+        "小売",
+        "カメラ",
+        "顔認識"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-RET-003",
+      "category": "RET",
+      "subcategory": "小売・飲食特化",
+      "title": "AIキャッチコピーの景表法対応",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "retail"
+      ],
+      "necessity": "required",
+      "clause_text_short": "AIが作った広告コピーが「優良誤認」「有利誤認」になっていないか確認。",
+      "clause_text_full": "AIが生成する広告コピー・販促文・商品説明は、景品表示法上の優良誤認・有利誤認に該当しないよう、必ず人が事実確認・表現確認を行うこと。",
+      "explanation_beginner": "AIに広告コピーを作らせると、つい「業界No.1」「効果絶大」と書きがち。法律で禁止されている表現になっていないか必ず確認します。",
+      "violation_risk_level": "high",
+      "law_basis": "景品表示法 第5条",
+      "tags": [
+        "小売",
+        "景表法",
+        "広告"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-BTY-001",
+      "category": "BTY",
+      "subcategory": "美容特化",
+      "title": "顧客カルテの取扱",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "beauty"
+      ],
+      "necessity": "required",
+      "clause_text_short": "顧客カルテ（肌質・施術履歴）を生成AIに入れる時は匿名化必須。",
+      "clause_text_full": "顧客カルテ（肌質、施術履歴、アレルギー情報、健康状態）は個人情報・要配慮個人情報を含むため、生成AIへの投入時は完全匿名化を必須とする。",
+      "explanation_beginner": "お客様のカルテ情報をChatGPTで分析する時は、必ず名前を消してから。アレルギー・健康情報は特に注意。",
+      "violation_risk_level": "high",
+      "tags": [
+        "美容",
+        "カルテ",
+        "要配慮"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-BTY-002",
+      "category": "BTY",
+      "subcategory": "美容特化",
+      "title": "ビフォーアフター写真のAI改変規制",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "beauty"
+      ],
+      "necessity": "required",
+      "clause_text_short": "ビフォーアフター写真をAIで「より良く」見せる加工は景表法違反のリスク。",
+      "clause_text_full": "ビフォーアフター写真のAI生成・改変・補正は、医療広告ガイドライン・景品表示法上の優良誤認に該当する可能性があるため、原則禁止。やむを得ない補正（明るさ・トリミング）に限定し、補正内容を併記する。",
+      "explanation_beginner": "ビフォーアフター写真をAIで「より痩せて」「より若く」見せる加工はNG。広告法違反になります。",
+      "violation_risk_level": "critical",
+      "tags": [
+        "美容",
+        "写真",
+        "景表法"
+      ],
+      "lawyer_review_required": true,
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-BTY-003",
+      "category": "BTY",
+      "subcategory": "美容特化",
+      "title": "医療行為境界の明確化",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "beauty"
+      ],
+      "necessity": "required",
+      "clause_text_short": "AIの推奨が医療行為（医師法）に該当しないよう確認。",
+      "clause_text_full": "AIによる肌質診断・治療推奨が、医師法第17条の医業に該当しないよう注意する。診断・治療判断は医師の業務範囲。美容施術所のAI推奨は「美容相談」の範囲に限定する。",
+      "explanation_beginner": "AIが「これは○○病ですね」「この治療がいい」と言ったら、それは医師の仕事。エステ・美容室では美容相談の範囲を超えないように。",
+      "violation_risk_level": "critical",
+      "law_basis": "医師法 第17条",
+      "tags": [
+        "美容",
+        "医師法",
+        "境界"
+      ],
+      "lawyer_review_required": true,
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-ITC-001",
+      "category": "ITC",
+      "subcategory": "IT・コンサル特化",
+      "title": "クライアント機密情報の生成AI投入禁止（NDA違反防止）",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "it_consulting"
+      ],
+      "necessity": "required",
+      "clause_text_short": "クライアントの情報をAIに入れる時は、必ずクライアントの承諾を得る。",
+      "clause_text_full": "クライアントから提供された機密情報（社内資料、コード、戦略情報、顧客リスト等）を生成AIに投入する場合、必ずクライアントの事前承諾を取得する。NDA違反は損害賠償・取引停止の重大リスク。",
+      "explanation_beginner": "クライアントから預かった資料・コードをChatGPTに入れる時は、必ずクライアントに「OK？」を聞いてから。黙って使うのは契約違反です。",
+      "violation_risk_level": "critical",
+      "tags": [
+        "IT・コンサル",
+        "NDA",
+        "クライアント情報"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-ITC-002",
+      "category": "ITC",
+      "subcategory": "IT・コンサル特化",
+      "title": "受託開発成果物の著作権帰属",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "it_consulting"
+      ],
+      "necessity": "required",
+      "clause_text_short": "受託開発でAIを使った場合、AI生成部分を契約書で明示。",
+      "clause_text_full": "受託開発契約において、AI生成コード・ドキュメントの著作権帰属、検収条件、責任範囲を明示する。AI生成物の品質責任、著作権侵害発生時の責任分担を契約書に明記。",
+      "explanation_beginner": "お客様向けの開発でAIを使うなら、「AIが書いたコードもうちの納品物として扱う」「AIが他人のコードを真似していた場合の責任は誰か」を契約書に書きます。",
+      "violation_risk_level": "high",
+      "tags": [
+        "IT・コンサル",
+        "受託開発",
+        "著作権"
+      ],
+      "lawyer_review_required": true,
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-ITC-003",
+      "category": "ITC",
+      "subcategory": "IT・コンサル特化",
+      "title": "OSSライセンスとAI生成コード",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "it_consulting"
+      ],
+      "necessity": "required",
+      "clause_text_short": "AIが生成したコードがGPL等のオープンソースを含む可能性。商用利用前に確認。",
+      "clause_text_full": "AI生成コードに、特定オープンソース（特にGPL/AGPL等のコピーレフトライセンス）由来のコードが含まれる可能性に留意。商用製品・受託開発成果物に組込む前に、ライセンス監査ツール等で確認すること。",
+      "explanation_beginner": "AIが書いたコードに、GPLというライセンスのコードが混じっていると、製品全体を無料公開する義務が発生する場合があります。商用利用前に確認します。",
+      "violation_risk_level": "high",
+      "tags": [
+        "IT・コンサル",
+        "OSS",
+        "ライセンス"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-BLD-001",
+      "category": "BLD",
+      "subcategory": "建設・不動産特化",
+      "title": "設計図面・施工計画書の営業秘密管理",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "construction"
+      ],
+      "necessity": "required",
+      "clause_text_short": "設計図面・施工計画書は生成AIに投入しません。",
+      "clause_text_full": "設計図面、構造計算書、施工計画書、工事原価情報を生成AIに投入することを禁止する。建築士法・営業秘密管理の観点で重要。",
+      "explanation_beginner": "設計図や施工計画書をAIにアップロードはNG。要約・整理が必要な時は固有情報を伏せた抜粋に限定。",
+      "violation_risk_level": "high",
+      "tags": [
+        "建設",
+        "設計図"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-BLD-002",
+      "category": "BLD",
+      "subcategory": "建設・不動産特化",
+      "title": "建築士法第20条 AI生成図面の士業最終確認",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "construction"
+      ],
+      "necessity": "required",
+      "clause_text_short": "AIで作った図面・書類は、建築士本人の確認・記名押印が必須。",
+      "clause_text_full": "建築士法第20条に基づき、設計図書には建築士の記名・押印が必須。AI生成図面でも、建築士本人が責任を持って内容確認の上で記名する。",
+      "explanation_beginner": "AIで図面を描いても、建築士の先生が「自分の責任で確認しました」と記名押印します。AI任せにはできません。",
+      "violation_risk_level": "critical",
+      "law_basis": "建築士法 第20条",
+      "tags": [
+        "建設",
+        "建築士法"
+      ],
+      "lawyer_review_required": true,
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-BLD-003",
+      "category": "BLD",
+      "subcategory": "建設・不動産特化",
+      "title": "重要事項説明書のAI生成時の宅建業法対応",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "construction"
+      ],
+      "necessity": "required",
+      "clause_text_short": "重要事項説明書をAIで作る時は、宅建士が必ず最終確認。",
+      "clause_text_full": "宅地建物取引業法第35条に基づく重要事項説明書をAIで生成する場合、宅地建物取引士が必ず最終確認・記名押印を行う。AI生成内容の誤りは取引士の責任。",
+      "explanation_beginner": "AIで重要事項説明書を作っても、宅建士の先生が必ず最終確認。法律で決まっています。",
+      "violation_risk_level": "critical",
+      "law_basis": "宅地建物取引業法 第35条",
+      "tags": [
+        "不動産",
+        "宅建業法"
+      ],
+      "lawyer_review_required": true,
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-PUB-001",
+      "category": "PUB",
+      "subcategory": "公的領域特化",
+      "title": "行政機関個人情報保護法対応",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "public"
+      ],
+      "necessity": "required",
+      "clause_text_short": "行政機関は、令和3年改正で一元化された個情法第5章の規定に従います。",
+      "clause_text_full": "行政機関・自治体・公益法人は、令和3年改正で一元化された個人情報保護法第5章の規定に従う。生成AI利用時の個人情報取扱は、保有個人情報の利用制限（第69条）に注意。",
+      "explanation_beginner": "自治体・公益法人には、行政機関向けの個人情報ルールがあります。一般企業より厳しい部分があります。",
+      "violation_risk_level": "critical",
+      "tags": [
+        "公的",
+        "行政機関個情法"
+      ],
+      "lawyer_review_required": true,
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-PUB-002",
+      "category": "PUB",
+      "subcategory": "公的領域特化",
+      "title": "デジタル庁ガイドブック遵守",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "public"
+      ],
+      "necessity": "required",
+      "clause_text_short": "デジタル庁の「テキスト生成AI利活用リスク対策ガイドブック」に準拠。",
+      "clause_text_full": "行政機関・自治体・公益法人での生成AI利用は、デジタル庁「テキスト生成AI利活用におけるリスクへの対策ガイドブック」最新版に準拠すること。",
+      "explanation_beginner": "国（デジタル庁）が出している「自治体・公的機関向けの生成AIガイドブック」に従います。",
+      "violation_risk_level": "high",
+      "tags": [
+        "公的",
+        "デジタル庁"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-PUB-003",
+      "category": "PUB",
+      "subcategory": "公的領域特化",
+      "title": "公文書管理法対応（AI生成文書の真正性）",
+      "applies_to_scale": [
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "public"
+      ],
+      "necessity": "required",
+      "clause_text_short": "AIで作った公文書は、生成過程・最終確認者を記録。",
+      "clause_text_full": "AIで生成・補助した公文書は、公文書管理法に基づき、生成過程・修正履歴・最終確認者を記録する。文書の真正性・改ざん検知を確保する。",
+      "explanation_beginner": "AIで公文書を作る時は、「どんなプロンプトで」「誰が最終確認したか」を記録。後で「これは本物の公文書」と証明できるようにします。",
+      "violation_risk_level": "high",
+      "law_basis": "公文書管理法",
+      "tags": [
+        "公的",
+        "公文書管理法"
+      ],
+      "version_added": "1.0.0"
+    },
+    {
+      "id": "C-IP-001",
+      "category": "IP",
+      "subcategory": "入力データの3分類確認",
+      "title": "入力データの3分類確認（許諾／公知公用／自前）",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "AIに入れる素材は「許諾あり・公知公用・自前で作った」の3つのどれかを必ず確認します。それ以外（他社サイトのキャプチャ、ネットから拾った画像等）は使いません。",
+      "clause_text_full": "従業者は、生成AIへの入力素材（画像・テキスト・コード・音声を含む）について、業務開始時に次の3分類のいずれに該当するかを確認しなければならない。①利用許諾を得た素材、②パブリックドメイン・クリエイティブコモンズ等の公知公用素材、③自社・本人による完全な自前作成素材。これら3分類に該当しない素材（他社Webサイトのスクリーンショット、無断ダウンロード画像、参照元不明素材等）の入力を禁ずる。",
+      "explanation_beginner": "AIに画像や文章を入れる前に「これって使っていい素材？」を確認するルール。安全なのは①許可をもらった素材、②パブリックドメインなど自由に使える素材、③自分で作った素材の3つだけ。「ネットで拾った」「他社サイトのスクショ」はダメ。",
+      "violation_risk_level": "critical",
+      "violation_risk_detail": "著作権侵害（民事損害賠償／刑事罰最大10年以下の懲役）／不正競争防止法違反／クライアント信用失墜",
+      "law_basis": "著作権法 第21条〜第28条／著作権法 第30条の4（学習利用例外の射程外）",
+      "law_basis_url": "https://elaws.e-gov.go.jp/document?lawid=345AC0000000048",
+      "tags": [
+        "IP",
+        "著作権",
+        "入力素材",
+        "3分類",
+        "許諾",
+        "公知公用",
+        "自前"
+      ],
+      "review_cycle_months": 12,
+      "lawyer_review_required": true,
+      "version_added": "1.1.0"
+    },
+    {
+      "id": "C-IP-002",
+      "category": "IP",
+      "subcategory": "他者著作物の入力禁止",
+      "title": "他者著作物の入力禁止原則",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "キャプチャ・スクショ・ダウンロード素材を「参考に」とAIに入力することは原則禁止。例外：パブリックドメイン／クリエイティブコモンズ／明示的許諾済み素材。",
+      "clause_text_full": "従業者は、他者が著作権・意匠権・商標権その他知的財産権を有する素材（Webサイトのキャプチャ、他社デザイン、出版物、ダウンロード画像、競合商品の写真等）を、生成AIに「参考」「リファレンス」「素材」として入力してはならない。AIによる学習・出力過程で当該素材の表現的特徴が出力物に反映され、著作権侵害・不正競争防止法違反（混同惹起・著名表示冒用）を構成し得るため。",
+      "explanation_beginner": "他人が作ったもの（他社のWebサイトキャプチャ、ダウンロードした画像など）を「これ参考にして」とAIに渡すのは原則NG。AIがそっくり真似た出力を作ってしまうと、後で訴えられるリスクがあります。",
+      "violation_risk_level": "critical",
+      "violation_risk_detail": "著作権侵害・不正競争防止法違反（商品形態模倣・著名表示冒用）／訴訟費用と損害賠償／クライアント信用失墜",
+      "law_basis": "著作権法 第21条／不正競争防止法 第2条第1項第1号・第2号・第3号",
+      "tags": [
+        "IP",
+        "著作権",
+        "キャプチャ",
+        "スクショ",
+        "参照",
+        "禁止"
+      ],
+      "review_cycle_months": 12,
+      "lawyer_review_required": true,
+      "version_added": "1.1.0"
+    },
+    {
+      "id": "C-IP-003",
+      "category": "IP",
+      "subcategory": "間接利用の倫理ライン",
+      "title": "間接利用の倫理ライン（法的セーフ・倫理アウト判定）",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "参照元→中間生成物→AI再分析→最終出力 の連鎖（間接利用）は法的にはグレーですが、当社では倫理アウトとして扱います。",
+      "clause_text_full": "従業者は、他者著作物を直接AI入力できないからといって、(1)当該著作物を分析した中間出力を作り、(2)その中間出力をさらにAIに再分析させる、という連鎖（間接利用）により事実上参照元の表現を再現する行為を行ってはならない。当該行為は現行著作権法では侵害認定が困難なグレーゾーンであるが、(a)裁判例蓄積中で予測不可能、(b)クライアント発覚時の信用失墜、(c)倫理的に容認しがたい、の3理由により禁止する。例外として、参照元を完全に分析せず、抽象的概念・カテゴリ・トレンド情報のみを抽出する場合は許容する。",
+      "explanation_beginner": "他社サイトを直接AIに入れちゃダメだから、いったん別のAIに「これ分析して」と渡して、その分析結果をさらに別のAIに「これを参考に作って」と渡せばセーフ？──実はこれ、法律的にはセーフでも倫理的にアウト。当社は「うちは倫理ラインも守る」を信用の源泉にしているので、こういう抜け道は使いません。",
+      "violation_risk_level": "high",
+      "violation_risk_detail": "裁判例蓄積中で予測不可能／クライアント発覚時の信用失墜・契約解除リスク／業界での信頼低下",
+      "tags": [
+        "IP",
+        "間接利用",
+        "倫理",
+        "グレーゾーン",
+        "信用"
+      ],
+      "review_cycle_months": 6,
+      "lawyer_review_required": true,
+      "version_added": "1.1.0"
+    },
+    {
+      "id": "C-IP-004",
+      "category": "IP",
+      "subcategory": "業務種別の参照ルール",
+      "title": "業務種別の参照ルール（画像生成／Webコーディング／アプリ開発）",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "画像生成・Webコーディング・アプリ開発の各業務シーンでは特に他者作品の参照が常態化しがちなため、業務別の具体ルールを定めます。",
+      "clause_text_full": "従業者は、次の業務種別ごとに定める参照ルールを遵守する。【画像生成業務】Midjourney等で「この画風で」「このテイストで」と指示する際、特定作家・特定作品名の使用は原則禁止。代わりに抽象的スタイル（水彩風／写実的／ミニマル等）で指示する。【Webコーディング業務】他社サイトのスクショをAIに「これを再現して」と渡す行為は不正競争防止法上の商品形態模倣を構成し得るため禁止。代わりに「3カラム・ナビバー上部・カード型レイアウト」など構造的指示を行う。【アプリ開発業務】他社UIキャプチャ→AI分析→自社アプリへ反映の連鎖は意匠権侵害リスクを生じる。自社で原案を作成しAIに改善案を求める形で利用する。",
+      "explanation_beginner": "業務によって、AIに渡してはいけないものが違います。【画像生成】「○○先生の絵柄で」はダメ、「水彩風で」のように抽象的に。【Webコーディング】他社サイトのスクショを「これそっくりに」はダメ、構造を言葉で説明する。【アプリ開発】他社アプリの画面を「これ真似て」はダメ、自分で原案を描いてからAIに改善依頼。",
+      "violation_risk_level": "critical",
+      "violation_risk_detail": "画像：著作権侵害・パブリシティ権侵害／Web：不正競争防止法違反・著作権侵害／アプリ：意匠権侵害",
+      "law_basis": "著作権法／不正競争防止法 第2条第1項第3号（商品形態模倣）／意匠法",
+      "tags": [
+        "IP",
+        "画像生成",
+        "Webコーディング",
+        "アプリ開発",
+        "業務別",
+        "参照ルール"
+      ],
+      "review_cycle_months": 12,
+      "lawyer_review_required": true,
+      "version_added": "1.1.0"
+    },
+    {
+      "id": "C-IP-005",
+      "category": "IP",
+      "subcategory": "出力物の権利所在",
+      "title": "出力物の権利所在（クライアント契約での明示義務）",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "AIで作った成果物の権利が誰のものかを、クライアント契約に明記します。「AI生成物を含む」「権利帰属」「責任分担」の3点を必ず合意します。",
+      "clause_text_full": "従業者は、生成AIを利用して制作した成果物をクライアントに納品する場合、契約書または発注書に次の事項を明示しなければならない。①AI生成物が含まれること、②AI生成物の権利帰属（自社／クライアント／共有）、③AI出力物に第三者著作権侵害が判明した場合の責任分担。AI生成物は現行日本法上、著作権の発生主体・帰属について議論がある（人間の創作的寄与の有無）ため、契約による合意形成が重要となる。",
+      "explanation_beginner": "AIで作った成果物をお客様に納品するときは、契約書に「AIで作りました」「権利は誰のものです」「もし後で著作権侵害が発覚したら誰が責任を取ります」をはっきり書いてから渡します。後でトラブルにならないためです。",
+      "violation_risk_level": "high",
+      "violation_risk_detail": "AI生成物の権利帰属トラブル／後発の著作権侵害発覚時の責任所在不明／クライアント契約解除リスク",
+      "law_basis": "著作権法 第2条第1項第1号（著作物の定義）／民法 第415条（債務不履行責任）",
+      "tags": [
+        "IP",
+        "出力物",
+        "権利帰属",
+        "契約",
+        "クライアント"
+      ],
+      "review_cycle_months": 12,
+      "lawyer_review_required": true,
+      "version_added": "1.1.0"
+    },
+    {
+      "id": "C-IP-006",
+      "category": "IP",
+      "subcategory": "肖像権・パブリシティ権",
+      "title": "肖像権・パブリシティ権（実在人物の画像・音声・名前）",
+      "applies_to_scale": [
+        "S",
+        "XS",
+        "S2",
+        "M",
+        "L"
+      ],
+      "applies_to_industry": [
+        "*"
+      ],
+      "necessity": "required",
+      "clause_text_short": "実在の人物（有名人・お客様・社員）の画像・音声・名前をAIに渡すときは、必ず本人の同意を確認します。",
+      "clause_text_full": "従業者は、生成AIへの入力プロンプトまたは入力素材に、実在人物の氏名・肖像・音声を含める場合、当該人物の同意を事前に取得しなければならない。具体的には、(1)有名人の名前・肖像を用いた画像・動画生成（パブリシティ権侵害）、(2)社員・お客様の写真・音声をAI処理する場合（肖像権侵害・個情法違反）、(3)実在人物を題材にした文章生成（名誉毀損・プライバシー侵害）を含む。同意取得の証跡（書面・メール）を保存し、削除要請があれば速やかに対応する。",
+      "explanation_beginner": "芸能人・お客様・社員などの「本物の人」の写真・声・名前をAIに使うときは、必ず本人にOKをもらってから。特に有名人を勝手にAIで再現すると「パブリシティ権侵害」で訴えられます。お客様の写真も同様、ビフォーアフター写真の使用同意は事前確認必須。",
+      "violation_risk_level": "critical",
+      "violation_risk_detail": "肖像権・パブリシティ権侵害（民事損害賠償）／個情法違反（要配慮情報含む場合は1億円罰金射程）／名誉毀損・プライバシー侵害",
+      "law_basis": "民法 第709条（不法行為）／個人情報保護法／著作権法（写真著作物）",
+      "tags": [
+        "IP",
+        "肖像権",
+        "パブリシティ権",
+        "実在人物",
+        "同意",
+        "プライバシー"
+      ],
+      "review_cycle_months": 12,
+      "lawyer_review_required": true,
+      "version_added": "1.1.0"
+    }
   ]
 }

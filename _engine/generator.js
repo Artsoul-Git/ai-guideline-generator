@@ -8,7 +8,7 @@
 
 (function(global) {
   const STORAGE_KEY = 'aigl_v1_state';
-  const GENERATOR_VERSION = '1.0.0';
+  const GENERATOR_VERSION = '1.1.0';
 
   // DB（runtime load）
   let META = null, CLAUSES = null, TEMPLATES = null, GLOSSARY = null;
@@ -20,19 +20,24 @@
     industry_self: '',
     employee_count: 0,
     scale: '',
+    tone_type: '',           // v1.1.0 新規：信頼ベース型/統制ベース型
     industries: [],
     contact_name: '',
     contact_email: '',
     audience_type: 'tiered',
     ai_tools: [],
     ai_purposes: [],
+    ai_genres: [],           // v1.1.0 新規：AIジャンル6
+    ai_concepts: [],         // v1.1.0 新規：AI概念4
+    caution_policy: '',      // v1.1.0 新規：警戒サービス対応方針
     data_types: [],
     masking_scenes: '',
     existing_rules: [],
+    uploaded_files: [],      // v1.1.0 新規：アップロード済み既存規程ファイル名一覧
     output_formats: [],
     selected_clauses: [],
     creation_date: '',
-    version: '1.0.0'
+    version: '1.1.0'
   };
 
   // === DBロード ===
@@ -385,15 +390,21 @@
   }
 
   // === 専門家向け 要件定義書（本格制作版 相談用）生成 ===
+  // v1.1.0：トーン軸・AIジャンル・概念・警戒方針・IP系条項・アップロード規程を反映
   function generateRequirementsMD(data) {
     const scaleMeta = getScaleMeta(data.scale);
     const industryLabels = data.industries.map(i => getIndustryMeta(i)?.label).filter(Boolean).join('、');
     const recommended = recommendClauses(data.scale, data.industries);
+    const toneMeta = META && META.tone_patterns ? META.tone_patterns.find(t => t.id === data.tone_type) : null;
+    const aiGenres = META && META.ai_genres ? META.ai_genres.filter(g => (data.ai_genres||[]).includes(g.id)) : [];
+    const aiConcepts = META && META.ai_concepts ? META.ai_concepts.filter(c => (data.ai_concepts||[]).includes(c.id)) : [];
+    const cautionPolicy = data.caution_policy || '';
+    const ipClauses = (CLAUSES||[]).filter(c => c.category === 'IP');
 
     return `# 専門家向け 要件定義書 ─ AI・IT利用ガイドライン本格制作版 相談用
 
-> このファイルは「AI・IT利用ガイドライン ジェネレーター v${GENERATOR_VERSION}」での入力内容をまとめたものです。
-> 業種・社内事情にあわせた完全カスタマイズ版（弁護士確認・社内浸透支援込み）の制作をご相談の際は、本ファイルを弊社（uemura@artsoul.jp）までお送りください。
+> このファイルは「AI・IT利用ガイドライン 要件定義シート v${GENERATOR_VERSION}」での入力内容をまとめたものです。
+> 本ファイルを弊社（uemura@artsoul.jp）まで添付メールでお送りいただくか、社内のAIエージェントスキル \`/ai-guideline-build\` に投入すると、業種11×規模5×トーン2に最適化したガイドライン本格制作（4成果物セット）が開始されます。
 
 ---
 
@@ -407,6 +418,7 @@
 | 業種カテゴリID | ${data.industries.join(', ')} |
 | 従業員数 | ${data.employee_count}名 |
 | 規模区分 | **${data.scale}（${scaleMeta?.label || ''}）** |
+| **採用トーン** | **${toneMeta ? toneMeta.label : '未選択'}** |
 | 担当者 | ${data.contact_name || '—'} |
 | 連絡先 | ${data.contact_email || '—'} |
 | 想定読者層 | ${data.audience_type} |
@@ -421,22 +433,73 @@
 - **キーリスク**：${scaleMeta?.key_risk || '—'}
 - **運用上の留意点**：${scaleMeta?.scale_ops_hint || '—'}
 
-## 3. AI利用実態
+## 3. トーン軸（ガイドラインの人格）
 
-| 項目 | 内容 |
-|---|---|
-| 利用ツール | ${data.ai_tools.join('、') || '—'} |
-| 主な用途 | ${data.ai_purposes.join('、') || '—'} |
-| 取扱データ種別 | ${data.data_types.join('、') || '—'} |
-| マスキング必要場面 | ${data.masking_scenes || '—'} |
+${toneMeta ? `### 採用：${toneMeta.label} ${toneMeta.label_sub ? '（'+toneMeta.label_sub+'）' : ''}
 
-## 4. 既存規程
+- **メッセージ**：${toneMeta.message}
+- **思想**：${toneMeta.philosophy}
+- **文体**：${toneMeta.writing_style}
+- **申請フロー**：${toneMeta.approval_flow}
+- **禁止表現**：${toneMeta.prohibition_style}
+- **ツール選択**：${toneMeta.tool_selection}
+- **ログ保存**：${toneMeta.log_storage}
+- **分量目安**：${toneMeta.page_estimate}
+- **切替注意**：${toneMeta.switch_warning}
+
+**ガイドライン本文の文体は本トーン軸に従って全条項を表現する。Phase 9（4成果物本制作）で適切なトーン別テンプレートを適用すること。**` : '（トーン軸未選択：規模ベース推奨を採用してください）'}
+
+## 4. AI利用実態
+
+### 4-1. 利用中／検討中のAIツール
+
+${data.ai_tools.length > 0 ? data.ai_tools.map(t => `- ${t}`).join('\n') : '- 未入力'}
+
+### 4-2. 主な用途
+
+${data.ai_purposes.length > 0 ? data.ai_purposes.map(p => `- ${p}`).join('\n') : '- 未入力'}
+
+### 4-3. 利用AIジャンル（v1.1.0 新規）
+
+${aiGenres.length > 0 ? aiGenres.map(g => `- **${g.label}**：${g.examples}
+  - 注意すべき概念：${g.key_concerns}`).join('\n') : '- 未選択'}
+
+### 4-4. 重視すべきAI利用概念（v1.1.0 新規）
+
+${aiConcepts.length > 0 ? aiConcepts.map(c => `- **${c.label}**：${c.description}`).join('\n') : '- 未選択'}
+
+### 4-5. 警戒すべきサービスへの対応方針（v1.1.0 新規）
+
+採用方針：**${cautionPolicy === 'strict' ? '🚫 厳格運用' : cautionPolicy === 'moderate' ? '⚖️ 段階運用' : cautionPolicy === 'lenient' ? '🆓 柔軟運用' : '未選択'}**
+
+${META && META.caution_services ? META.caution_services.map(cs =>
+  `- **${cs.category}**：例 ${cs.examples.join('、')} ／ 方針：${cs.guideline}`
+).join('\n') : ''}
+
+### 4-6. 取扱データ種別
+
+${data.data_types.length > 0 ? data.data_types.map(d => `- ${d}`).join('\n') : '- 未入力'}
+
+### 4-7. マスキング必要場面（自由記述）
+
+${data.masking_scenes || '（未入力）'}
+
+## 5. 既存規程
+
+### 5-1. チェック項目
 
 ${data.existing_rules.length > 0 ?
   data.existing_rules.map(r => `- ${r.name}：${r.exists ? '✅ 有' : '❌ 無'}${r.note ? ' / ' + r.note : ''}`).join('\n')
   : '（既存規程情報未入力）'}
 
-## 5. 採用条項リスト
+### 5-2. アップロード済み既存規程ファイル（v1.1.0 新規）
+
+${(data.uploaded_files && data.uploaded_files.length > 0) ?
+  data.uploaded_files.map(f => `- **${f.name}**（${f.size_kb}KB／抽出文字数 ${f.text_length||0}文字）
+  - 抽出キーワード抜粋：${(f.keywords||[]).slice(0,15).join('、') || '—'}`).join('\n')
+  : '（アップロードファイルなし）'}
+
+## 6. 採用条項リスト
 
 **全${recommended.length}件 を推奨採用**
 
@@ -445,14 +508,33 @@ ${recommended.map(id => {
   return c ? `- \`${id}\` ${c.title}（${c.necessity}）` : '';
 }).filter(Boolean).join('\n')}
 
-## 6. 業種特化ガイドライン参照
+## 7. IP系条項（v1.1.0 新規・全規模・全業種必修・Kei指示2026-06-29）
+
+**著作権・肖像権・間接利用倫理ライン**を全クライアント案件で必修組込。本格制作時は以下6条項を必ずガイドライン本体に組込し、業種別深掘りパックを適用する。
+
+${ipClauses.map(c => `### ${c.id} ${c.title}
+
+- **要約**：${c.clause_text_short}
+- **違反リスク**：${c.violation_risk_detail}
+- **法的根拠**：${c.law_basis || '—'}
+`).join('\n')}
+
+### IP系業種別深掘り推奨
+
+${META && META.ip_business_packs ? META.ip_business_packs.map(pack =>
+  `- **${pack.label}**
+  - 深掘り内容：${pack.ip_focus}
+  - 主リスク：${pack.key_risk}`
+).join('\n') : ''}
+
+## 8. 業種特化ガイドライン参照
 
 ${data.industries.map(ind => {
   const m = getIndustryMeta(ind);
   return m ? `- **${m.label}**：${m.key_laws.join('、')} ／ ${m.extra_warning}` : '';
 }).filter(Boolean).join('\n')}
 
-## 7. 出力希望形式
+## 9. 出力希望形式
 
 ${data.output_formats.length > 0 ? data.output_formats.map(f => `- ${f}`).join('\n') : '- 未選択'}
 
@@ -612,30 +694,28 @@ ${mdToHtml(allProductsMd)}
     downloadBlob(blob, `${data.company_name || 'AIガイドライン'}_${data.creation_date}.docx`, 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
   }
 
+  // v1.1.0：PDF出力を window.print() ベースに切替（jsPDF白紙バグ対策）
+  // 別タブで成果物HTMLを開き、ブラウザの印刷ダイアログ→「PDFとして保存」誘導
   async function exportPdf(data, allProductsMd) {
-    if (typeof html2pdf === 'undefined') {
-      alert('PDF出力ライブラリ（html2pdf.js）が読み込まれていません。');
+    const html = generateFullHtml(data, allProductsMd);
+    // 別タブで開いて自動的に印刷ダイアログを起動
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) {
+      alert('印刷タブの起動に失敗しました。ブラウザのポップアップブロックを解除してください。');
       return;
     }
-    const html = generateFullHtml(data, allProductsMd);
-    const container = document.createElement('div');
-    container.innerHTML = html;
-    container.style.position = 'absolute';
-    container.style.left = '-9999px';
-    document.body.appendChild(container);
-    const opt = {
-      margin: [15, 15, 20, 15],
-      filename: `${data.company_name || 'AIガイドライン'}_${data.creation_date}.pdf`,
-      image: { type: 'jpeg', quality: 0.95 },
-      html2canvas: { scale: 2, useCORS: true },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-      pagebreak: { mode: ['css', 'legacy'] }
-    };
-    try {
-      await html2pdf().set(opt).from(container).save();
-    } finally {
-      container.remove();
-    }
+    // 追加CSS：印刷時のヘッダ・余白最適化
+    const printOptimizedHtml = html.replace('</head>',
+      '<style>@media print{@page{size:A4;margin:18mm 16mm}body{font-size:11pt;line-height:1.55}.product-divider{page-break-before:always}h1,h2,h3,h4{page-break-after:avoid}}@media screen{body{max-width:800px;margin:0 auto;padding:32px;background:#f5f5f5}article{background:#fff;padding:40px;box-shadow:0 4px 16px rgba(0,0,0,.08)}.print-instructions{background:#fffbea;border:2px solid #f0c674;padding:18px 22px;border-radius:8px;margin-bottom:24px;font-size:14px}.print-instructions strong{color:#7a5b1f}}@media print{.print-instructions{display:none}}</style></head>'
+    ).replace('<body>', '<body><div class="print-instructions"><strong>📄 PDFとして保存する手順：</strong> ① Ctrl+P（Mac: ⌘+P）で印刷ダイアログを開く ② 送信先で「PDFに保存」または「Microsoft Print to PDF」を選択 ③ 保存ボタンをクリック</div>');
+    printWindow.document.open();
+    printWindow.document.write(printOptimizedHtml);
+    printWindow.document.close();
+    // 印刷ダイアログを自動起動（500ms後・レンダリング完了待ち）
+    setTimeout(() => {
+      try { printWindow.focus(); printWindow.print(); }
+      catch(e) { console.warn('Auto-print failed:', e); }
+    }, 800);
   }
 
   async function exportMd(data, allProductsMd) {
@@ -679,7 +759,11 @@ ${mdToHtml(allProductsMd)}
       }
 
       hideLoading();
-      showToast('✅ 生成完了。ダウンロードフォルダを確認してください。', 'good');
+      showToast('✅ 要件定義書を作成しました。次の流れに進んでください。', 'good');
+      // v1.1.0：完了画面を表示（この後の流れ案内）
+      if (typeof window !== 'undefined' && window.AIGL_UI && typeof window.AIGL_UI.showCompletion === 'function') {
+        try { window.AIGL_UI.showCompletion(); } catch(e) { console.warn('showCompletion failed:', e); }
+      }
     } catch (e) {
       hideLoading();
       console.error(e);
