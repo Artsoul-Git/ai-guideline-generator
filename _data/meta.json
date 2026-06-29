@@ -9,23 +9,23 @@
   "tone_patterns": [
     {
       "id": "trust",
-      "label": "信頼ベース型（クレド型）",
-      "label_sub": "性善説・スピード重視",
+      "label": "信頼ベース型（約束事カード型）",
+      "label_sub": "信頼前提・スピード重視",
       "recommended_for_scales": ["S", "XS", "S2"],
       "message": "全員が「正しく怖がりながら、早く使いこなす」",
-      "philosophy": "ガチガチのルールより、1枚の『約束事（クレド）』を共有してスタート",
+      "philosophy": "ガチガチのルールより、1枚の『約束事カード』を共有してスタート",
       "writing_style": "『私たちは〜します』（宣言・一人称複数）",
       "approval_flow": "ゼロ（自己責任）",
       "prohibition_style": "ニュアンスで自制を促す",
       "tool_selection": "現場裁量",
       "log_storage": "推奨",
-      "page_estimate": "A4・5〜8枚＋クレドカード1枚",
+      "page_estimate": "A4・5〜8枚＋約束事カード1枚",
       "switch_warning": "業務委託・パートが多い場合は統制ベース推奨"
     },
     {
       "id": "control",
-      "label": "統制ベース型（防壁型）",
-      "label_sub": "性悪説・統制開始",
+      "label": "統制ベース型（ガードレール型）",
+      "label_sub": "手続き前提・統制開始",
       "recommended_for_scales": ["M", "L"],
       "message": "「悪気のないうっかり漏洩」から会社と社員を守る",
       "philosophy": "顔が見えない社員や外部スタッフが増える時期、手続きを挟む『防壁としてのルール』に切り替え",
@@ -160,7 +160,7 @@
     {
       "step": 3,
       "label": "業種×規模×トーンに最適化した4成果物が完成",
-      "description": "ガイドライン本体／カスタマイズGB／リスク対策GB／マスキング実務マニュアル（規模により2-4本＋クレドカード）"
+      "description": "ガイドライン本体／カスタマイズGB／リスク対策GB／マスキング実務マニュアル（規模により2〜4本＋約束事カード）"
     },
     {
       "step": 4,
@@ -432,11 +432,11 @@
   ],
 
   "output_formats": [
-    {"id": "html", "label": "HTML（ブラウザ即閲覧）", "ext": ".html"},
-    {"id": "word", "label": "Word（社内回覧・改訂用）", "ext": ".docx"},
-    {"id": "pdf", "label": "PDF（印刷配布用）", "ext": ".pdf"},
-    {"id": "md", "label": ".md（再開・編集用）", "ext": ".md"},
-    {"id": "requirements", "label": "専門家向け 要件定義書.md（本格制作版 相談用）", "ext": "_requirements.md"}
+    {"id": "html", "label": "要件定義書HTML（ブラウザで即閲覧）", "ext": ".html"},
+    {"id": "word", "label": "要件定義書Word（社内回覧・改訂用）", "ext": ".docx"},
+    {"id": "pdf", "label": "要件定義書PDF（印刷配布用）", "ext": ".pdf"},
+    {"id": "md", "label": "要件定義書MD（再開・編集用）", "ext": ".md"},
+    {"id": "requirements", "label": "専門家向け要件定義書MD（本格制作 ASご相談用／/ai-guideline-build 投入用）", "ext": "_requirements.md"}
   ],
 
   "audience_options": [

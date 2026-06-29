@@ -143,7 +143,7 @@
     });
     state.step = 1;
     state.audience_type = 'tiered';
-    state.version = '1.0.0';
+    state.version = '1.1.0';   // html-validator FLAG-1 修正 (2026-06-29 サイクル2)
     localStorage.removeItem(STORAGE_KEY);
   }
 
@@ -433,7 +433,7 @@
 - **キーリスク**：${scaleMeta?.key_risk || '—'}
 - **運用上の留意点**：${scaleMeta?.scale_ops_hint || '—'}
 
-## 3. トーン軸（ガイドラインの人格）
+## 3. トーン軸（ガイドラインの書き方）
 
 ${toneMeta ? `### 採用：${toneMeta.label} ${toneMeta.label_sub ? '（'+toneMeta.label_sub+'）' : ''}
 
@@ -468,7 +468,7 @@ ${aiGenres.length > 0 ? aiGenres.map(g => `- **${g.label}**：${g.examples}
 
 ${aiConcepts.length > 0 ? aiConcepts.map(c => `- **${c.label}**：${c.description}`).join('\n') : '- 未選択'}
 
-### 4-5. 警戒すべきサービスへの対応方針（v1.1.0 新規）
+### 4-5. 海外サーバー系・無料版サービスへの対応方針（v1.1.0 新規）
 
 採用方針：**${cautionPolicy === 'strict' ? '🚫 厳格運用' : cautionPolicy === 'moderate' ? '⚖️ 段階運用' : cautionPolicy === 'lenient' ? '🆓 柔軟運用' : '未選択'}**
 
@@ -576,7 +576,7 @@ ${data.output_formats.length > 0 ? data.output_formats.map(f => `- ${f}`).join('
 
 _生成日：${data.creation_date}_
 _ジェネレーター版：v${GENERATOR_VERSION}_
-_条項DB版：${CLAUSES ? 'v1.0.0' : '不明'}_
+_条項DB版：v${META && META.version ? META.version : (CLAUSES ? '1.1.0' : '不明')}_  (html-validator FLAG-2 修正)
 
 <!-- AIGL_REQUIREMENTS_META: ${JSON.stringify({v: 1, generator: GENERATOR_VERSION, state: state})} -->
 `;
@@ -729,31 +729,26 @@ ${mdToHtml(allProductsMd)}
   }
 
   // === メイン生成エントリ ===
+  // v1.1.0：要件定義シート リブランディングに伴い、全形式が「要件定義書」を出力するよう変更
+  // （旧：HTML/Word/PDF/.md は4成果物完成版を出力／新：全形式が要件定義書を異なる形式で出力）
+  // 本格的なガイドライン4成果物は /ai-guideline-build スキルで本格制作する
   async function generateAll() {
     if (!validateRequired()) return;
     if (!data().creation_date) state.creation_date = new Date().toISOString().slice(0, 10);
 
     const d = data();
-    showLoading('成果物を生成中...');
+    showLoading('要件定義書を作成中...');
 
     try {
-      const p1 = generateProduct01(d);
-      const p2 = generateProduct02(d);
-      const p3 = generateProduct03(d);
-      const p4 = generateProduct04(d);
-
-      const allMd =
-        p1 + '\n\n<hr class="product-divider">\n\n' +
-        p2 + '\n\n<hr class="product-divider">\n\n' +
-        p3 + '\n\n<hr class="product-divider">\n\n' +
-        p4;
+      // v1.1.0：要件定義書MDを生成して、全形式で使い回す
+      const requirementsMd = generateRequirementsMD(d);
 
       const formats = d.output_formats;
       for (const fmt of formats) {
-        if (fmt === 'html') await exportHtml(d, allMd);
-        else if (fmt === 'word') await exportWord(d, allMd);
-        else if (fmt === 'pdf') await exportPdf(d, allMd);
-        else if (fmt === 'md') await exportMd(d, allMd);
+        if (fmt === 'html') await exportHtml(d, requirementsMd);
+        else if (fmt === 'word') await exportWord(d, requirementsMd);
+        else if (fmt === 'pdf') await exportPdf(d, requirementsMd);
+        else if (fmt === 'md') await exportMd(d, requirementsMd);
         else if (fmt === 'requirements') await exportRequirements(d);
         await new Promise(r => setTimeout(r, 300));
       }
